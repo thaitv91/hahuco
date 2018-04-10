@@ -1,0 +1,42 @@
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `Extra small` as of 4.0
+$screen-xs: 575px;
+
+//** Deprecated `Small` as of 4.0
+$screen-sm: 576px;
+
+//** Deprecated `Medium` as of 4.0
+$screen-md: 768px;
+
+//** Deprecated `Large` as of 4.0
+$screen-lg:992px;
+
+//** Deprecated `Extra large` as of 4.0
+$screen-xl: 1200px;
+
+
+$color-text:#333;
+$bg-body:#f6f6f6;
+$white:#fff;
+$border:#ccc;
+$color-link:#005992;
+$black:#000;
+
+
+// color
+$color-1:#d72127;
+$color-2:#005992;
+$color-3:#073d5f;
+$color-4:#083d5f;
+$color-5:#999999;
+$color-6:#d71149;
+$color-7:#666;
+$border-2:#dddddd;
+$color-8:#94d2f3;
+$color-9:#005992;
+$color-10:#02b6ea;
+$color-11:#D71249;

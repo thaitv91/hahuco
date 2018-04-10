@@ -1,0 +1,61 @@
+.ico-search{
+  @include use-sprite('search')
+}
+
+.ico-menu{
+  @include use-sprite('menu');
+}
+
+@for $i from 1 through 3{
+  .ico-indemnify-#{$i}{
+    @include use-sprite('indemnify-#{$i}');
+  }
+}
+
+.ico-phone{
+  @include use-sprite('phone');
+}
+
+.ico-info-product{
+  @include use-sprite('info-product');
+}
+
+.ico-object-product{
+  @include use-sprite('object-product');
+}
+
+.ico-benefit-product{
+  @include use-sprite('benefit-product');
+}
+
+.ico-profile-product{
+  @include use-sprite('profile-product');
+}
+
+.ico-useful-product{
+  @include use-sprite('useful-product');
+}
+
+.ico-info-product-normal{
+  @include use-sprite('info-product-normal');
+}
+
+.ico-object-product-normal{
+  @include use-sprite('object-product-normal');
+}
+
+.ico-benefit-product-normal{
+  @include use-sprite('benefit-product-normal');
+}
+
+.ico-profile-product-normal{
+  @include use-sprite('profile-product-normal');
+}
+
+.ico-useful-product-normal{
+  @include use-sprite('useful-product-normal');
+}
+
+.ico-hotline{
+  @include use-sprite('hotline');
+}

@@ -1,0 +1,101 @@
+.networks{
+  select.form-control{
+    height: 50px !important;
+    @include border-radius(0);
+  }
+  .title{
+    margin-bottom: 44px;
+  }
+  .list-tab{
+    margin: 0 -5px 0;
+    padding-top: 24px;
+    li{
+      padding: 0 5px;
+      position: relative;
+      input{
+        position: absolute;
+        top:0;
+        left: 0;
+        opacity: 0;
+        &:checked{
+          &+.btn-vbi{
+            background-color: $color-2;
+          }
+        }
+      }
+//      &.active{
+//        .btn-vbi{
+//          background-color: $color-2;
+//        }
+//      }
+    }
+  }
+
+  .plane-content{
+    display: none;
+    max-width: 890px;
+    margin: 0px auto 30px;
+    h4{
+      font-weight: 700;
+      font-size: 18px;
+    }
+    &#all{
+      display: block;
+    }
+  }
+}
+
+.list-office{
+  max-height: 470px;
+  @include breakpoint(lg){
+    max-height: 670px;
+  }
+  li{
+    padding: 25px 15px;
+    border-bottom:1px solid #e5e5e5;
+
+    &:hover{
+      background-color: #f7f7f7;
+    }
+    &+li{
+
+    }
+    h4{
+      font-size: 14px;
+      margin: 0 0 5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    p{
+      margin: 0;
+    }
+  }
+}
+
+#map{
+  height: 470px;
+  position: relative;
+  @include breakpoint(lg){
+    height: 670px;
+  }
+}
+
+
+.box-directtion{
+  position: absolute;
+  padding: 20px 15px;
+  top: 20px;
+  left: 50%;
+  z-index: 2;
+  @include box-shadow();
+  @include translate(-50%, 0);
+  width: 620px;
+  max-width: 100%;
+  .btn-vbi{
+    @include border-radius(0);
+    padding: 8px 14px;
+  }
+  .form-control{
+    height: 37px;
+  }
+}

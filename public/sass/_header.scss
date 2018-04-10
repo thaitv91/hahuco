@@ -1,0 +1,261 @@
+header{
+
+}
+.header-top{
+  background-color: #02b5e9;
+  color:$white;
+  line-height: 35px;
+  background-image: url("../images/bg/header-top.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  font-size: 13px;
+  ul{
+    margin: 0;
+    li{
+      display: inline-block;
+      &+li{
+        margin-left: 25px;
+        @include breakpoint(lg){
+          margin-left: 32px;
+        }
+      }
+      a{
+        position: relative;
+        display: inline-block;
+        padding-left: 14px;
+        &:before{
+          content: "";
+          @include use-sprite('bullet');
+          position: absolute;
+          top:50%;
+          margin-top: -3px;
+          left: 0;
+        }
+      }
+    }
+  }
+  a{
+    color: $white;
+    &+a{
+      margin-left: 10px;
+    }
+  }
+  .header-right{
+    margin-left: 0;
+    @include breakpoint(md){
+      margin-left: 100px;
+    }
+  }
+  .language{
+    padding-left: 14px;
+    margin-left: 12px;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 9px;
+      background-color: $white;
+      top:50%;
+      left: 0;
+      margin-top: -4px;
+    }
+  }
+}
+
+.navbar-light{
+  position: relative;
+  @include breakpoint(lg){
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .logo{
+    @include breakpoint(lg){
+      text-align: center;
+      .navbar-brand{
+        margin-right: 0;
+      }
+    }
+  }
+  .navbar-nav{
+    .nav-link{
+      text-transform: uppercase;
+      color: $color-2;
+      font-weight: 600;
+      i{
+        vertical-align: text-bottom;
+        margin-right: 4px;
+        @include use-sprite('menu-hover');
+        display: none;
+        @include breakpoint(lg){
+          display: inline-block;
+        }
+      }
+      @media screen and (max-width: $screen-lg - 1){
+        color: $white !important;
+        padding:15px;
+      }
+      &:hover, &:focus{
+        color: $color-1;
+        i{
+          @include use-sprite('menu-hover');
+          display: none;
+          @include breakpoint(lg){
+            display: inline-block;
+          }
+        }
+        @media screen and (max-width: $screen-lg - 1){
+          color: $white;
+          background-color: $color-link;
+        }
+      }
+    }
+    .nav-item{
+      &+.nav-item{
+        @media screen and (max-width: $screen-lg - 1){
+          border-top:1px solid #4f536c;
+        }
+      }
+      &.active{
+        .nav-link{
+          color: $color-1;
+          i{
+            @include use-sprite('menu-hover');
+            display: none;
+            @include breakpoint(lg){
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    .dropdown-toggle{
+      &:after{
+        display: none;
+      }
+    }
+  }
+
+  .slogan{
+    color: $color-2;
+    font-size: 18px;
+//    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 13px;
+      background-color: $color-2;
+      margin-right: 14px;
+    }
+  }
+
+
+  .navbar-collapse{
+    @media screen and (max-width: $screen-lg - 1){
+      position: absolute;
+      top:100%;
+      left: 0;
+      right: 0;
+      background-color: #212331;
+      z-index: 3;
+    }
+
+    .dropdown-menu{
+      border: none;
+      min-width: 240px;
+      background-color: #212331;
+      @include border-radius(0);
+      padding: 0;
+      .dropdown-item{
+        color: $white;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        &:hover, &:focus{
+          background-color: $color-2;
+        }
+      }
+      li{
+        &+li{
+          border-top:1px solid #4f536c;
+        }
+      }
+    }
+  }
+
+  .navbar-toggler{
+    border:none;
+    cursor: pointer;
+  }
+}
+
+.search-header{
+  margin-left: 8px;
+  .dropdown-toggle{
+    background-color: $color-1;
+    border:none;
+    cursor: pointer;
+    @include border-radius(50%);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    &:after{
+      display: none;
+    }
+  }
+
+  .dropdown-menu{
+    left: auto;
+    right: -1px;
+    top:-1px;
+    min-width: 240px;
+    padding: 0 40px 0 5px;
+    height: 32px;
+    margin: 0;
+    .form-control{
+      border: none;
+      @include border-radius(0);
+      height: 30px;
+    }
+    button{
+      background-color: $color-1;
+      border: none;
+      width: 30px;
+      height: 30px;
+      text-align: left;
+      line-height: 30px;
+      position: absolute;
+      top:0;
+      right: 0;
+      @include border-radius(0 4px 4px 0);
+    }
+  }
+}
+
+.fixed-header{
+  header{
+    position: fixed;
+    animation: 250ms ease-out 0s normal none 1 running showStickyMenu;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    .header-top{
+      display: none !important;
+    }
+    .navbar-light{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: rgba($white,0.9) !important;
+      @include box-shadow(0 5px 10px rgba(0,0,0,0.2));
+      .slogan{
+        display: none !important;
+      }
+    }
+  }
+}

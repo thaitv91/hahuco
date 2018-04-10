@@ -1,0 +1,121 @@
+@mixin breakpoint($bp) {
+  @if $bp == xl {
+    @media only screen and (min-width: $screen-xl) { @content ; }
+  } @else if $bp == lg {
+    @media only screen and (min-width: $screen-lg) { @content ; }
+  } @else if $bp == md {
+    @media only screen and (min-width: $screen-md) { @content ; }
+  } @else if $bp == sm {
+    @media only screen and (min-width: $screen-sm) { @content ; }
+  } @else if $bp == xs {
+    @media only screen and (max-width: $screen-xs) { @content ; }
+  }
+}
+
+@mixin flexWidth($value){
+  -ms-flex: 0 0 $value;
+  flex: 0 0 $value;
+  max-width: $value;
+}
+
+@mixin flexWrap(){
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin dFlex(){
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin justifyContent($value){
+  -ms-flex-pack: $value;
+  justify-content: $value;
+}
+
+@mixin alignItems($value){
+  -ms-flex-align: $value;
+  align-items: $value;
+}
+
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+}
+
+@mixin border-radius($value){
+  -webkit-border-radius:$value;
+  border-radius:$value;
+}
+
+@mixin transition($value: all ease 0.5s){
+  -webkit-transition:$value;
+  transition:$value;
+}
+
+@mixin box-shadow($value: 0 5px 15px rgba($black,0.1)){
+  -webkit-box-shadow:$value;
+  box-shadow:$value;
+}
+
+@mixin square($value){
+  width: $value;
+  height: $value;
+}
+
+@mixin OpenSans(){
+  font-family: 'Open Sans', sans-serif;
+}
+
+$icons: sprite-map("sprites/*.png", $layout: smart, $spacing: 5px) !default;
+
+
+//Sprite mixin, works perfectly with standard defines
+@mixin use-sprite($sprite, $sprite-retina: false, $sprite-map: $icons) {
+
+  background-image: sprite-url($sprite-map);
+  background-position: sprite-position($sprite-map, $sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: image-height(sprite-file($sprite-map, $sprite));
+  width: image-width(sprite-file($sprite-map, $sprite));
+  display: inline-block;
+
+}
+
+@mixin border-radius($value){
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  -ms-border-radius: $value;
+  -o-border-radius: $value;
+  border-radius: $value;
+}
+
+
+@mixin placeholder($color){
+  &::-webkit-input-placeholder { // WebKit browsers
+    color: #{$color};
+  }
+  &:-moz-placeholder { // Mozilla Firefox 4 to 18
+    color: #{$color};
+    opacity:  1;
+  }
+  &::-moz-placeholder { // Mozilla Firefox 19+
+    color: #{$color};
+    opacity:  1;
+  }
+  &:-ms-input-placeholder { // Internet Explorer 10+
+    color: #{$color};
+  }
+}
+
+@mixin gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg) {
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient($deg, $start-color, $end-color); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient($deg, $start-color, $end-color); // Opera 12
+  background-image: linear-gradient($deg, $start-color, $end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+}
+
+@mixin scale($value){
+  -webkit-transform:scale($value);
+  transform:scale($value);
+}

@@ -1,0 +1,121 @@
+//products
+.products{
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0 -15px;
+    li{
+      @include flexWidth(100%);
+      padding: 0 15px;
+      @include breakpoint(sm){
+        @include flexWidth(50%);
+      }
+      @include breakpoint(md){
+        @include flexWidth(33.3333%)
+      }
+      @include breakpoint(lg){
+        @include flexWidth(20%);
+      }
+    }
+  }
+
+  .tile-product{
+    .img{
+      img{
+        min-height: 158px;
+        max-height: 158px;
+      }
+    }
+  }
+}
+
+.tile-product{
+  text-align: center;
+  margin-bottom: 30px;
+  display: block;
+  h4{
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    a{
+      color: $color-link;
+    }
+  }
+  .img{
+    margin-bottom: 20px;
+  }
+  a{
+    color: $color-text;
+    &:hover{
+      color: $color-link;
+      text-decoration: none;
+    }
+  }
+}
+
+.list-products{
+  .title{
+    margin-bottom: 54px;
+  }
+  .row{
+    .col{
+      @media screen and (max-width: $screen-lg - 1){
+        @include flexWidth(33.3333%);
+      }
+      @media screen and (max-width: $screen-md - 1){
+        @include flexWidth(50%);
+      }
+
+      @media screen and (max-width: $screen-sm - 1){
+        @include flexWidth(100%);
+      }
+    }
+  }
+
+  .nav{
+    li{
+      margin-bottom: 30px;
+    }
+    .tile-product{
+      position: relative;
+      margin-bottom: 0;
+      height: 100%;
+      &.active{
+        &:after{
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -30px;
+          @include translate(-50%,0);
+          display: block;
+          width: 0;
+          height: 0;
+          border-left:12px solid transparent;
+          border-right:12px solid transparent;
+          border-bottom:12px solid $white;
+        }
+      }
+    }
+  }
+
+  .tab-content{
+    background-color:$white;
+    padding: 30px 15px 0;
+    .tile-product{
+      .img{
+        height: 173px;
+        img{
+//          width: 100%;
+          max-height: 173px;
+        }
+      }
+    }
+    .btn-load-more{
+      padding-bottom: 30px;
+      .btn-vbi{
+        min-width: 140px;
+      }
+    }
+  }
+}
+

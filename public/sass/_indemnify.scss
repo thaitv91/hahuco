@@ -1,0 +1,212 @@
+.indemnify-car{
+//  @include gradient-directional($color-8,$color-6);
+  background-color: #f8f8f8;
+  padding: 48px 0 3px;
+  .col-lg-4{
+    margin-bottom: 30px;
+  }
+  .title{
+    margin-bottom: 50px;
+  }
+}
+
+.tile-indemnify{
+  padding: 0 0 15px;
+  @include transition();
+  height: 100%;
+//  &:hover{
+//    @include box-shadow();
+//  }
+  .btn-vbi{
+    min-width: 110px;
+    margin: 10px 5px 0;
+  }
+  ul{
+    margin: 0;
+    counter-reset: section;
+    li{
+      margin-bottom: 20px;
+      padding-left: 35px;
+      position: relative;
+      p{
+        margin-bottom: 0;
+      }
+      &:before{
+        content: counter(section);
+        position: absolute;
+        background: url("../images/bg/bullet.png") no-repeat;
+        width: 24px;
+        height: 26px;
+        line-height: 21px;
+        top:0;
+        left: 0;
+        text-align: center;
+        counter-increment: section;
+        font-weight: 700;
+        color: $white;
+        font-size: 14px;
+      }
+      .text{
+        margin-left: -35px;
+        margin-top: 13px;
+        p{
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .header-tile{
+    background-color: $color-10;
+    color: $white;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    min-height: 207px;
+    &.bg-1{
+      background-color: $color-link;
+    }
+    &.bg-2{
+      background-color: #6d5580;
+    }
+    &.bg-3{
+      background-color: $color-6;
+    }
+  }
+
+  .body-tile{
+    font-size: 16px;
+    h4{
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 25px;
+    }
+    .text{
+      color:$color-link;
+      font-size: 14px;
+      padding: 20px 25px;
+      p{
+        margin-bottom: 10px;
+      }
+      img{
+        max-height: 35px;
+        @include breakpoint(xl){
+          max-height: 45px;
+        }
+      }
+      a{
+        &+a{
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+.indemnify{
+  .tile-product{
+    .img{
+      img{
+        max-height: 200px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.bg-v2{
+  background: url(../images/bg/bg-testimonial-left.jpg) no-repeat top left,url(../images/bg/bg-testimonial-right.jpg) no-repeat bottom right;
+  background-color: #083d5f;
+  padding: 55px 0;
+  color: $white;
+}
+.profile-indemnify{
+  .title{
+    margin-bottom: 55px;
+  }
+
+  .loading{
+    padding: 25px 0;
+    img{
+      max-width: 45px;
+    }
+  }
+
+  .steps{
+    label{
+      span{
+        color:$color-1;
+      }
+    }
+    .error{
+      color: $color-1;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    textarea.form-control{
+      height: 70px;
+    }
+    h3{
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .btn{
+      margin-top: 25px;
+      &+.btn{
+        margin-left: 15px;
+      }
+    }
+    .btn-primary{
+      i{
+        margin-left: 5px;
+      }
+    }
+    .btn-default{
+      i{
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .step-1{
+    padding-bottom: 30px;
+  }
+  .mess{
+    font-size: 16px;
+    padding: 0 0 35px;
+    min-height: 280px;
+    @include dFlex();
+    @include justifyContent(center);
+    &.hidden-block{
+      display: none !important;
+    }
+    p{
+      margin: 10px;
+    }
+    .download-app{
+      padding-top: 15px;
+      a{
+        &+a{
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.chung-timepicker{
+  .title{
+    font-size: 14px;
+    text-transform: capitalize;
+    margin: 0;
+    color:$color-text;
+  }
+}
+
+.hidden-block{
+  display: none;
+}

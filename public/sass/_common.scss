@@ -1,0 +1,417 @@
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=vietnamese');
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-bold.eot');
+  src: url('../fonts/opensans-bold.eot') format('embedded-opentype'),
+  url('../fonts/opensans-bold.woff') format('woff'),
+  url('../fonts/opensans-bold.ttf') format('truetype'),
+  url('../fonts/opensans-bold.svg#OpenSansBold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-bolditalic.eot');
+  src: url('../fonts/opensans-bolditalic.eot') format('embedded-opentype'),
+  url('../fonts/opensans-bolditalic.woff') format('woff'),
+  url('../fonts/opensans-bolditalic.ttf') format('truetype'),
+  url('../fonts/opensans-bolditalic.svg#OpenSansBoldItalic') format('svg');
+  font-weight:700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-italic.eot');
+  src: url('../fonts/opensans-italic.eot') format('embedded-opentype'),
+  url('../fonts/opensans-italic.woff') format('woff'),
+  url('../fonts/opensans-italic.ttf') format('truetype'),
+  url('../fonts/opensans-italic.svg#OpenSansItalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-light.eot');
+  src: url('../fonts/opensans-light.eot') format('embedded-opentype'),
+  url('../fonts/opensans-light.woff') format('woff'),
+  url('../fonts/opensans-light.ttf') format('truetype'),
+  url('../fonts/opensans-light.svg#OpenSansLight') format('svg');
+  font-weight:300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-regular.eot');
+  src: url('../fonts/opensans-regular.eot') format('embedded-opentype'),
+  url('../fonts/opensans-regular.woff') format('woff'),
+  url('../fonts/opensans-regular.ttf') format('truetype'),
+  url('../fonts/opensans-regular.svg#OpenSansRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-semibold.eot');
+  src: url('../fonts/opensans-semibold.eot') format('embedded-opentype'),
+  url('../fonts/opensans-semibold.woff') format('woff'),
+  url('../fonts/opensans-semibold.ttf') format('truetype'),
+  url('../fonts/opensans-semibold.svg#OpenSansSemibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-extrabold.eot');
+  src: url('../fonts/opensans-extrabold.eot') format('embedded-opentype'),
+  url('../fonts/opensans-extrabold.woff') format('woff'),
+  url('../fonts/opensans-extrabold.ttf') format('truetype'),
+  url('../fonts/opensans-extrabold.svg#OpenSansExtrabold') format('svg');
+  font-style: normal;
+  font-weight: 800;
+}
+
+
+
+body{
+  color: $color-text;
+  font-size: 14px;
+  @include OpenSans();
+}
+body p, body span, body div{
+  font-family: 'Open Sans', sans-serif !important;
+}
+a{
+  color: $color-text;
+  &:hover{
+    color: $color-link;
+    text-decoration: none;
+  }
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.space-global{
+  margin-bottom: 70px;
+}
+
+.dropdown-menu{
+  font-size: 14px;
+}
+
+
+
+.title{
+  margin: 0 0 45px;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 300;
+  color: $black;
+  @include breakpoint(lg){
+    font-size: 36px;
+    margin-bottom: 90px;
+  }
+}
+
+// slick
+.slick-list{
+  margin: 0 -15px;
+  .slick-slide{
+    padding: 0 15px;
+  }
+}
+
+.slick-slider{
+  .slick-arrow{
+    border:none;
+    background-color: transparent;
+    overflow: hidden;
+    font-size: 0;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    @include translate(0,-50%);
+    z-index: 2;
+  }
+
+  .slick-prev{
+    left: 0;
+    @include breakpoint(xl){
+      left: -50px;
+    }
+  }
+
+  .slick-next{
+    right: 0;
+    @include breakpoint(xl){
+      right: -50px;
+    }
+  }
+}
+
+.arrows-gray{
+  .slick-prev{
+    @include use-sprite('arrow-gray-left');
+    &:hover{
+      @include use-sprite('arrow-gray-left-hover');
+    }
+  }
+
+  .slick-next{
+    @include use-sprite('arrow-gray-right');
+    &:hover{
+      @include use-sprite('arrow-gray-right-hover');
+    }
+  }
+}
+
+.arrows-white{
+  .slick-prev{
+    @include use-sprite('arrow-white-left');
+    &:hover{
+      @include use-sprite('arrow-white-left-hover');
+    }
+  }
+
+  .slick-next{
+    @include use-sprite('arrow-white-right');
+    &:hover{
+      @include use-sprite('arrow-white-right-hover');
+    }
+  }
+}
+
+.arrows-white-2{
+  .slick-prev{
+    @include use-sprite('arrow-white-left');
+    &:hover{
+      @include use-sprite('arrow-gray-left-hover');
+    }
+  }
+
+  .slick-next{
+    @include use-sprite('arrow-white-right');
+    &:hover{
+      @include use-sprite('arrow-gray-right-hover');
+    }
+  }
+}
+
+.slick-dots{
+  margin: 44px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  @include breakpoint(md){
+    margin-top: 84px;
+  }
+  li{
+    display: inline-block;
+    margin: 0 4px;
+    button{
+      border: none;
+      @include square(10px);
+      @include border-radius(50%);
+      text-align: left;
+      text-indent: -9999px;
+      overflow: hidden;
+      @include transition();
+      padding: 0;
+    }
+  }
+}
+.dots-white{
+  .slick-dots{
+    li{
+      button{
+        background-color: rgba($white,0.5);
+        &:hover{
+          background-color: $white;
+        }
+      }
+      &.slick-active{
+        button{
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+// e: slick
+
+.move-next{
+  a{
+    font-size: 30px;
+    @include square(45px);
+    background-color: $color-link;
+    color: $white;
+    @include border-radius(50%);
+    text-align: center;
+    line-height: 45px;
+    display: inline-block;
+    i{
+      vertical-align: middle;
+    }
+  }
+}
+
+.section-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mt-header{
+//  margin-top: -30px;
+}
+.fz-24{
+  font-size: 18px;
+  @include breakpoint(md){
+    font-size: 24px;
+  }
+}
+
+.fz-16{
+  font-size: 16px;
+}
+
+.no-bg{
+  background-image: none !important;
+}
+
+.text-link{
+  color: $color-link;
+}
+
+.page-inner{
+  border-top: 2px solid $border-2;
+  padding-top: 33px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+.toggle-navright{
+  position: fixed;
+  right: 0;
+  top:50%;
+  @include translate(0, -50%);
+  z-index: 999;
+  span{
+    background-color: rgba($color-1,0.8);
+    width: 50px;
+    height: 250px;
+    @include border-radius(6px 0 0 6px);
+    color: $white;
+    text-align: center;
+    line-height: 250px;
+    display: inline-block;
+    font-size: 24px;
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    -o-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    i{
+      vertical-align: baseline;
+    }
+  }
+}
+
+.nav-right-fixed{
+  position: fixed;
+  right: -1024px;
+  top:50%;
+  @include translate(0, -50%);
+  background-color: rgba($color-1,0.8);
+  padding: 30px 20px;
+  @include border-radius(6px 0 0 6px);
+  width: 320px;
+  z-index: 9999;
+  @include transition();
+  min-height: 250px;
+  h4{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  a{
+    color: $white;
+  }
+  .close-nav{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .img{
+    @include flexWidth(80px);
+    margin-right: 20px;
+  }
+  .text{
+    .name{
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+  }
+  &.show-nav{
+    right: 0;
+  }
+}
+
+.text-pink{
+  color: $color-1;
+}
+
+.g-view-more{
+  text-align: right;
+  .btn{
+    i{
+      @include transition();
+    }
+    &:hover{
+      i{
+        @include translate(20px,0);
+      }
+    }
+  }
+}
+
+.mybullet{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li{
+    position: relative;
+    padding-left: 35px;
+    min-height: 25px;
+    margin-bottom: 10px;
+    img{
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top:0;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.banner-slider .slick-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+.banner-slider .slick-dots li button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  width: 30px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+.banner-slider .slick-dots li button:hover, .banner-slider .slick-dots li button:focus {
+  background-color: white;
+  outline: none;
+}
+.banner-slider .slick-dots li.slick-active button {
+  background-color: white;
+}

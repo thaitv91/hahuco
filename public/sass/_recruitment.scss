@@ -1,0 +1,104 @@
+.search-recruitment{
+  background-color: $color-2;
+  padding: 16px 0 0;
+  .btn-outline-light{
+    border:1px solid $white;
+  }
+}
+
+.create-profile{
+  .btn-vbi{
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    min-width:240px;
+    margin-bottom: 25px;
+    i{
+      margin-right: 5px;
+    }
+    margin-left:5px;
+    margin-right: 5px;
+  }
+  .btn-blue{
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    -o-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  .upload-cv{
+    p{
+      margin: 3px 0 0;
+      font-size: 13px;
+      font-style: italic;
+      color:#868e96;
+    }
+  }
+  label{
+    span{
+      color: $color-1;
+    }
+  }
+}
+
+.download-form-recruitment{
+  img{
+    margin: auto;
+  }
+  .slick-slider{
+    .slick-arrow{
+      margin-top: 0;
+      @include breakpoint(md){
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.tile-education{
+  .img{
+    margin-bottom: 15px;
+    overflow: hidden;
+    img{
+      @include transition();
+      &:hover{
+        @include scale(1.2);
+      }
+    }
+  }
+  h4{
+    font-size: 16px;
+    a{
+      &:hover, &:focus{
+        color:$color-1;
+      }
+    }
+  }
+  &:hover{
+    a{
+      color:$color-1;
+    }
+  }
+}
+
+.message-success{
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+  display: none;
+  font-size: 16px;
+  &.show{
+    display: block;
+  }
+}

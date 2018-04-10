@@ -1,0 +1,13 @@
+{
+    "name": "package-page/pages",
+    "description": "Laravel Page",
+    "type": "laravel",
+    "authors": [
+        {
+            "name": "tuanviet",
+            "email": "vietnt.hn@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
