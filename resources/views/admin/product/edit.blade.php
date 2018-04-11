@@ -66,6 +66,14 @@
 						</span>
 						@endif
 					</div>
+
+					<div class="form-group row margin-bottom-30">
+						<label  class="col-sm-12 col-sx-12" for="tags">Tags</label>
+						<div class="col-sm-12 col-sx-12">
+							<input id="tags" class="form-control" name="tags" type="text" value="{{ $str_tags }}" data-role="tagsinput">
+						</div>
+					</div>
+
 					<div class="form-group margin-bottom-30">
 						<label for="thumbnail">@lang('admin/product.thumbnail')</label>
 						<input type="file" name="thumbnail" id="thumbnail">
@@ -76,14 +84,17 @@
 						</span>
 						@endif
 					</div>
+
 					<div class="form-group row margin-bottom-30">
 						<label  class="col-sm-8 col-form-label" for="noibat">Sản phẩm nổi bật:</label>
 						<div class="col-sm-4">
 							<input id="noibat" type="checkbox" name="noi_bat" value="noi_bat" {{ $product->noi_bat ? 'checked' : '' }} data-toggle="toggle">
 						</div>
 					</div>
+
+
 					<div class="form-group margin-bottom-30">
-						<button type="submit" class="btn btn-primary">@lang('admin/general.update')</button>
+						<input id="submit" type="submit" class="btn btn-primary" value="@lang('admin/general.update')">
 						<a href="{{ route('admin.product') }}" class="btn btn-default">@lang('admin/general.back')</a>
 					</div>
 				</div>

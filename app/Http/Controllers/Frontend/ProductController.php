@@ -8,6 +8,7 @@ use App\Models\ProductCategory as Category;
 use App\Models\ProductTerm as Term;
 use App\Models\Product;
 use App\Models\ProductContact as Contact;
+use Spatie\Tags\Tag;
 
 class ProductController extends Controller
 {
@@ -27,6 +28,22 @@ class ProductController extends Controller
 			$title = "Danh mục sản phẩm: " . $term->name;
 			return view('frontend.danhsachsanpham', compact(['term', 'title']));
 		}
+    }
+
+    public function tags($slug) {
+	    $locale = app()->getLocale();
+		$tag = Tag::where("slug->{$locale}", '=', $slug)->first();
+		$tag_name = $tag->name;
+
+		$products = Product::withAnyTags($tag_name)->get();
+
+		$data = [
+			'title' => 'Product Tags: ' . $tag_name,
+			'products' => $products,
+			'tag_name' => $tag_name
+		];
+
+		return view('frontend.sptags', $data);
     }
 
     public function showMoreProducts($term_id) {

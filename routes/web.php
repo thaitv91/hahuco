@@ -266,6 +266,7 @@ Route::group(['prefix' => 'admin'], function () {
 //=========================================HOMEPAGE===============================================
 Route::group(['prefix'=>'san-pham'], function() {
 //    Route::get('', 'Frontend\ProductController@index')->name('homepage.product');
+	Route::get('tag/{slug}', 'Frontend\ProductController@tags')->name('homepage.product.tags');
     Route::get('xem-them/{term_id}', 'Frontend\ProductController@showMoreProducts')->name('homepage.product.showMore');
 	Route::get('{term_slug}/{product_slug?}', 'Frontend\ProductController@show')->name('homepage.product.show');
     Route::post('{term_slug}/{product_slug}', 'Frontend\ProductController@storeContact')->name('homepage.product.storeContact');

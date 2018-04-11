@@ -29,6 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="{{url('css/toastr.min.css')}}" rel="stylesheet"/>
     <link href="{{url('css/adminStyle.css')}}" rel="stylesheet"/>
     <link href="{{url('css/bootstrap-toggle.min.css')}}" rel="stylesheet"/>
+    <link href="{{url('css/bootstrap-tagsinput.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="{{url('css/bootstrap-datepicker3.css')}}"/>
     <!-- Data Table -->
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
@@ -384,6 +385,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script type="text/javascript" src="/js/highcharts/map.js"></script>
 <script type="text/javascript" src="/js/highcharts/world.js"></script>
 <script type="text/javascript" src="/js/bootstrap-toggle.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-tagsinput.js"></script>
 <script type='text/javascript' src='{{ url('js/highcharts/loader.js') }}'></script>
 
 <script>
@@ -485,6 +487,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }
     $(window).load(function() {
         $('form *:input[type!=hidden]:first').focus();
+    });
+
+    $('form').bind("keypress", function(e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            return false;
+        }
     });
 </script>
 @yield('scripts')

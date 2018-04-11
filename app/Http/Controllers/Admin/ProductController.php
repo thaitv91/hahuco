@@ -8,6 +8,7 @@ use App\Models\ProductTerm;
 use App\Models\ProductCategory;
 use App\Models\Product;
 use Session, Redirect;
+use Spatie\Tags\Tag;
 
 class ProductController extends Controller
 {
@@ -27,8 +28,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = $this->product->get();
-
-        return view('admin.product.index', compact(['products']));
+		$title = "Danh sách sản phẩm";
+        return view('admin.product.index', compact(['products', 'title']));
     }
 
     /**
@@ -40,7 +41,14 @@ class ProductController extends Controller
     {
         $category_default = ProductCategory::firstOrCreate(['name'=>'Default', 'slug'=>'default']);
         $term_default = ProductTerm::firstOrCreate(['name'=>'Default', 'slug'=>'default']);
+//	    $tags = Tag::select('name')->get()->toJson();
 
+//	    $alltags =[];
+//	    foreach ($tags as $tag) {
+//	    	$alltags[] = $tag['name'];
+//	    }
+
+//	    $alltags = json_encode($alltags);
         $categories = ProductCategory::get(['name', 'id']);
         $terms = ProductTerm::get(['name', 'id']);
 		$title = 'Tạo mới sản phẩm';
@@ -55,7 +63,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['title'=>'required']);
+        $request->validate([
+        	'title'=>'required',
+	        'tags' => 'required'
+        ]);
         $product = $this->product;
         $product->product_category_id = $request->category;
         $product->product_term_id = $request->term;
@@ -70,6 +81,10 @@ class ProductController extends Controller
         if ($request->thumbnail) {
             $product->thumbnail = $this->image->uploadImage('hahuco/uploads/products', $request->thumbnail);
         }
+
+        // tags save()
+	    $tags = explode(",", $request->tags);
+	    $product->attachTags($tags);
 
         $product->save();
 
@@ -100,8 +115,14 @@ class ProductController extends Controller
         $categories = ProductCategory::get(['name', 'id']);
         $terms = ProductTerm::get(['name', 'id']);
         $product = $this->product->where('slug', $slug)->firstOrFail();
+
+        $tags = $product->tags;
+        $str_tags = "";
+        foreach ($tags as $tag) {
+        	$str_tags .= $tag->name . ",";
+        }
 		$title = "Edit Sản Phẩm: " . $product->title;
-        return view('admin.product.edit', compact(['title','product', 'categories', 'terms']));
+        return view('admin.product.edit', compact(['title','product', 'categories', 'terms', 'str_tags']));
     }
 
     /**
@@ -132,7 +153,10 @@ class ProductController extends Controller
             $product->thumbnail = $this->image->uploadImage('hahuco/uploads/products', $request->thumbnail);
         }
 
-        
+        // tags
+	    $tags = explode(",", $request->tags);
+        $product->syncTags($tags);
+
         $product->save();
 
         Session::flash('success', trans('admin/general.success.edit'));

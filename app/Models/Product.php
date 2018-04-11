@@ -10,6 +10,7 @@ class Product extends Model
 {
     use Sluggable;
     use Searchable;
+	use \Spatie\Tags\HasTags;
 
     protected $table = 'product';
     protected $guarded = array();
