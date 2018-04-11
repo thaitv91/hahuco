@@ -9,9 +9,10 @@ use App\Models\News;
 
 class NewsController extends Controller
 {
-    public function show($news_slug) {
-    	$news = News::where('slug', $news_slug)->firstOrFail();
-        return view('frontend.chitiettintuc', compact(['news']));
+    public function show( $id) {
+	    $news = News::where('slug', $id)->firstOrFail();
+	    $title = "Tin tức: " . $news->title;
+	    return view('frontend.chitiettintuc', compact(['news', 'title']));
     }
 
     public function listNews() {

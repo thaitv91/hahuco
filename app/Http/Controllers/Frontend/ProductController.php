@@ -17,13 +17,16 @@ class ProductController extends Controller
         return view('frontend.sanpham', compact(['categories', 'terms']));
 	}
 
-    public function show($product_slug) {
-        $product = Product::where('slug', $product_slug)->firstOrFail();
-        $data = [
-        	"title" => "Sản phẩm: " . $product->title,
-	        "product" => $product
-        ];
-        return view('frontend.chitietsanpham', $data);
+	public function show($term_slug, $product_slug = null) {
+	    $term = Term::where('slug', $term_slug)->firstOrFail();
+		if ($product_slug) {
+			$product = Product::where('product_term_id', $term->id)->where('slug', $product_slug)->firstOrFail();
+			$title = "Sản phẩm: " . $product->title;
+			return view('frontend.chitietsanpham', compact(['product', 'title']));
+		} else {
+			$title = "Danh mục sản phẩm: " . $term->name;
+			return view('frontend.danhsachsanpham', compact(['term', 'title']));
+		}
     }
 
     public function showMoreProducts($term_id) {

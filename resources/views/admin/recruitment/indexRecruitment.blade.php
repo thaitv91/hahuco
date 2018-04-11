@@ -24,8 +24,6 @@
 						<thead>
 							<th>@lang('admin/recruitment.id')</th>
 							<th>@lang('admin/recruitment.title')</th>
-							<th>@lang('admin/recruitment.job')</th>
-							<th>@lang('admin/recruitment.place')</th>
 							<th>@lang('admin/recruitment.thumbnail')</th>
 							<th></th>
 						</thead>
@@ -34,8 +32,6 @@
 							<tr>
 								<td>{{ $key+1 }}</td>
 								<td>{{ $recruitment->title }}</td>
-								<td>{{ $recruitment->job->name }}</td>
-								<td>{{ $recruitment->place->name }}</td>
 								<td>
 									<img src="{{ asset($recruitment->thumbnail) }}" class="img" height="75px">
 								</td>

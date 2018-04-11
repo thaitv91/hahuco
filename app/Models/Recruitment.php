@@ -3,9 +3,33 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Laravel\Scout\Searchable;
 
 class Recruitment extends Model
 {
+	use Sluggable;
+	use Searchable;
+
+	public function sluggable()
+	{
+		return [
+			'slug' => [
+				'source' => 'title'
+			]
+		];
+	}
+
+	public function toSearchableArray()
+	{
+		return [
+			'title'                     => $this->title,
+			'slug'                      => $this->slug,
+			'excerpt'                      => $this->excerpt,
+			'body'                      => $this->body,
+		];
+	}
+
     protected $guarded = array();
 
     public function job() {

@@ -96,9 +96,10 @@ class RecruitmentController extends Controller
     }
 
     public function show($id) {
-        $recruitment = Recruitment::where('id', $id)->firstOrFail();
 
-        return view('frontend.recruitment_detail', compact(['recruitment']));
+        $recruitment = Recruitment::where('slug', $id)->firstOrFail();
+	    $title = "Tuyển Dụng: " . $recruitment->title;
+        return view('frontend.recruitment_detail', compact(['recruitment', 'title']));
     }
 
     public function refreshCaptcha()

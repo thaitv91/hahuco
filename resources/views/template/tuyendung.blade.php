@@ -1,20 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
-    <!-- main content -->
-    <section class="banner-only-img">
-        <div class="section-img" style="background-image: url('/{{ $page->thumbnail }}')"></div>
+    <section class="page-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <article>
+                        <div class="title_ct mb-4">
+                            <span>{!! $page->title !!}</span>
+                        </div>
+                        @widget('DanhSachTuyenDung')
+                    </article><!-- End .content -->
+                </div>
+                <div class="col-lg-3 order-lg-first">
+                    @widget('SidebarLeft')
+                </div>
+            </div>
+        </div>
     </section>
-
-    @widget($page->getContentofField("tuyendung-recruitment-search"))
-
-    @widget( $page->getContentofField("tuyendung-recruitment-list"))
-    
-    @widget( $page->getContentofField("tuyendung-recruitment-resume"),['section_class' => 'testimonials', 'readmore' => true] )
-
-    @widget( $page->getContentofField("tuyendung-van-hoa-doanh-nghiep") , ['cate_slug' => 'van-hoa-doanh-nghiep', 'title' => 'Văn Hóa Doanh Nghiệp', 'addon_class' => 'space-global','readmore' => true])
-    
-    @widget( $page->getContentofField("tuyendung-chuong-trinh-dao-tao") , ['title' => 'Chương trình đào tạo', 'readmore' => true])
-   
-    <!-- e: main content -->
 @endsection

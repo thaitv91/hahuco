@@ -14,7 +14,7 @@
 		'email'				=>	'Email',
 		'phone'				=>	'Điện thoại',
 		'created_at'		=>	'Thời gian tạo',
-		'resume'			=>	'Hồ sơ',
+		'resume'			=>	'Catalog',
 		'file_upload'		=>	'Tệp tải lên',
 		'download_format'	=>	'Tải xuống bản mẫu'
 	);

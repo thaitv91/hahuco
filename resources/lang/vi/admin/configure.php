@@ -7,13 +7,13 @@
 		'facebook'			=>	'Facebook',
 		'twitter'			=>	'Twitter',
 		'google'			=>	'Google',
-		'instagram'			=>	'Instagram',
+		'instagram'			=>	'Youtube',
 		'copyright'			=>	'Copyright',
-		'promotion_image'	=>	'Ảnh khuyến mãi',
-		'promotion_title'	=>	'Tiêu đề khuyến mãi',
-		'promotion_content'	=>	'Nội dung khuyễn mãi',
-		'promotion_link'	=>	'Đường dẫn khuyến mãi',
-		'android_link'		=>	'Đường dẫn sản phẩm Android',
-		'ios_link'			=>	'Đường dẫn sản phẩm IOS',
-		'email'				=>	'Email'
+		'promotion_image'	=>	'QR Code Website',
+		'promotion_title'	=>	'Email 1',
+		'promotion_content'	=>	'Địa chỉ Trụ Sở Chính',
+		'promotion_link'	=>	'Email 2',
+		'android_link'		=>	'Hotline 1',
+		'ios_link'			=>	'Hotline 2',
+		'email'				=>	'Hotline 3'
 	);

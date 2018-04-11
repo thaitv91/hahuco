@@ -27,7 +27,8 @@ class ConfigureController extends Controller
         $data = Configure::all();
        
         $this->viewData = array(
-            'data' => $data
+            'data' => $data,
+	        'title' => 'Configure: All'
         );
         return view ( 'admin.configure.index', $this->viewData );
     }
@@ -89,7 +90,8 @@ class ConfigureController extends Controller
     {
         $data = Configure::find($id);
         $this->viewData = array(
-            'data' => $data
+            'data' => $data,
+            'title' => 'Hahuco: Configure'
         );
         return view ( 'admin.configure.edit', $this->viewData );
     }

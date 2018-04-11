@@ -27,8 +27,9 @@ class ProductTermController extends Controller
     public function index()
     {
         $terms = $this->term->get();
+        $title = "Danh mục Sản phẩm: Danh sách";
 
-        return view('admin.product_term.index', compact(['terms']));
+        return view('admin.product_term.index', compact(['terms', 'title']));
     }
 
     /**
@@ -41,8 +42,8 @@ class ProductTermController extends Controller
         // $category = new ProductCategory;
         // $category_default = $category->firstOrCreate(['name'=>'Default', 'slug'=>'default']);
         $term_default = $this->term->firstOrCreate(['name'=>'Default', 'slug'=>'default']);
-        
-        return view('admin.product_term.create');
+        $title = "Danh mục Sản phẩm: Tạo mới";
+        return view('admin.product_term.create', compact(['title']));
     }
 
     /**
@@ -88,8 +89,8 @@ class ProductTermController extends Controller
     public function edit($slug)
     {
         $term = $this->term->where('slug', $slug)->firstOrFail();
-
-        return view('admin.product_term.edit', compact(['term']));
+	    $title = "Danh mục Sản phẩm: Sửa";
+        return view('admin.product_term.edit', compact(['term', 'title']));
     }
 
     /**

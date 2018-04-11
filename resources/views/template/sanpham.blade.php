@@ -1,27 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
-    <!-- main content -->
-    @php $image = $page->getContentofField('sanpham-banner-image') @endphp
-    @if($page->getContentofField('sanpham-banner-type') == 'Image')
+    <section class="page-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <article>
+                        <div class="title_ct">
+                            <span>{!! $page->title !!}</span>
+                        </div>
+                        {!! $page->content !!}
 
-    <section class="banner-only-img">
-        <div class="section-img" style="background-image: url('/{{ $image }}')"></div>
-    </section><!-- /.banner-slogan -->
-    @elseif($page->getContentofField('sanpham-banner-type') == 'Slider')
-        @widget('ImageSlider')
-    @elseif($page->getContentofField('homepage-banner-type') == 'Video')
-        <section class="banner-video">
-            <div class="video-play">
-                <video autoplay="" muted width="100%" height="100%">
-                    <source src="{{ asset($page->getContentofField('sanpham-banner-video')) }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                        @widget('TatCaSanPham')
+                    </article><!-- End .content -->
+                </div>
+                <div class="col-lg-3 order-lg-first">
+                    @widget('SidebarLeft')
+                </div>
             </div>
-        </section><!-- /.banner-video -->
-    @endif
-    @widget($page->getContentofField("sanpham-danh-sach-san-pham"))
-
-    @widget($page->getContentofField("sanpham-cham-soc-khach-hang"))
-    <!-- e: main content -->
+        </div>
+    </section>
 @endsection

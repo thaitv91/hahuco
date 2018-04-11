@@ -6,7 +6,7 @@
         <div class="main_sb">
             <ul class="ul_dmsp">
                 @foreach($terms as $term)
-                    <li><a href="/products/term/{{ $term->slug }}"><h2>{{ $term->name }}</h2></a></li>
+                    <li><a href="{{ route('homepage.product.show',$term->slug) }}"><h2>{{ $term->name }}</h2></a></li>
                 @endforeach
             </ul>
         </div><!-- End .main_sb -->
@@ -19,15 +19,15 @@
             <ul>
                 <li>
                     <strong>Hotline 01</strong>
-                    <p style="color:#333;">0901 761 511</p>
+                    <p style="color:#333;">{!! $hotline1 !!}</p>
                 </li>
                 <li>
                     <strong>Hotline 02</strong>
-                    <p style="color:#333;">0903 471 511</p>
+                    <p style="color:#333;">{!! $hotline2 !!}</p>
                 </li>
                 <li>
                     <strong>Hotline 03</strong>
-                    <p style="color:#333;">02466 711 511</p>
+                    <p style="color:#333;">{!! $hotline3 !!}</p>
                 </li>
             </ul>
         </div><!-- End .hotline -->

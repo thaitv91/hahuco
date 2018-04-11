@@ -9,6 +9,7 @@ use App\Models\RecruitmentJob as Job;
 use App\Models\RecruitmentPlace as Place;
 use App\Models\RecruitmentProfile as Profile;
 use App\Models\RecruitmentResume as Resume;
+use Session, Redirect;
 
 class RecruitmentController extends Controller
 {
@@ -38,52 +39,46 @@ class RecruitmentController extends Controller
     	$request->validate(array(
     			'title'		=>	'required',
     			'body'		=>	'required',
-    			'job'		=>	'required',
-    			'place'		=>	'required',
+    			'excerpt'		=>	'required'
     	));
 
     	$recruitment = new Recruitment;
     	$recruitment->title = $request->title;
     	$recruitment->body = $request->body;
-    	$recruitment->job_id = $request->job;
-    	$recruitment->place_id = $request->place;
+    	$recruitment->excerpt = $request->excerpt;
 
     	if($request->thumbnail) {
-    		$recruitment->thumbnail = $this->image->uploadImage('images/recruitment', $request->thumbnail);
+    		$recruitment->thumbnail = $this->image->uploadImage('hahuco/upload/recruitment', $request->thumbnail);
     	}
 
-    	$recruitment->save();
+    	if($recruitment->save()){
+		    Session::flash('success', 'Create item success');
 
-    	\Session::flash('success', 'Create item success');
-
-    	return redirect()->route('admin.recruitment.index');
+		    return redirect()->route('admin.recruitment.index');
+	    }
     }
 
     public function editRecruitment($id) {
     	$title = 'Recruitment | Edit';
     	$recruitment = Recruitment::where('id', $id)->firstOrFail();
-    	$jobs = Job::all();
-    	$places = Place::all();
 
-    	return view('admin.recruitment.editRecruitment', compact(['title', 'recruitment', 'jobs', 'places']));
+    	return view('admin.recruitment.editRecruitment', compact(['title', 'recruitment']));
     }
 
     public function updateRecruitment(Request $request, $id) {
     	$request->validate(array(
     			'title'		=>	'required',
-    			'body'		=>	'required',
-    			'job'		=>	'required',
-    			'place'		=>	'required',
+    			'excerpt'		=>	'required',
+    			'body'		=>	'required'
     	));
 
     	$recruitment = Recruitment::where('id', $id)->firstOrFail();
     	$recruitment->title = $request->title;
     	$recruitment->body = $request->body;
-    	$recruitment->job_id = $request->job;
-    	$recruitment->place_id = $request->place;
+    	$recruitment->excerpt = $request->excerpt;
 
     	if($request->thumbnail) {
-    		$recruitment->thumbnail = $this->image->uploadImage('images/recruitment', $request->thumbnail);
+    		$recruitment->thumbnail = $this->image->uploadImage('hahuco/uploads/recruitment', $request->thumbnail);
     	}
     	$recruitment->save();
 
@@ -249,7 +244,7 @@ class RecruitmentController extends Controller
         $request->validate(array(
                 'name'     =>  'required',
                 'thumbnail'=>  'required | mimes:jpeg,bmp,png,jpg',
-                'resume_format'=>  'required | mimes:jpeg,bmp,png,jpg',
+                'resume_format'=>  'required',
         ));
 
         $resume = new Resume;
@@ -257,11 +252,14 @@ class RecruitmentController extends Controller
         $resume->description = $request->description;
 
         if($request->thumbnail) {
-            $resume->thumbnail = $this->image->uploadImage('images/resume/thumbnail', $request->thumbnail);
+            $resume->thumbnail = $this->image->uploadImage('hahuco/uploads/resume/thumbnail', $request->thumbnail);
         }
 
         if($request->resume_format) {
-            $resume->url_download = $this->image->uploadImage('images/resume/files', $request->resume_format);
+        	$file = $request->resume_format;
+	        $file->move('hahuco/uploads/resume/files',$file->getClientOriginalName());
+            //$resume->url_download = $this->image->uploadImage('hahuco/uploads/resume/files', $request->resume_format);
+	        $resume->url_download = 'hahuco/uploads/resume/files/' . $file->getClientOriginalName();
         }
 
         $resume->save();
@@ -282,18 +280,21 @@ class RecruitmentController extends Controller
         $request->validate(array(
                 'name'     =>  'required',
                 'thumbnail'=>  'mimes:jpeg,bmp,png,jpg',
-                'resume_format'=>  'mimes:jpeg,bmp,png,jpg',
+                'resume_format'=>  'required',
         ));
         $resume = Resume::where('id', $id)->firstOrFail();
         $resume->name = $request->name;
         $resume->description = $request->description;
 
         if($request->thumbnail) {
-            $resume->thumbnail = $this->image->uploadImage('images/resume/thumbnail', $request->thumbnail);
+            $resume->thumbnail = $this->image->uploadImage('hahuco/uploads/resume/thumbnail', $request->thumbnail);
         }
 
         if($request->resume_format) {
-            $resume->url_download = $this->image->uploadImage('images/resume/files', $request->resume_format);
+            //$resume->url_download = $this->image->uploadImage('hahuco/uploads/resume/files', $request->resume_format);
+	        $file = $request->resume_format;
+	        $file->move('hahuco/uploads/resume/files',$file->getClientOriginalName());
+	        $resume->url_download = 'hahuco/uploads/resume/files/' . $file->getClientOriginalName();
         }
 
         $resume->save();

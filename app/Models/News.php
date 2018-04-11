@@ -41,6 +41,11 @@ class News extends Model
         return $this->belongsTo('App\Models\NewsCategory', 'news_categoryid');
     }
 
+    public function getCateSlug() {
+	    $cate = $this->category()->firstOrFail();
+	    return $cate->slug;
+    }
+
     public function relatedPosts($count = 5) {
 
         return $this->hasMany('App\Models\News', 'news_categoryid', 'news_categoryid')

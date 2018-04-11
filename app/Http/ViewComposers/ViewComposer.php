@@ -22,6 +22,7 @@ class ViewComposer
         $promotion_url = is_null($configViews) ? '' : $configViews->promotion_url;
         $android = is_null($configViews) ? '' : $configViews->android;
         $apple = is_null($configViews) ? '' : $configViews->apple;
+	    $email = is_null($configViews) ? '' : $configViews->email;
 
 	    $this->logo = $logo;
 	    $this->sitename = $sitename;
@@ -36,6 +37,7 @@ class ViewComposer
 	    $this->promotion_url = $promotion_url;
 	    $this->android = $android;
 	    $this->apple = $apple;
+	    $this->email = $email;
 
     }
 	public function compose(View $view)
@@ -47,11 +49,12 @@ class ViewComposer
        $view->with('google',$this->google);
        $view->with('instagram',$this->instagram);
        $view->with('copyright',$this->copyright);
-       $view->with('promotion_image',$this->promotion_image);
-       $view->with('promotion_url',$this->promotion_url);
-       $view->with('promotion_content',$this->promotion_content);
-       $view->with('promotion_title',$this->promotion_title);
-       $view->with('android',$this->android);
-       $view->with('apple',$this->apple);
+       $view->with('qr_website',$this->promotion_image);
+       $view->with('email2',$this->promotion_url);
+       $view->with('trusochinh_address',$this->promotion_content);
+       $view->with('email1',$this->promotion_title);
+       $view->with('hotline1',$this->android);
+       $view->with('hotline2',$this->apple);
+       $view->with('hotline3',$this->email);
       }
 }

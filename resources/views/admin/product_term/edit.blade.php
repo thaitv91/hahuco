@@ -30,7 +30,7 @@
 					</div>
 					<div class="form-group margin-bottom-30">
 						<label for="description">@lang('admin/term.description')</label>
-						<textarea type="text" class="form-control my-editor" name="description" id="description" rows="5">{{ $term->description }}</textarea>
+						<textarea type="text" class="form-control my-editor" name="description" id="description" rows="15">{{ $term->description }}</textarea>
 						@if ($errors->has('description'))
 						<span class="help-block">
 							<strong>{{ $errors->first('description') }}</strong>

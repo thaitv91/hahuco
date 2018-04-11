@@ -44,7 +44,11 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8">
-                        <a class="logo" href="index.html"><img src="/hahuco/uploads/quangcao/logoklt-png-201802220920325DWZPvNich.png" alt="Kim loai tam Intech"></a>
+                        @if($logo)
+                            <a class="logo" href="/"><img src="/{{ $logo }}" alt="Logo {{ $sitename }}"></a>
+                        @else
+                            <a class="logo" href="/">{{ $sitename }}</a>
+                        @endif
                     </div>
                     <div class="col-lg-4">
                         <div class="search">
@@ -61,7 +65,7 @@
             <div class="container">
                 <ul class="ul_mn clearfix">
                     <li class="active"><a href="index.html">Trang chủ</a></li>
-                    <li><a href="gioi-thieu/index.html">Giới Thiệu</a>
+                    <li><a href="/gioi-thieu">Giới Thiệu</a>
                         <ul class="mn_child_01">
                             <li><a href="gioi-thieu/gia-tri-cot-loi/index.html">Giá trị cốt lõi</a>
                             </li>
@@ -70,7 +74,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="san-pham/index.html">Sản phẩm</a>
+                        <a href="/san-pham/">Sản phẩm</a>
                         <ul class="mn_child_01 mn_child_02">
                             <li><a href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a></li>
                             <li><a href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a>
@@ -86,11 +90,11 @@
                             <li><a href="ban-an-cong-nghiep/index.html">Bàn ăn công nghiệp</a></li>
                         </ul>
                     </li>
-                    <li><a href="dich-vu/index.html">Dịch vụ</a></li>
-                    <li><a href="catalogue/index.html">Catalogue</a></li>
-                    <li><a href="tin-tuc/index.html">Tin tức</a></li>
-                    <li><a href="tuyen-dung/index.html">Tuyển Dụng</a></li>
-                    <li><a href="lien-he/index.html">Liên hệ</a></li>
+                    <li><a href="/dich-vu">Dịch vụ</a></li>
+                    <li><a href="/catalog">Catalogue</a></li>
+                    <li><a href="/tin-tuc">Tin tức</a></li>
+                    <li><a href="/tuyen-dung">Tuyển Dụng</a></li>
+                    <li><a href="/lien-he">Liên hệ</a></li>
                 </ul><!--End .ul_mn -->
                 <a class="icon_menu_mobile" href="javascript:void(0)" val="0"></a>
             </div><!-- End .min_wrap -->
@@ -112,27 +116,26 @@
                                     <ul class="ul_info_foot">
                                         <li><strong>Trụ sở chính</strong>
 
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" />Địa chỉ: Số 7, ngõ 74, đường Cầu Diễn, phường Phúc Diễn, Bắc Từ Liêm, Hà Nội</p>
+                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" />{!! $trusochinh_address !!}</p>
 
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: 024 66 711 511</p>
+                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
 
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email: kinhdoanh01@kimloaitamintech.com - kinhdoanh02@kimloaitamintech.com</p>
+                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email: <a href="mailto:{!! $email1 !!}">{!! $email1 !!}</a></p>
 
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: 0901 761 511 - 0903 471 511</p>
+                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline2 }}">{{ $hotline2 }}</a></p>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <ul class="ul_info_foot">
-                                        <li><strong>Văn phòng và nhà máy</strong>
+                                        <li><strong>Xưởng sản xuất</strong>
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" /> Địa chỉ: Lô 6, Khu công nghiệp Lai Xá, Xã Kim Chung, Huyện Hoài Đức, TP.Hà Nội.</p>
 
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: 0466 711 511</p>
+                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
 
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email:  kinhdoanh01@kimloaitamintech.com - kinhdoanh02@kimloaitamintech.com</p>
+                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email:  <a href="mailto:{!! $email2 !!}">{!! $email2 !!}</a></p>
 
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: 0901 761 511 - 0903 471 511
-                                                 </p>
+                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline3 }}">{{ $hotline3 }}</a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -180,10 +183,18 @@
                         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                             <p><strong>Các mạng xã hội</strong></p>
                             <div class="mb-3">
-                                <a href="https://www.facebook.com/bangtaibangchuyen/" rel="nofollow" style="font-size: 13px;" target="_blank"><img alt="facebook" height="38" src="/hahuco/imgs/layout/social_1.png" width="38" /> </a>
-                                <a href="https://plus.google.com/+IntechViá»tNamcongnghiepviet" rel="nofollow" style="font-size: 13px;" target="_blank"><img alt="google" height="38" src="/hahuco/imgs/layout/social_2.png" width="38" /> </a>
-                                <a href="#" rel="nofollow" style="font-size: 13px;" target="_blank"><img alt="tw" height="38" src="/hahuco/imgs/layout/social_3.png" width="38" /> </a>
-                                <a href="https://www.youtube.com/channel/UCwtofYRoqLCAnrcwMx800qw/videos" rel="nofollow" style="font-size: 13px;" target="_blank"><img alt="youtube" height="38" src="/hahuco/imgs/layout/social_4.png" width="38" /></a>
+                                <a href="{{ $facebook }}" rel="nofollow" style="font-size: 13px;" target="_blank">
+                                    <img alt="facebook" height="38" src="/hahuco/imgs/layout/social_1.png" width="38" />
+                                </a>
+                                <a href="{{ $google }}" rel="nofollow" style="font-size: 13px;" target="_blank">
+                                    <img alt="google" height="38" src="/hahuco/imgs/layout/social_2.png" width="38" />
+                                </a>
+                                <a href="{{ $twitter }}" rel="nofollow" style="font-size: 13px;" target="_blank">
+                                    <img alt="tw" height="38" src="/hahuco/imgs/layout/social_3.png" width="38" /> 
+                                </a>
+                                <a href="{{ $instagram }}" rel="nofollow" style="font-size: 13px;" target="_blank">
+                                    <img alt="youtube" height="38" src="/hahuco/imgs/layout/social_4.png" width="38" />
+                                </a>
                             </div>
 
                             <a href="http://www.online.gov.vn/CustomWebsiteDisplay.aspx?DocId=37111" rel="nofollow" target="_blank"><img alt="" src="/hahuco/imgs/layout/dathongbao.png" /> </a>
@@ -198,47 +209,33 @@
             <!-- End .foot_2 -->        
         <div class="foot_3 text-center">
             <div class="container">
-                <a href="index.html">Gia công kim loại tấm</a> |
-
-                <a href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a> |
-
-                <a href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a> |
-
-                <a href="gia-cong-cat-laser/index.html">Gia công cắt laser</a> |
-
-                <a href="gia-ke-gia-ke-kho-hang/index.html">Giá kệ, giá kệ kho hàng</a> |
-
-                <a href="xe-day-xe-day-hang/index.html">Xe đẩy, xe đẩy hàng</a> |
-
-                <a href="ban-thao-tac-ban-inox/index.html">Bàn thao tác, Bàn Inox</a> |
-
-                <a href="thang-mang-cap-dien/index.html">Thang máng cáp điện</a> |
-
-                <a href="san-pham-dot-dap-hang-loat/index.html">Sản phẩm đột dập hàng loạt</a>
+                {!! $copyright !!}
             </div>
         </div><!-- End .foot_3 -->
-    </footer><!-- End #footer --></div><!-- End #wrapper -->
+    </footer><!-- End #footer -->
+</div><!-- End #wrapper -->
+
 <div class="fixed_button">
     <ul>
         <li class="fb_email">
             <div class="inner_fb" style="line-height: 24px; text-indent: 0;">
                 <div style="padding: 10px 0 0 10px; text-align: left !important; font-size: 11px;">
-                    <a href="mailto:kinhdoanh01@kimloaitamintech.com">kinhdoanh01@kimloaitamintech.com</a>
+                    <a href="mailto:{!! $email1 !!}">{!! $email1 !!}</a>
                     <br>
-                    <a href="mailto:kinhdoanh02@kimloaitamintech.com">kinhdoanh02@kimloaitamintech.com</a>
+                    <a href="mailto:{!! $email2 !!}">{!! $email2 !!}</a>
                 </div>
             </div>
         </li>
         <li class="fb_website">
             <div class="inner_fb">
-                <img src="/hahuco/imgs/layout/qr_mikyo.vn.png" alt="http://mikyo.vn">
+                <img src="{!! $qr_website !!}" alt="hahuco.com.vn">
             </div>
         </li>
         <li class="fb_hotline">
             <div class="inner_fb">
-                0901 761 511
+                <a href="tel:{{ $hotline2 }}">{{ $hotline2 }}</a>
                 <br>
-                0903 471 511
+                <a href="tel:{{ $hotline3 }}">{{ $hotline3 }}</a>
             </div>
         </li>
         <li class="fb_support">
@@ -246,6 +243,7 @@
         </li>
     </ul>
 </div><!-- End .fixed_button -->
+
 <style>
     .f-detail a {
         color: #01712a !important;
@@ -263,6 +261,8 @@
         }
     }
 </style>
+
+
 <div class="menu_mobile" style="visibility: hidden;">
 
     <span class="close_menu_mobile"></span>
@@ -271,63 +271,23 @@
 
         <ul class="ul_ma_1">
 
-            <li class="active">
-
-                <a href="index.html">Trang chủ</a>
-
-            </li>
-
+            <li class="active"><a href="/">Trang chủ</a></li>
 
             <li>
-
                 <a href="gioi-thieu/index.html">Giới Thiệu</a>
-
-
                 <i class="arrown_menu_accordion" val="sub_ac_87"></i>
-
                 <ul class="ul_ma_2" id="sub_ac_87" style="display:none;">
-
-
-                    <li>
-
-                        <a href="gioi-thieu/gia-tri-cot-loi/index.html">Giá trị cốt lõi</a>
-
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="gioi-thieu/chinh-sach-chat-luong/index.html">Chính sách chất lượng</a>
-
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html">Giới thiệu về kim loại tấm Intech</a>
-
-
-                    </li>
-
-
+                    <li><a href="gioi-thieu/gia-tri-cot-loi/index.html">Giá trị cốt lõi</a></li>
+                    <li><a href="gioi-thieu/chinh-sach-chat-luong/index.html">Chính sách chất lượng</a></li>
+                    <li><a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html">Giới thiệu về kim loại tấm Intech</a></li>
                 </ul><!-- End .ul_ma_2 -->
-
-
             </li>
 
-
             <li>
-
                 <a href="san-pham/index.html">Sản phẩm</a>
-
-
                 <i class="arrown_menu_accordion" val="sub_ac_78"></i>
 
                 <ul class="ul_ma_2" id="sub_ac_78" style="display:none;">
-
-
                     <li>
 
                         <a href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a>
@@ -422,51 +382,18 @@
 
 
                     </li>
-
-
                 </ul><!-- End .ul_ma_2 -->
-
-
             </li>
 
+            <li><a href="dich-vu/index.html">Dịch vụ</a></li>
 
-            <li>
+            <li><a href="catalogue/index.html">Catalogue</a></li>
 
-                <a href="dich-vu/index.html">Dịch vụ</a>
+            <li><a href="tin-tuc/index.html">Tin tức</a></li>
 
+            <li><a href="tuyen-dung/index.html">Tuyển Dụng</a></li>
 
-            </li>
-
-
-            <li>
-
-                <a href="catalogue/index.html">Catalogue</a>
-
-
-            </li>
-
-
-            <li>
-
-                <a href="tin-tuc/index.html">Tin tức</a>
-
-
-            </li>
-
-
-            <li>
-
-                <a href="tuyen-dung/index.html">Tuyển Dụng</a>
-
-
-            </li>
-
-
-            <li class="active">
-
-                <a href="lien-he/index.html">Liên hệ</a>
-
-            </li>
+            <li class="active"><a href="lien-he/index.html">Liên hệ</a></li>
 
         </ul><!-- End .ul_ma_1 -->
 
@@ -489,22 +416,14 @@
     });
 
 </script>
-<script>$(document).ready(function(){$.get('librarys/xuly_count7e7c.html?ko_dem=1');});</script>
+<script type="text/javascript" defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAABstmYZWOOycZj4yBeJu23RV8z_hIV3c&libraries=places&callback=initialize"></script>
 <script src="/hahuco/scripts/jquery.lazyload.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/hahuco/scripts/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="/hahuco/scripts/owl-carousel/owl.transitions.css">
 <script src="/hahuco/scripts/owl-carousel/owl.carousel.js"></script>
 <script src="/hahuco/scripts/frame_script.js"></script>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-82755233-1', 'auto');
-    ga('send', 'pageview');
-
-</script></body>
+@yield('scripts')
+</body>
 
 <!-- Mirrored from kimloaitamintech.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Apr 2018 05:06:35 GMT -->
 </html>

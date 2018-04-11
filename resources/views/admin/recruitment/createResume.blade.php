@@ -27,7 +27,7 @@
 						</div>
 						<div class="form-group margin-bottom-30">
 							<label  class="" for="content">@lang('admin/recruitment.description')</label>
-							<textarea class="form-control my-editor" rows="5" id="description" name="description"></textarea>
+							<textarea class="form-control my-editor" rows="15" id="description" name="description"></textarea>
 							@if($errors->has('description'))
 							<span class="help-block">
 								<strong class="text-danger">{{$errors->first('description')}}</strong>

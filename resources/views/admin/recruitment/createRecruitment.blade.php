@@ -25,9 +25,20 @@
 							</span>
 							@endif
 						</div>
+
+						<div class="form-group margin-bottom-30">
+							<label  class="" for="excerpt">Mô tả</label>
+							<textarea class="form-control" rows="5" id="excerpt" name="excerpt"></textarea>
+							@if($errors->has('excerpt'))
+								<span class="help-block">
+								<strong class="text-danger">{{$errors->first('excerpt')}}</strong>
+							</span>
+							@endif
+						</div>
+
 						<div class="form-group margin-bottom-30">
 							<label  class="" for="content">@lang('admin/recruitment.body')</label>
-							<textarea class="form-control my-editor" rows="5" id="body" name="body"></textarea>
+							<textarea class="form-control my-editor" rows="15" id="body" name="body"></textarea>
 							@if($errors->has('body'))
 							<span class="help-block">
 								<strong class="text-danger">{{$errors->first('body')}}</strong>
@@ -38,34 +49,6 @@
 				</div>
 				<div class="col-md-4">
 					<div class="box-body">
-						<div class="form-group margin-bottom-30">
-							<label  class="" for="name">@lang('admin/recruitment.job')</label>
-							<select class="selectpicker form-control" id="job" name="job" title="Choose one of the following..." data-live-search="true" tabindex="-98">
-								<option disabled selected></option>
-								@foreach ($jobs as $job)
-								<option value="{{ $job->id }}">{{ $job->name }}</option>
-								@endforeach
-							</select>
-							@if($errors->has('job'))
-							<span class="help-block">
-								<strong class="text-danger">{{$errors->first('job')}}</strong>
-							</span>   
-							@endif
-						</div>
-						<div class="form-group margin-bottom-30">
-							<label  class="" for="name">@lang('admin/recruitment.place')</label>
-							<select class="selectpicker form-control" id="place" name="place" title="Choose one of the following..." data-live-search="true" tabindex="-98">
-								<option disabled selected></option>
-								@foreach ($places as $place)
-								<option value="{{ $place->id }}">{{ $place->name }}</option>
-								@endforeach
-							</select>
-							@if($errors->has('place'))
-							<span class="help-block">
-								<strong class="text-danger">{{$errors->first('place')}}</strong>
-							</span>   
-							@endif
-						</div>
 						<div class="form-group margin-bottom-30">
 							<label class="">@lang('admin/recruitment.thumbnail')</label>
 							<input type="file" name="thumbnail" value="" id="thumbnail" class="required borrowerImageFile" data-errormsg="PhotoUploadErrorMsg">

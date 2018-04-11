@@ -209,6 +209,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                 </li>
 
+                <li class="">
+                    <a href="{{ route('admin.recruitment.resume.index') }} ">
+                        <i class="fa fa-link"></i><span>@lang('admin/sidebar.resume')</span>
+                    </a>
+                </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-link"></i> 
@@ -222,7 +228,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li><a href="{{ route('admin.recruitment.create') }}"> @lang('admin/sidebar.new')</a></li>
                         <li><a href="{{ route('admin.recruitment.job.index') }} "> @lang('admin/sidebar.job')</a></li>
                         <li><a href="{{ route('admin.recruitment.place.index') }} "> @lang('admin/sidebar.place')</a></li>
-                        <li><a href="{{ route('admin.recruitment.resume.index') }} "> @lang('admin/sidebar.resume')</a></li>
                         <li><a href="{{ route('admin.recruitment.profile.index') }} "> @lang('admin/sidebar.profile')</a></li>
                     </ul>
                 </li>

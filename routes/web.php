@@ -104,6 +104,18 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('update-order', 'Admin\PartnerController@updateOrder')->name('admin.partner.updateOrder');
     });
 
+	//Dich vu
+	Route::group(['prefix'=>'dich-vu'], function() {
+		Route::get('', 'Admin\DichvuController@index')->name('admin.dichvu');
+		Route::get('create', 'Admin\DichvuController@create')->name('admin.dichvu.create');
+		Route::post('create', 'Admin\DichvuController@store');
+		Route::get('edit/{id}', 'Admin\DichvuController@edit')->name('admin.dichvu.edit');
+		Route::post('edit/{id}', 'Admin\DichvuController@update');
+		Route::get('remove/{id}', 'Admin\DichvuController@destroy')->name('admin.dichvu.remove');
+		Route::get('re-order', 'Admin\DichvuController@reorder')->name('admin.dichvu.reorder');
+		Route::post('update-order', 'Admin\DichvuController@updateOrder')->name('admin.dichvu.updateOrder');
+	});
+
     //Testimonial
     Route::group(['prefix'=>'testimonial'], function() {
         Route::get('', 'Admin\TestimonialController@index')->name('admin.testimonial');
@@ -255,46 +267,33 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['prefix'=>'san-pham'], function() {
 //    Route::get('', 'Frontend\ProductController@index')->name('homepage.product');
     Route::get('xem-them/{term_id}', 'Frontend\ProductController@showMoreProducts')->name('homepage.product.showMore');
-    Route::get('{product_slug?}', 'Frontend\ProductController@show')->name('homepage.product.show');
+	Route::get('{term_slug}/{product_slug?}', 'Frontend\ProductController@show')->name('homepage.product.show');
     Route::post('{term_slug}/{product_slug}', 'Frontend\ProductController@storeContact')->name('homepage.product.storeContact');
 });
 
 Route::group(['prefix'=>'tin-tuc'], function() {
-	Route::get( '/', 'Frontend\NewsController@listNews' )->name( 'homepage.news.all' );
-	Route::get( '/cate/{category_slug}', 'Frontend\NewsController@listNewsOfCategory' )->name( 'homepage.news.category' );
-	Route::get( '{news_slug}', 'Frontend\NewsController@show' )->name( 'homepage.news.show' );
+//	Route::get( '/', 'Frontend\NewsController@listNews' )->name( 'homepage.news.all' );
+	//Route::get( '/cate/{category_slug}', 'Frontend\NewsController@listNewsOfCategory' )->name( 'homepage.news.category' );
+	Route::get( '{id}', 'Frontend\NewsController@show' )->name( 'homepage.news.show' );
 });
 
 Route::group(['prefix'=>'partner'], function() {
 	Route::get( '{id}', 'Frontend\PartnerController@show' )->name( 'homepage.partner.show' );
 });
 
+Route::group(['prefix'=>'dich-vu'], function() {
+	Route::get( '{id}', 'Frontend\DichvuController@show' )->name( 'homepage.dichvu.show' );
+});
+
 Route::group(['prefix'=>'testimonial'], function() {
     Route::get('{id}', 'Frontend\TestimonialController@show')->name('homepage.testimonial.show');
 });
 
-
-// lien he page
-// Route::get('/lien-he', function () {
-// 	return view('frontend.lienhe');
-// });
 Route::post( 'lien-he', 'Frontend\ContactController@storeContact')->name('contact.store');
 Route::group(['prefix'=>'email-registration'], function() {
     // Route::post('register', 'Frontend\EmailRegistrationController@storeEmail')->name('email.store');
     Route::post('register', 'Frontend\EmailRegistrationController@storeEmailAjax')->name('email_registration.store');
 });
-// Gioi thieu page
-//Route::get('/gioi-thieu', function() {
-//	return view('frontend.gioithieu');
-//});
-
-// cham soc khach hang page
-// Route::get('cham-soc-khach-hang', 'Frontend\HomeController@cskhIndex')->name('frontend.cskh');
-//Route::get('boi-thuong', 'Frontend\CompensationController@index')->name('frontend.boithuong');
-//Route::get('boi-thuong-oto', 'Frontend\CompensationController@compensationOto')->name('frontend.boithuong.detail');
-
-
-// Route::get('/mang-luoi','User\NetWorkController@index')->name('user.network.index');
 Route::get('/changeSelect/filter-filed', 'User\NetWorkController@changeRegion')->name('user.network.changeRegion');
 Route::get('/changeSelectCity/filter-filed-city', 'User\NetWorkController@changeCity')->name('user.network.changeCity');
 Route::get('/changeSelectDistrict/filter-filed-district', 'User\NetWorkController@changeDistrict')->name('user.network.changeDistrict');
@@ -310,10 +309,10 @@ Route::get('location', function () {
 	return view('example');
 });
 
-Route::group(['prefix' => 'recruitment', 'as' => 'recruitment.', 'namespace' => 'Frontend'], function() {
+Route::group(['prefix' => 'tuyen-dung', 'as' => 'recruitment.', 'namespace' => 'Frontend'], function() {
     Route::get('search', 'RecruitmentController@search')->name('search');
     Route::post('store-profile', 'RecruitmentController@storeProfile')->name('storeProfile');
-    Route::get('show/{id}', 'RecruitmentController@show')->name('show');
+    Route::get('{id}', 'RecruitmentController@show')->name('show');
     Route::get('list', 'RecruitmentController@index')->name('index');
 });
 Route::get('refresh_captcha', 'Frontend\RecruitmentController@refreshCaptcha')->name('refresh_captcha');

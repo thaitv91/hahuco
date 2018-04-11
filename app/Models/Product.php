@@ -48,6 +48,11 @@ class Product extends Model
         return $this->belongsTo('App\Models\ProductTerm', 'product_term_id');
     }
 
+    public function getTermSlug() {
+    	$term = $this->term()->firstOrFail();
+    	return $term->slug;
+	}
+
     public function category() {
         return $this->belongsTo('App\Models\ProductCategory', 'product_category_id');
     }
