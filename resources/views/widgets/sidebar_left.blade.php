@@ -6,7 +6,7 @@
         <div class="main_sb">
             <ul class="ul_dmsp">
                 @foreach($terms as $term)
-                    <li><a href="{{ route('homepage.product.show',$term->slug) }}"><h2>{{ $term->name }}</h2></a></li>
+                    <li><a href="{{ route('homepage.product.term',$term->slug) }}"><h2>{{ $term->name }}</h2></a></li>
                 @endforeach
             </ul>
         </div><!-- End .main_sb -->

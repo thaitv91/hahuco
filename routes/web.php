@@ -268,12 +268,12 @@ Route::group(['prefix'=>'san-pham'], function() {
 //    Route::get('', 'Frontend\ProductController@index')->name('homepage.product');
 	Route::get('tag/{slug}', 'Frontend\ProductController@tags')->name('homepage.product.tags');
     Route::get('xem-them/{term_id}', 'Frontend\ProductController@showMoreProducts')->name('homepage.product.showMore');
-	Route::get('{term_slug}/{product_slug?}', 'Frontend\ProductController@show')->name('homepage.product.show');
+	Route::get('{product_slug}', 'Frontend\ProductController@show')->name('homepage.product.show');
+	Route::get('/danh-muc/{term_slug}', 'Frontend\ProductController@term')->name('homepage.product.term');
     Route::post('{term_slug}/{product_slug}', 'Frontend\ProductController@storeContact')->name('homepage.product.storeContact');
 });
 
 Route::group(['prefix'=>'tin-tuc'], function() {
-//	Route::get( '/', 'Frontend\NewsController@listNews' )->name( 'homepage.news.all' );
 	//Route::get( '/cate/{category_slug}', 'Frontend\NewsController@listNewsOfCategory' )->name( 'homepage.news.category' );
 	Route::get( '{id}', 'Frontend\NewsController@show' )->name( 'homepage.news.show' );
 });

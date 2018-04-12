@@ -11,7 +11,9 @@ class TatCaSanPham extends AbstractWidget
      *
      * @var array
      */
-    protected $config = [];
+    protected $config = [
+    	'term_id' => ''
+    ];
 
     /**
      * Treat this method as a controller action.
@@ -19,8 +21,11 @@ class TatCaSanPham extends AbstractWidget
      */
     public function run()
     {
-        //
-		$products = \App\Models\Product::simplePaginate(8);
+	    if ($this->config['term_id'] == '') {
+		    $products = \App\Models\Product::simplePaginate(8);
+	    } else {
+		    $products = \App\Models\Product::where('product_term_id', '=', $this->config['term_id'])->simplePaginate(8);
+	    }
         return view('widgets.tat_ca_san_pham', [
             'config' => $this->config,
 	        'products' => $products

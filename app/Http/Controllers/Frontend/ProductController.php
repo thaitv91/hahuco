@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Events\ViewProductHandler;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\ProductCategory as Category;
@@ -18,17 +19,20 @@ class ProductController extends Controller
         return view('frontend.sanpham', compact(['categories', 'terms']));
 	}
 
-	public function show($term_slug, $product_slug = null) {
-	    $term = Term::where('slug', $term_slug)->firstOrFail();
-		if ($product_slug) {
-			$product = Product::where('product_term_id', $term->id)->where('slug', $product_slug)->firstOrFail();
-			$title = "Sản phẩm: " . $product->title;
-			return view('frontend.chitietsanpham', compact(['product', 'title']));
-		} else {
-			$title = "Danh mục sản phẩm: " . $term->name;
-			return view('frontend.danhsachsanpham', compact(['term', 'title']));
-		}
+	public function show($product_slug) {
+		$product = Product::where('slug', $product_slug)->firstOrFail();
+		event( new ViewProductHandler($product));
+		$title = "Sản phẩm: " . $product->title;
+		$tags = $product->tags;
+		return view('frontend.chitietsanpham', compact(['product', 'title', 'tags']));
     }
+
+	public function term($term_slug) {
+		$term = Term::where('slug', $term_slug)->firstOrFail();
+		$title = "Danh mục sản phẩm: " . $term->name;
+		return view('frontend.danhsachsanpham', compact(['term', 'title']));
+	}
+
 
     public function tags($slug) {
 	    $locale = app()->getLocale();

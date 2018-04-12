@@ -54,6 +54,11 @@ class Product extends Model
     	return $term->slug;
 	}
 
+	public function getTermID() {
+		$term = $this->term()->firstOrFail();
+		return $term->id;
+	}
+
     public function category() {
         return $this->belongsTo('App\Models\ProductCategory', 'product_category_id');
     }
