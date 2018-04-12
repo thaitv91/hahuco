@@ -48,6 +48,8 @@
 						</span>
 						@endif
 					</div>
+
+					@include('admin.include.seo')
 				</div>
 				<!-- /.box-body -->
 			</div>
@@ -71,6 +73,7 @@
 						<label  class="col-sm-12 col-sx-12" for="tags">Tags</label>
 						<div class="col-sm-12 col-sx-12">
 							<input id="tags" class="form-control" name="tags" type="text" value="{{ $str_tags }}" data-role="tagsinput">
+
 						</div>
 					</div>
 
@@ -114,5 +117,7 @@
 	$('#thumbnail').on('change', function() {
 		readURL(this, 'preview-thumbnail');
 	});
+
+
 </script>
 @endsection

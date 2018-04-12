@@ -17,11 +17,11 @@
                         <div class="main_ct">
                             <div class="row">
                                 @foreach($term->products as $product)
-                                    <div class="col-md-3 col-sm-6">
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
                                         <a href="{{ route('homepage.product.show', [ $term->slug, $product->slug]) }}" class="tile-product">
                                             <div class="inner_prod">
                                                 <figure>
-                                                    <img class="lazy" data-original="{{ $product->thumbnail }}" alt="{{ $product->title }}" width="185" height="140">
+                                                    <img class="" src="/{{ $product->thumbnail }}" alt="{{ $product->title }}" width="185" height="140">
                                                     <div class="mask_img"><i>Xem chi tiết</i></div>
                                                 </figure>
                                                 <h3><p>{{ $product->title }}</p></h3>

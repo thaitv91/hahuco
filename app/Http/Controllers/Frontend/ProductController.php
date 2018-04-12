@@ -10,9 +10,11 @@ use App\Models\ProductTerm as Term;
 use App\Models\Product;
 use App\Models\ProductContact as Contact;
 use Spatie\Tags\Tag;
+use SEO;
 
 class ProductController extends Controller
 {
+
 	public function index() {
 		$categories = Category::where('slug', '=', 'bao-hiem-ca-nhan')->first();
 		$terms = Term::all();
@@ -21,8 +23,12 @@ class ProductController extends Controller
 
 	public function show($product_slug) {
 		$product = Product::where('slug', $product_slug)->firstOrFail();
-		event( new ViewProductHandler($product));
 		$title = "Sản phẩm: " . $product->title;
+
+		//seoable
+		$seoable = $product->setSeoable();
+
+		event( new ViewProductHandler($product));
 		$tags = $product->tags;
 		return view('frontend.chitietsanpham', compact(['product', 'title', 'tags']));
     }
@@ -42,7 +48,7 @@ class ProductController extends Controller
 		$products = Product::withAnyTags($tag_name)->get();
 
 		$data = [
-			'title' => 'Product Tags: ' . $tag_name,
+			'title' => 'Sản phẩm Tags: ' . $tag_name,
 			'products' => $products,
 			'tag_name' => $tag_name
 		];

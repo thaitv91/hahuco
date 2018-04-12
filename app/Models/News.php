@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Laravel\Scout\Searchable;
+use Spatie\Tags\HasTags;
 
 class News extends Model
 {
@@ -12,6 +13,8 @@ class News extends Model
     protected $guarded = array();
     use Sluggable;
     use Searchable;
+    use HasTags;
+    use \App\Http\Traits\Seoables;
 
     /**
      * Return the sluggable configuration array for this model.

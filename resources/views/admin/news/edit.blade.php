@@ -45,6 +45,8 @@
 						</span>
 						@endif
 					</div>
+
+					@include('admin.include.seo')
 				</div>
 				<!-- /.box-body -->
 			</div>
@@ -63,11 +65,15 @@
 						</span>
 						@endif
 					</div>
+
 					<div class="form-group margin-bottom-30">
 						<label for="thumbnail">@lang('admin/news.thumbnail')</label>
 						<input type="file" id="thumbnail" name="thumbnail" class="">
 						<img src="{{ asset($news->thumbnail) }}" class="img img-thumbnail" id="preview-thumbnail" width="675px" height="auto"  @if (!$news->thumbnail) style="display: none" @endif>
 					</div>
+
+					@include('admin.include.tag')
+
 					<div class="form-group margin-bottom-30">
 						<button type="submit" class="btn btn-primary">@lang('admin/general.update')</button>
 						<a href="{{ route('admin.news') }}" class="btn btn-default">@lang('admin/general.back')</a>

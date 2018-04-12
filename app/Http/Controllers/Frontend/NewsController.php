@@ -6,14 +6,39 @@ use App\Models\NewsCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\News;
+use Spatie\Tags\Tag;
+use SEO;
 
 class NewsController extends Controller
 {
     public function show( $id) {
-	    $news = News::where('slug', $id)->firstOrFail();
-	    $title = "Tin tức: " . $news->title;
-	    return view('frontend.chitiettintuc', compact(['news', 'title']));
+	    $new = News::where('slug', $id)->firstOrFail();
+	    $title = "Tin tức: " . $new->name;
+
+	    //seoable
+	    $seoable = $new->setSeoable();
+
+	    // tag
+	    $tags = $new->tags;
+
+	    return view('frontend.chitiettintuc', compact(['new', 'title', 'tags']));
     }
+
+	public function tags($slug) {
+		$locale = app()->getLocale();
+		$tag = Tag::where("slug->{$locale}", '=', $slug)->first();
+		$tag_name = $tag->name;
+
+		$news = News::withAnyTags($tag_name)->get();
+
+		$data = [
+			'title' => 'Sản phẩm Tags: ' . $tag_name,
+			'news' => $news,
+			'tag_name' => $tag_name
+		];
+
+		return view('frontend.tintuctags', $data);
+	}
 
     public function listNews() {
     	$outCate = ['default', 'chuong-trinh-dao-tao'];

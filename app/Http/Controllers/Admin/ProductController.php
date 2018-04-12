@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = $this->product->get();
+        $products = $this->product->orderBy('created_at','DESC')->get();
 		$title = "Danh sách sản phẩm";
         return view('admin.product.index', compact(['products', 'title']));
     }
@@ -41,14 +41,6 @@ class ProductController extends Controller
     {
         $category_default = ProductCategory::firstOrCreate(['name'=>'Default', 'slug'=>'default']);
         $term_default = ProductTerm::firstOrCreate(['name'=>'Default', 'slug'=>'default']);
-//	    $tags = Tag::select('name')->get()->toJson();
-
-//	    $alltags =[];
-//	    foreach ($tags as $tag) {
-//	    	$alltags[] = $tag['name'];
-//	    }
-
-//	    $alltags = json_encode($alltags);
         $categories = ProductCategory::get(['name', 'id']);
         $terms = ProductTerm::get(['name', 'id']);
 		$title = 'Tạo mới sản phẩm';
@@ -65,7 +57,6 @@ class ProductController extends Controller
     {
         $request->validate([
         	'title'=>'required',
-	        'tags' => 'required'
         ]);
         $product = $this->product;
         $product->product_category_id = $request->category;
@@ -73,7 +64,8 @@ class ProductController extends Controller
         $product->title = $request->title;
         $product->mo_ta_san_pham = $request->mo_ta_san_pham;
         $product->short_description = $request->short_description;
-	    if(!is_null($product->noi_bat)) {
+        $product->view_count = 0;
+	    if(!is_null($request->noi_bat)) {
 		    $product->noi_bat = 1;
 	    } else {
 		    $product->noi_bat = 0;
@@ -82,15 +74,21 @@ class ProductController extends Controller
             $product->thumbnail = $this->image->uploadImage('hahuco/uploads/products', $request->thumbnail);
         }
 
-        // tags save()
+	    $product->save();
+
+	    // tags save()
 	    $tags = explode(",", $request->tags);
 	    $product->attachTags($tags);
 
-        $product->save();
+	    // Seo
+	    $title = $request->seoable_title ? $request->seoable_title : $product->title;
+	    $key = $request->keyword ? $request->keyword : '';
+	    $description = $request->seoable_description ? $request->seoable_description : '';
+	    $product->attachSeoAble($title, $key, $description);
 
         Session::flash('success', trans('admin/general.success.create'));
-
         return Redirect::route('admin.product');
+
     }
 
     /**
@@ -116,13 +114,21 @@ class ProductController extends Controller
         $terms = ProductTerm::get(['name', 'id']);
         $product = $this->product->where('slug', $slug)->firstOrFail();
 
+        // tags
         $tags = $product->tags;
         $str_tags = "";
         foreach ($tags as $tag) {
         	$str_tags .= $tag->name . ",";
         }
+
+        // seoable
+	    $seoable = $product->getSeoable();
+        $seoable_title = $seoable ? $seoable->seoable_title : '';
+        $keyword = $seoable ? $seoable->keyword : '';
+	    $seoable_description = $seoable ? $seoable->seoable_description : '';
+
 		$title = "Edit Sản Phẩm: " . $product->title;
-        return view('admin.product.edit', compact(['title','product', 'categories', 'terms', 'str_tags']));
+        return view('admin.product.edit', compact(['title','product', 'categories', 'terms', 'str_tags', 'seoable_description', 'keyword', 'seoable_title']));
     }
 
     /**
@@ -157,6 +163,11 @@ class ProductController extends Controller
 	    $tags = explode(",", $request->tags);
         $product->syncTags($tags);
 
+	    // seoable
+	    $title = $request->seoable_title ? $request->seoable_title : $product->title;
+	    $key = $request->keyword ? $request->keyword : '';
+	    $description = $request->seoable_description ? $request->seoable_description : '';
+	    $product->updateSeoAble($title, $key, $description);
         $product->save();
 
         Session::flash('success', trans('admin/general.success.edit'));

@@ -2,12 +2,14 @@
 
 namespace PackagePage\Pages\Models;
 
+use App\Http\Traits\Seoables;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Pages extends Model
 {
     use Sluggable;
+    use Seoables;
 
     protected $table = "pages";
     

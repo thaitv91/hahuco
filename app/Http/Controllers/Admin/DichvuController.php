@@ -65,6 +65,16 @@ class DichvuController extends Controller
 		}
 		$dichvu->save();
 
+		// tags save()
+		$tags = explode(",", $request->tags);
+		$dichvu->attachTags($tags);
+
+		// Seo
+		$title = $request->seoable_title ? $request->seoable_title : $dichvu->name;
+		$key = $request->keyword ? $request->keyword : '';
+		$description = $request->seoable_description ? $request->seoable_description : '';
+		$dichvu->attachSeoAble($title, $key, $description);
+
 		Session::flash('success', trans('admin/general.success.create'));
 
 		return Redirect::route('admin.dichvu');
@@ -92,7 +102,20 @@ class DichvuController extends Controller
 		$title = 'Dịch Vụ | Chỉnh sửa';
 		$dichvu = $this->dichvu->where('slug', $slug)->firstOrFail();
 
-		return view('admin.dichvu.edit', compact(['title', 'dichvu']));
+		// tags
+		$tags = $dichvu->tags;
+		$str_tags = "";
+		foreach ($tags as $tag) {
+			$str_tags .= $tag->name . ",";
+		}
+
+		// seoable
+		$seoable = $dichvu->getSeoable();
+		$seoable_title = $seoable ? $seoable->seoable_title : '';
+		$keyword = $seoable ? $seoable->keyword : '';
+		$seoable_description = $seoable ? $seoable->seoable_description : '';
+
+		return view('admin.dichvu.edit', compact(['title', 'dichvu', 'str_tags', 'seoable_description', 'keyword', 'seoable_title']));
 	}
 
 	/**
@@ -109,20 +132,30 @@ class DichvuController extends Controller
 		                    'content'   =>  'required'
 		]);
 
-		$news = $this->news->where('slug', $slug)->firstOrFail();
-		$news->slug = null;
-		$news->news_categoryid = $request->category;
-		$news->name = $request->name;
-		$news->excerpt = $request->excerpt;
-		$news->content = $request->content;
+		$dichvu = $this->dichvu->where('slug', $slug)->firstOrFail();
+		$dichvu->name = $request->name;
+		$dichvu->excerpt = $request->excerpt;
+		$dichvu->content = $request->content;
 		if ($request->thumbnail) {
-			$news->thumbnail = $this->image->uploadImage('images/news', $request->thumbnail);
+			$dichvu->image = $this->image->uploadImage('hahuco/uploads/news', $request->thumbnail);
 		}
-		$news->save();
+
+		// tags
+		$tags = explode(",", $request->tags);
+		//dd($tags);
+		$dichvu->syncTags($tags);
+
+		// seoable
+		$title = $request->seoable_title ? $request->seoable_title : $dichvu->title;
+		$key = $request->keyword ? $request->keyword : '';
+		$description = $request->seoable_description ? $request->seoable_description : '';
+		$dichvu->updateSeoAble($title, $key, $description);
+
+		$dichvu->save();
 
 		Session::flash('success', trans('admin/general.success.edit'));
 
-		return Redirect::route('admin.news');
+		return Redirect::back();
 	}
 
 	/**
@@ -133,8 +166,8 @@ class DichvuController extends Controller
 	 */
 	public function destroy($slug)
 	{
-		$news = $this->news->where('slug', $slug)->firstOrFail();
-		$news->delete();
+		$dichvu = $this->dichvu->where('slug', $slug)->firstOrFail();
+		$dichvu->delete();
 
 		Session::flash('success', trans('admin/general.success.remove'));
 

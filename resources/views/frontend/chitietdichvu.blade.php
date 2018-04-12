@@ -11,6 +11,13 @@
                         </div>
                         <h1 class="title_D">{{ $dichvu->name }}</h1>
                         {!! $dichvu->content !!}
+
+                        <div class="tag">
+                            <span>Tags</span>
+                            @foreach($tags as $tag)
+                                <a target="_self" href="{{ route('homepage.dichvu.tags', $tag->slug) }}">{{ $tag->name }}</a>
+                            @endforeach
+                        </div><!-- End .tag -->
                     </article><!-- End .content -->
                 </div>
                 <div class="col-lg-3 order-lg-first">

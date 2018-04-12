@@ -38,6 +38,8 @@
 								<label  class="" for="content">Content</label>
 								<textarea class="form-control my-editor" rows="15" id="content" name="content">{{ $dichvu->content }}</textarea>
 							</div>
+
+							@include('admin.include.seo')
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -52,6 +54,8 @@
 								<strong class="text-danger">{{$errors->first('thumbnail')}}</strong>
 							</span>
 							@endif
+
+							@include('admin.include.tag')
 
 							<div class="form-group margin-bottom-30">
 								<button type="submit" class="btn btn-primary">Save</button>

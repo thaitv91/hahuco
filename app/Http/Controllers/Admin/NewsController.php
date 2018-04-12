@@ -26,7 +26,7 @@ class NewsController extends Controller
     public function index()
     {
         $title = 'News';
-        $news = $this->news->get();
+        $news = $this->news->orderBy('created_at', 'DESC')->get();
 
         return view('admin.news.index', compact(['title', 'news']));
     }
@@ -69,6 +69,16 @@ class NewsController extends Controller
         }
         $news->save();
 
+	    // tags save()
+	    $tags = explode(",", $request->tags);
+	    $news->attachTags($tags);
+
+	    // Seo
+	    $title = $request->seoable_title ? $request->seoable_title : $news->title;
+	    $key = $request->keyword ? $request->keyword : '';
+	    $description = $request->seoable_description ? $request->seoable_description : '';
+	    $news->attachSeoAble($title, $key, $description);
+
         Session::flash('success', trans('admin/general.success.create'));
 
         return Redirect::route('admin.news');
@@ -98,7 +108,20 @@ class NewsController extends Controller
         $category = new NewsCategory; 
         $categories = $category->get(['id', 'name']);
 
-        return view('admin.news.edit', compact(['title', 'news', 'categories']));
+	    // tags
+	    $tags = $news->tags;
+	    $str_tags = "";
+	    foreach ($tags as $tag) {
+		    $str_tags .= $tag->name . ",";
+	    }
+
+	    // seoable
+	    $seoable = $news->getSeoable();
+	    $seoable_title = $seoable ? $seoable->seoable_title : '';
+	    $keyword = $seoable ? $seoable->keyword : '';
+	    $seoable_description = $seoable ? $seoable->seoable_description : '';
+
+        return view('admin.news.edit', compact(['title', 'news', 'categories', 'str_tags', 'seoable_description', 'keyword', 'seoable_title']));
     }
 
     /**
@@ -125,6 +148,16 @@ class NewsController extends Controller
             $news->thumbnail = $this->image->uploadImage('images/news', $request->thumbnail);
         }
         $news->save();
+
+	    // tags
+	    $tags = explode(",", $request->tags);
+	    $news->syncTags($tags);
+
+	    // seoable
+	    $title = $request->seoable_title ? $request->seoable_title : $news->title;
+	    $key = $request->keyword ? $request->keyword : '';
+	    $description = $request->seoable_description ? $request->seoable_description : '';
+	    $news->updateSeoAble($title, $key, $description);
 
         Session::flash('success', trans('admin/general.success.edit'));
 

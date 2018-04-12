@@ -187,6 +187,7 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         Yab\MySQLScout\Providers\MySQLScoutServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+	    Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
     ],
 
     /*
@@ -242,6 +243,12 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+
+	    //artesaos seotools
+//        'SEOMeta'   => Artesaos\SEOTools\Facades\SEOMeta::class,
+//        'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
+//        'Twitter'   => Artesaos\SEOTools\Facades\TwitterCard::class,
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
     ],
 
 ];

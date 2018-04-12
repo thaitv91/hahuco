@@ -276,6 +276,7 @@ Route::group(['prefix'=>'san-pham'], function() {
 Route::group(['prefix'=>'tin-tuc'], function() {
 	//Route::get( '/cate/{category_slug}', 'Frontend\NewsController@listNewsOfCategory' )->name( 'homepage.news.category' );
 	Route::get( '{id}', 'Frontend\NewsController@show' )->name( 'homepage.news.show' );
+	Route::get(' tag/{slug}', 'Frontend\NewsController@tags' )->name( 'homepage.news.tags' );
 });
 
 Route::group(['prefix'=>'partner'], function() {
@@ -284,6 +285,7 @@ Route::group(['prefix'=>'partner'], function() {
 
 Route::group(['prefix'=>'dich-vu'], function() {
 	Route::get( '{id}', 'Frontend\DichvuController@show' )->name( 'homepage.dichvu.show' );
+	Route::get( 'tag/{slug}', 'Frontend\DichvuController@tags' )->name( 'homepage.dichvu.tags' );
 });
 
 Route::group(['prefix'=>'testimonial'], function() {

@@ -95,6 +95,13 @@ class PageController extends Controller
                     $thumbnail_name = $this->image->uploadImage($folder, $thumbnail);
                     $data['thumbnail']= $thumbnail_name;
                     $pages = Pages::create($data);
+
+	                // Seo
+	                $title = $request->seoable_title ? $request->seoable_title : $pages->title;
+	                $key = $request->keyword ? $request->keyword : '';
+	                $description = $request->seoable_description ? $request->seoable_description : '';
+	                $pages->attachSeoAble($title, $key, $description);
+
                     DB::commit();  
                 }
                 $page_id = $pages->id;
@@ -155,12 +162,21 @@ class PageController extends Controller
             return array_search($item->slug, $field_slug);
         });
 
+	    // seoable
+	    $seoable = $data->getSeoable();
+	    $seoable_title = $seoable ? $seoable->seoable_title : '';
+	    $keyword = $seoable ? $seoable->keyword : '';
+	    $seoable_description = $seoable ? $seoable->seoable_description : '';
+
         $this->viewData = array(
             'title'         =>  'Page Manager | Page | Edit',
             'page_category'  => $page_category,
             'data'           => $data,
             'list_view'      => $list_view,
             'fields'           => $fields,
+	        'seoable_title' => $seoable_title,
+	        'keyword' => $keyword,
+	        'seoable_description' => $seoable_description
         );
 
         return view ( 'pages::admin.pages.edit', $this->viewData );
@@ -251,7 +267,12 @@ class PageController extends Controller
                                 }
                             }
                         }
-            
+	                // Seo
+	                $title = $request->seoable_title ? $request->seoable_title : $pages->title;
+	                $key = $request->keyword ? $request->keyword : '';
+	                $description = $request->seoable_description ? $request->seoable_description : '';
+	                $pages->updateSeoAble($title, $key, $description);
+
                     $pages->update($page);
                     DB::commit();
                     Session::flash('success','Success!');
@@ -289,6 +310,13 @@ class PageController extends Controller
                         }
                         $this->addPageField( $id, $data['template'] );
                     }
+
+	                // Seo
+	                $title = $request->seoable_title ? $request->seoable_title : $pages->title;
+	                $key = $request->keyword ? $request->keyword : '';
+	                $description = $request->seoable_description ? $request->seoable_description : '';
+	                $pages->updateSeoAble($title, $key, $description);
+
                     $pages->update($data);
                     DB::commit();
                     Session::flash( 'success', 'Update success !!!!!');

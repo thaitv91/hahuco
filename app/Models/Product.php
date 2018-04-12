@@ -11,6 +11,7 @@ class Product extends Model
     use Sluggable;
     use Searchable;
 	use \Spatie\Tags\HasTags;
+	use \App\Http\Traits\Seoables;
 
     protected $table = 'product';
     protected $guarded = array();

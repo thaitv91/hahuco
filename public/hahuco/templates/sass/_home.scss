@@ -6,6 +6,7 @@
       padding: 0;
     }
   }
+
   &.slick-slider{
     .slick-prev{
       left:15px;
@@ -15,8 +16,14 @@
     }
   }
   .i-want {
-    min-height: 500px;
+    min-height: 320px;
     background-size: cover;
+    @include breakpoint(md){
+      min-height: 450px;
+    }
+    @include breakpoint(lg){
+      min-height: 500px;
+    }
   }
 
 	.slick-dots{
@@ -49,6 +56,10 @@
 .tile-product{
   display:block;
   margin-bottom:20px;
+  position:relative;
+  .inner_prod{
+    min-height:248px;
+  }
   .desc{
     line-height:18px;
     max-height:36px;

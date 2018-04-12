@@ -8,16 +8,19 @@
     <meta name="google-site-verification" content="0Aqnw36QedShF9MeA3Pixc8RZWREMp6E95iTecttMgw" />
     <link rel="shortcut icon" href="uploads/version/logo-ico-201712121314331AhdyXKwCJ.ico" />
     <base   />
-    <meta name="author" content="Thiết kế website bởi escovietnam.vn" />
-    <meta name="web_author" content="Thiết kế website bởi escovietnam.vn" />
+    {{--<meta name="author" content="Thiết kế website bởi escovietnam.vn" />--}}
+    {{--<meta name="web_author" content="Thiết kế website bởi escovietnam.vn" />--}}
+    {!! SEO::generate() !!}
     <title>{{ isset($title) ? $title : 'Hahuco.com.vn' }}</title>
-    <meta name="description" content="Công ty Kim Loại Tấm Intech Việt Nam chuyên gia công kim loại và phân phối các thiết bị công nghiệp với chất lượng tốt nhất hiện nay." />
-    <meta name="keywords" content="Kim loại tấm Intech Việt Nam, xe đẩy, xe đẩy hàng, giá kệ, giá kệ kho hàng, tủ đựng dụng cụ, bàn inox, bàn thao tác, gia công cắt laser, gia công đột cnc, chấn gấp cnc," />
-    <meta property="og:title" content="CÔNG TY CỔ PHẦN KIM LOẠI TẤM INTECH VIỆT NAM"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="index.html"/>
-    <meta property="og:image" content="/hahuco/imgs/noimage.png" />
-    <meta property="og:description" content="Công ty Kim Loại Tấm Intech Việt Nam chuyên gia công kim loại và phân phối các thiết bị công nghiệp với chất lượng tốt nhất hiện nay."/>
+
+
+    {{--<meta name="description" content="Công ty Kim Loại Tấm Intech Việt Nam chuyên gia công kim loại và phân phối các thiết bị công nghiệp với chất lượng tốt nhất hiện nay." />--}}
+    {{--<meta name="keywords" content="Kim loại tấm Intech Việt Nam, xe đẩy, xe đẩy hàng, giá kệ, giá kệ kho hàng, tủ đựng dụng cụ, bàn inox, bàn thao tác, gia công cắt laser, gia công đột cnc, chấn gấp cnc," />--}}
+    {{--<meta property="og:title" content="CÔNG TY CỔ PHẦN KIM LOẠI TẤM INTECH VIỆT NAM"/>--}}
+    {{--<meta property="og:type" content="website"/>--}}
+    {{--<meta property="og:url" content="index.html"/>--}}
+    {{--<meta property="og:image" content="/hahuco/imgs/noimage.png" />--}}
+    {{--<meta property="og:description" content="Công ty Kim Loại Tấm Intech Việt Nam chuyên gia công kim loại và phân phối các thiết bị công nghiệp với chất lượng tốt nhất hiện nay."/>--}}
     
     <link type="text/css" href="/stylesheets/slick.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="/hahuco/templates/bootstrap.css">
@@ -63,7 +66,7 @@
         </div><!-- End .banner -->
         <nav class="nav_mn">
             <div class="container">
-                <ul class="ul_mn clearfix">
+                <ul class="ul_mn clearfix d-none d-lg-block">
                     <li class="active"><a href="index.html">Trang chủ</a></li>
                     <li><a href="/gioi-thieu">Giới Thiệu</a>
                         <ul class="mn_child_01">

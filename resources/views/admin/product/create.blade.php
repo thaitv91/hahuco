@@ -48,6 +48,8 @@
 						</span>
 						@endif
 					</div>
+
+					@include('admin.include.seo')
 				</div>
 				<!-- /.box-body -->
 			</div>

@@ -29,6 +29,8 @@
 							<label  class="" for="content">Content</label>
 							<textarea class="form-control my-editor" rows="15" id="content" name="content"></textarea>
 						</div>
+
+						@include('admin.include.seo')
 					</div>
 				</div>
 				<div class="col-md-4">

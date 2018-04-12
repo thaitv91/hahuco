@@ -14,12 +14,15 @@ use PackagePage\Pages\Models\Pages;
 use PackagePage\Pages\Models\PageField;
 use PackagePage\Pages\Models\TemplateField;
 use Storage;
+use SEO;
 
 class UserPageController extends Controller
 {	
 	public function index($slug = ''){
 		$slug = $slug ? $slug : 'homepage';
 		$data = Pages::where( 'slug', $slug )->first();
+		$data->setSeoable();
+
 		$template = $data->template;
 		$html_template = 'template.'.$template;
 

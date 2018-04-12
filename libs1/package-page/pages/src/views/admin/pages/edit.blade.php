@@ -29,6 +29,9 @@
                			<label  class="" for="content">Content</label>
                			<textarea class="form-control my-editor" rows="15" id="content" name="content">{!! $data->content !!}</textarea>
 					</div>
+
+					@include('admin.include.seo')
+
 					<div id = "template-ajax" class="">
 						@if($fields)
 						@foreach ($fields as $key => $field)
