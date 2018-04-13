@@ -3,6 +3,7 @@
 @section('content')
     <section class="page-inner">
         <div class="container">
+            {{ Breadcrumbs::render('page', $page) }}
             <div class="row">
                 <div class="col-lg-9">
                     <article>
