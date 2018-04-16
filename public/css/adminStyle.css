@@ -46,3 +46,47 @@
 .margin-bottom-30 {
     margin-bottom: 30px; 
 }
+
+.bootstrap-tagsinput{
+  display: block !important;
+}
+
+.form-seo{
+  padding: 20px;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  margin-top: 20px;
+}
+
+.d-block{
+  display: block;
+}
+.text-white{
+  color:#fff;
+}
+a.text-white:hover, a.text-white:focus{
+  color:#fff;
+}
+
+.list-check{
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.list-check li{
+    padding-left: 20px;
+    position: relative;
+}
+.list-check input{
+  position: absolute;
+  top:1px;
+  left: 0;
+}
+
+.list-check label{
+  font-weight: normal;
+}

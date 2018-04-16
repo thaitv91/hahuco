@@ -5562,5 +5562,171 @@
         "keywords": [
             "laravel"
         ]
+    },
+    {
+        "name": "spatie/image-optimizer",
+        "version": "1.0.14",
+        "version_normalized": "1.0.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/spatie/image-optimizer.git",
+            "reference": "91603599eb29024cc9849a4a511a629ebce97850"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/91603599eb29024cc9849a4a511a629ebce97850",
+            "reference": "91603599eb29024cc9849a4a511a629ebce97850",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+            "psr/log": "^1.0",
+            "symfony/process": "^2.8|^3.0|^4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.2|^7.0",
+            "symfony/var-dumper": "^3.0|^4.0"
+        },
+        "time": "2018-03-07 13:42:33",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Spatie\\ImageOptimizer\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Freek Van der Herten",
+                "email": "freek@spatie.be",
+                "homepage": "https://spatie.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "Easily optimize images using PHP",
+        "homepage": "https://github.com/spatie/image-optimizer",
+        "keywords": [
+            "image-optimizer",
+            "spatie"
+        ]
+    },
+    {
+        "name": "spatie/laravel-image-optimizer",
+        "version": "1.1.3",
+        "version_normalized": "1.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/spatie/laravel-image-optimizer.git",
+            "reference": "6dd6644240db119fe3c60aafd4b0513937b588af"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/spatie/laravel-image-optimizer/zipball/6dd6644240db119fe3c60aafd4b0513937b588af",
+            "reference": "6dd6644240db119fe3c60aafd4b0513937b588af",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.5.0|~5.6.0",
+            "php": "^7.0",
+            "spatie/image-optimizer": "^1.0.4"
+        },
+        "require-dev": {
+            "orchestra/testbench": "~3.5.0|~3.6.0",
+            "phpunit/phpunit": "^6.3|^7.0"
+        },
+        "time": "2018-02-08 13:45:21",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Spatie\\LaravelImageOptimizer\\ImageOptimizerServiceProvider"
+                ],
+                "aliases": {
+                    "ImageOptimizer": "Spatie\\LaravelImageOptimizer\\Facades\\ImageOptimizer"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Spatie\\LaravelImageOptimizer\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Freek Van der Herten",
+                "email": "freek@spatie.be",
+                "homepage": "https://spatie.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "Optimize images in your Laravel app",
+        "homepage": "https://github.com/spatie/laravel-image-optimizer",
+        "keywords": [
+            "laravel-image-optimizer",
+            "spatie"
+        ]
+    },
+    {
+        "name": "lavary/laravel-menu",
+        "version": "v1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lavary/laravel-menu.git",
+            "reference": "772800ab87d4496f16891758b8c303e5f75faf1d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lavary/laravel-menu/zipball/772800ab87d4496f16891758b8c303e5f75faf1d",
+            "reference": "772800ab87d4496f16891758b8c303e5f75faf1d",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": ">=5.0",
+            "illuminate/view": ">=5.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-10-30 16:48:59",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Lavary\\Menu\\ServiceProvider"
+                ],
+                "aliases": {
+                    "Menu": "Lavary\\Menu\\Facade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Lavary\\Menu\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Lavary",
+                "email": "mrl.8081@gmail.com"
+            }
+        ],
+        "description": "A quick way to create menus in Laravel 5",
+        "homepage": "https://github.com/lavary/laravel-menu",
+        "keywords": [
+            "laravel"
+        ]
     }
 ]

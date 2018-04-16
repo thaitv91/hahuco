@@ -42,96 +42,111 @@
 </head>
 <body>
 <div id="wrapper">
+
     <header id="header">
-        <div class="banner">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        @if($logo)
-                            <a class="logo" href="/"><img src="/{{ $logo }}" alt="Logo {{ $sitename }}"></a>
-                        @else
-                            <a class="logo" href="/">{{ $sitename }}</a>
-                        @endif
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="search">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                </a>
+                @if($logo)
+                    <a class="navbar-brand" href="/"><img src="/{{ $logo }}" alt="Logo {{ $sitename }}"></a>
+                @else
+                    <a class="navbar-brand" href="/">{{ $sitename }}</a>
+                @endif
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">TRANG CHỦ</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/gioi-thieu">
+                                GIỚI THIỆU
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a href="gioi-thieu/gia-tri-cot-loi/index.html" class="dropdown-item">Giá trị cốt lõi</a>
+                                </li>
+                                <li>
+                                    <a href="gioi-thieu/chinh-sach-chat-luong/index.html" class="dropdown-item">Chính sách chất lượng</a>
+                                </li>
+                                <li>
+                                    <a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html" class="dropdown-item">Giới thiệu về kim loại tấm Intech</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/san-pham/">
+                                Sản phẩm
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a></li>
+                                <li><a class="dropdown-item" href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a>
+                                </li>
+                                <li><a class="dropdown-item" href="gia-cong-cat-laser/index.html">Gia công cắt laser</a></li>
+                                <li><a class="dropdown-item" href="gia-ke-gia-ke-kho-hang/index.html">Giá kệ, giá kệ kho hàng</a></li>
+                                <li><a class="dropdown-item" href="xe-day-xe-day-hang/index.html">Xe đẩy, xe đẩy hàng</a></li>
+                                <li><a class="dropdown-item" href="ban-thao-tac-ban-inox/index.html">Bàn thao tác, Bàn Inox</a></li>
+                                <li><a class="dropdown-item" href="thang-mang-cap-dien/index.html">Thang máng cáp điện</a></li>
+                                <li><a class="dropdown-item" href="dot-dap-hang-loat/index.html">Đột dập hàng loạt</a></li>
+                                <li><a class="dropdown-item" href="tu-dung-dung-cu/index.html">Tủ đựng dụng cụ</a></li>
+                                <li><a class="dropdown-item" href="tu-phong-sach/index.html">Tủ phòng sạch</a></li>
+                                <li><a class="dropdown-item" href="ban-an-cong-nghiep/index.html">Bàn ăn công nghiệp</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/dich-vu">Dịch vụ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/catalog">Catalogue</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/tin-tuc">Tin tức</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/tuyen-dung">Tuyển Dụng</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/lien-he">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <div class="search-header dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ico-search"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="inner">
                             <form action="http://kimloaitamintech.com/xu-ly.htm" method="post">
-                                <input class="ipt_s box-sizing-fix" type="text" placeholder="Từ khóa tìm kiếm..!" name="search_tukhoa">
-                                <input class="btn_s" type="submit" value="&nbsp;">
+                                <input type="text" placeholder="Từ khóa tìm kiếm..!" name="search_tukhoa" class="form-control">
+                                <button class="btn_s" type="submit"><i class="ico-search"></i></button>
                             </form>
-                        </div><!-- End .search -->
+                        </div>
                     </div>
-                </div>                
-            </div><!-- End .container -->
-        </div><!-- End .banner -->
-        <nav class="nav_mn">
-            <div class="container">
-                <ul class="ul_mn clearfix d-none d-lg-block">
-                    <li class="active"><a href="index.html">Trang chủ</a></li>
-                    <li><a href="/gioi-thieu">Giới Thiệu</a>
-                        <ul class="mn_child_01">
-                            <li><a href="gioi-thieu/gia-tri-cot-loi/index.html">Giá trị cốt lõi</a>
-                            </li>
-                            <li><a href="gioi-thieu/chinh-sach-chat-luong/index.html">Chính sách chất lượng</a></li>
-                            <li><a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html">Giới thiệu về kim loại tấm Intech</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/san-pham/">Sản phẩm</a>
-                        <ul class="mn_child_01 mn_child_02">
-                            <li><a href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a></li>
-                            <li><a href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a>
-                            </li>
-                            <li><a href="gia-cong-cat-laser/index.html">Gia công cắt laser</a></li>
-                            <li><a href="gia-ke-gia-ke-kho-hang/index.html">Giá kệ, giá kệ kho hàng</a></li>
-                            <li><a href="xe-day-xe-day-hang/index.html">Xe đẩy, xe đẩy hàng</a></li>
-                            <li><a href="ban-thao-tac-ban-inox/index.html">Bàn thao tác, Bàn Inox</a></li>
-                            <li><a href="thang-mang-cap-dien/index.html">Thang máng cáp điện</a></li>
-                            <li><a href="dot-dap-hang-loat/index.html">Đột dập hàng loạt</a></li>
-                            <li><a href="tu-dung-dung-cu/index.html">Tủ đựng dụng cụ</a></li>
-                            <li><a href="tu-phong-sach/index.html">Tủ phòng sạch</a></li>
-                            <li><a href="ban-an-cong-nghiep/index.html">Bàn ăn công nghiệp</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/dich-vu">Dịch vụ</a></li>
-                    <li><a href="/catalog">Catalogue</a></li>
-                    <li><a href="/tin-tuc">Tin tức</a></li>
-                    <li><a href="/tuyen-dung">Tuyển Dụng</a></li>
-                    <li><a href="/lien-he">Liên hệ</a></li>
-                </ul><!--End .ul_mn -->
-                <a class="icon_menu_mobile" href="javascript:void(0)" val="0"></a>
-            </div><!-- End .min_wrap -->
-        </nav><!-- End .nav_mn -->
-    </header><!-- End #header -->
+                </div><!-- /.search-header -->
+            </div>
+        </nav>
+    </header>
     @yield("content")
     <footer id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div class="about-ft">
-                            <div class="text-center">
-                                <h3>CÔNG TY CỔ PHẨN KIM LOẠI TẤM INTECH VIỆT NAM</h3>
-                                <p>MST: 0107273031 do Sở Kế Hoạch Đầu Tư TP.Hà Nội cấp ngày 29/12/2015.</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="row">
+                            <div class="col-md-5 mb-3 mb-lg-0">
+                                <div class="about-ft">
+                                    <img src="/hahuco/images/upload/logo-footer.png" alt="Image" class="logo" />
+                                    <p><strong>Trụ sở chính</strong></p>
                                     <ul class="ul_info_foot">
-                                        <li><strong>Trụ sở chính</strong>
-
+                                        <li>
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" />{!! $trusochinh_address !!}</p>
-
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
 
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email: <a href="mailto:{!! $email1 !!}">{!! $email1 !!}</a></p>
 
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline2 }}">{{ $hotline2 }}</a></p>
                                         </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
+                                    </ul>                                    
+
+                                    <p><strong>Xưởng sản xuất</strong></p>
+
                                     <ul class="ul_info_foot">
-                                        <li><strong>Xưởng sản xuất</strong>
+                                        <li>
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" /> Địa chỉ: Lô 6, Khu công nghiệp Lai Xá, Xã Kim Chung, Huyện Hoài Đức, TP.Hà Nội.</p>
 
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
@@ -140,77 +155,56 @@
 
                                             <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline3 }}">{{ $hotline3 }}</a></p>
                                         </li>
-                                    </ul>
-                                </div>
+                                    </ul>                                    
+                                </div><!-- /.about-ft -->
                             </div>
-                        </div><!-- /.about-ft -->
+
+                            <div class="col-md-3 mb-3 mb-lg-0">
+                                <div class="link-ft">
+                                    <h3 class="text-uppercase">TRUY CẬP NHANH</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#">Trang chủ</a></li>
+                                        <li><a href="#">Giới thiệu</a></li>
+                                        <li><a href="#">Lĩnh vực đầu tư</a></li>
+                                        <li><a href="#">Dự án</a></li>
+                                        <li><a href="#">Tin tức</a></li>
+                                        <li><a href="#">Liên hệ</a></li>
+                                    </ul>
+                                </div><!-- /.link-ft -->
+                            </div>
+
+                            <div class="col-md-4 mb-3 mb-lg-0">
+                                <div class="link-ft">
+                                    <h3 class="text-uppercase">CHÚNG TÔI CÓ GÌ?</h3>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#">Bất động sản</a></li>
+                                        <li><a href="#">Cơ sở hạ tầng</a></li>
+                                        <li><a href="#">Nông nghiệp</a></li>
+                                        <li><a href="#">Sản phẩm tài chính</a></li>
+                                        <li><a href="#">Phát triển cộng đồng</a></li>
+                                        <li><a href="#">Năng lượng</a></li>
+                                    </ul>
+                                </div><!-- /.link-ft -->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-4">
-                        <ul class="links">
-                            <li>
-                                <a href="dich-vu/chinh-sach-quy-dinh-chung-395/index.html">Chính sách & quy định chung</a>
-                            </li>
-                            <li>
-                                <a href="dich-vu/chinh-sach-mua-hang-va-thanh-toan-393/index.html">Chính sách mua hàng & thanh toán</a>
-                            </li>
-                            <li>
-                                <a href="dich-vu/chinh-sach-van-chuyen-391/index.html">Chính sách vận chuyển</a>
-                            </li>
-                            <li>
-                                <a href="dich-vu/chinh-sach-doi-tra-392/index.html">Chính sách đổi trả</a>
-                            </li>
-                            <li>
-                                <a href="dich-vu/chinh-sach-bao-hang-394/index.html">Chính sách bảo hành</a>
-                            </li>
-                            <li>
-                                <a href="dich-vu/chinh-sach-bao-mat-396/index.html">Chính sách bảo mật</a>
-                            </li>
-                        </ul>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="hahuco-fb">
+                            <h3 class="text-uppercase">Kết nối với chúng tôi</h3>
+                            <div class="fb-page" data-href="https://www.facebook.com/www.hahuco.com.vn/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/www.hahuco.com.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/www.hahuco.com.vn/">TỰ ĐỘNG HÓA Hahuco</a></blockquote>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><!-- /.footer-top -->
+
         
            
             <!-- End .ul_info_foot --><!-- End .info_foot -->
-
-            <div class="foot_2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <a href="http://intechvietnam.com/"><img alt="" height="87" src="uploads/noidung/images/logo-trang.png" width="200" /></a>​<br />
-                            <img alt="" height="56" src="/hahuco/imgs/layout/img_foot_2.png" width="247" />
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                            <p><strong>Các mạng xã hội</strong></p>
-                            <div class="mb-3">
-                                <a href="{{ $facebook }}" rel="nofollow" style="font-size: 13px;" target="_blank">
-                                    <img alt="facebook" height="38" src="/hahuco/imgs/layout/social_1.png" width="38" />
-                                </a>
-                                <a href="{{ $google }}" rel="nofollow" style="font-size: 13px;" target="_blank">
-                                    <img alt="google" height="38" src="/hahuco/imgs/layout/social_2.png" width="38" />
-                                </a>
-                                <a href="{{ $twitter }}" rel="nofollow" style="font-size: 13px;" target="_blank">
-                                    <img alt="tw" height="38" src="/hahuco/imgs/layout/social_3.png" width="38" /> 
-                                </a>
-                                <a href="{{ $instagram }}" rel="nofollow" style="font-size: 13px;" target="_blank">
-                                    <img alt="youtube" height="38" src="/hahuco/imgs/layout/social_4.png" width="38" />
-                                </a>
-                            </div>
-
-                            <a href="http://www.online.gov.vn/CustomWebsiteDisplay.aspx?DocId=37111" rel="nofollow" target="_blank"><img alt="" src="/hahuco/imgs/layout/dathongbao.png" /> </a>
-                        </div>
-
-                        <div class="col-lg-4 col-md-12">
-                            <iframe allowfullscreen="" frameborder="0" height="210" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.3236314215123!2d105.7232675150002!3d21.0597325859816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134545188616895%3A0x67ce7722f9132f70!2zQ8O0bmcgVHkgQ-G7lSBQaOG6p24gS2ltIExv4bqhaSBU4bqlbSBJbnRlY2ggVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1513213915154" style="border:0" width="100%"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End .foot_2 -->        
-        <div class="foot_3 text-center">
+        <div class="footer-bottom text-center">
             <div class="container">
                 {!! $copyright !!}
             </div>
@@ -426,6 +420,14 @@
 <script src="/hahuco/scripts/owl-carousel/owl.carousel.js"></script>
 <script src="/hahuco/scripts/frame_script.js"></script>
 @yield('scripts')
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=1723119761310275&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 
 <!-- Mirrored from kimloaitamintech.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Apr 2018 05:06:35 GMT -->

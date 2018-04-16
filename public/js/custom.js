@@ -79,6 +79,8 @@ $(window).ready(function(){
         slidesToScroll: 1
     });
 
+    
+
 
     $('.dotdotdot, .tile-news .text h4, .tile-news .text .description').dotdotdot();
 

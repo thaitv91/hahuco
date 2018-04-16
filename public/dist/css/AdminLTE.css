@@ -4941,14 +4941,3 @@ table.text-center th {
   }
 }
 
-.bootstrap-tagsinput{
-  display: block !important;
-}
-
-.form-seo{
-  padding: 20px;
-  border:1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
-  margin-top: 20px;
-}

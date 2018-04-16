@@ -26,6 +26,11 @@ Route::get('ajax-dashboard', 'Admin\DashboardController@ajaxLoadData')->name('ad
 
 Route::group(['prefix' => 'admin'], function () {
 
+	Route::group(['prefix' => 'menu'], function () {
+		//Route::get('/', 'Admin\MenusController@index')->name('admin.menu.index');
+		Route::get('{id}', 'Admin\MenusController@index')->name('admin.menu.index');
+	});
+
     Route::group(['prefix' => 'user'], function () {
         Route::get('/', 'Admin\UserController@index')->name('admin.user');
         Route::get('edit/{id?}', 'Admin\UserController@edit')->name('admin.user.edit');

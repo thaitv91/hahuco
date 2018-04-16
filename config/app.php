@@ -188,6 +188,8 @@ return [
         Yab\MySQLScout\Providers\MySQLScoutServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
 	    Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+	    Spatie\LaravelImageOptimizer\ImageOptimizerServiceProvider::class,
+	    Lavary\Menu\ServiceProvider::class,
     ],
 
     /*
@@ -244,11 +246,10 @@ return [
         'Input' => Illuminate\Support\Facades\Input::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
-	    //artesaos seotools
-//        'SEOMeta'   => Artesaos\SEOTools\Facades\SEOMeta::class,
-//        'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
-//        'Twitter'   => Artesaos\SEOTools\Facades\TwitterCard::class,
+	    // artesaos seotools
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'ImageOptimizer' => Spatie\LaravelImageOptimizer\ImageOptimizerFacade::class,
+        'Menu'      => Lavary\Menu\Facade::class,
     ],
 
 ];

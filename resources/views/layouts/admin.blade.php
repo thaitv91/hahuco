@@ -387,6 +387,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script type="text/javascript" src="/js/bootstrap-toggle.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap-tagsinput.js"></script>
 <script type='text/javascript' src='{{ url('js/highcharts/loader.js') }}'></script>
+<script src="/packages/menu-manager/js/jquery-sortable-lists.js"></script>
 
 <script>
     $.ajaxSetup({
@@ -458,17 +459,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             xhr.send(formData);
         },
     });
-</script>
-<script>
+
+
     @if ( Session::has('success'))
     toastr.success('{{ session('success')}}');
     @endif
     @if ( Session::has('error'))  
     toastr.error('{{ session('error')}}');  
     @endif
-</script>
 
-<script type="text/javascript">
     // Preview Image
     function readURL(input, id) {
         if (input.files && input.files[0]) {

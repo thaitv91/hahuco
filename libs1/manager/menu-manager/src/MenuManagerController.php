@@ -71,8 +71,9 @@ class MenuManagerController extends Controller {
         $menu = Menu::where('id', $menu_item_id)->firstOrFail();
         $menuItems = MenuItem::where('menu_id', $menu->id)->where('parent_id', 0)->orderBy('order', 'asc')->get();
         $html = (string)$this->render2($menuItems, '');
-        // dd($html);
+
         return view('menu-view::edit_menu_item', compact(['html', 'menu']));
+        //return view('admin.menus.index', compact(['html', 'menu']));
     }
 
     public function remove($id) {
