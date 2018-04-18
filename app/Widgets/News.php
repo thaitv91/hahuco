@@ -14,7 +14,7 @@ class News extends AbstractWidget
      * @var array
      */
     protected $config = [
-        'count' =>  6,
+        'count' =>  3,
         'cate_slug' => '',
         'title' => '',
         'addon_class' => '',

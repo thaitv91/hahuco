@@ -2,6 +2,13 @@
 
 @section('content')
     <section class="page-inner">
+
+        <div class="breadcrumb-ov">
+            <div class="container">
+                {{ Breadcrumbs::render('sp-cate', $term) }}
+            </div>
+        </div><!-- /.breadcrumb-ov -->
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
@@ -18,7 +25,7 @@
                             <div class="row">
                                 @foreach($term->products as $product)
                                     <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <a href="{{ route('homepage.product.show', [ $term->slug, $product->slug]) }}" class="tile-product">
+                                        <a href="{{ route('homepage.product.show', [ $product->slug]) }}" class="tile-product">
                                             <div class="inner_prod">
                                                 <figure>
                                                     <img class="" src="/{{ $product->thumbnail }}" alt="{{ $product->title }}" width="185" height="140">

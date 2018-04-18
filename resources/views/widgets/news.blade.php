@@ -1,21 +1,29 @@
-  <section class="{{ $section_class }} text-white section-img {{ $config['addon_class'] }}">
+<section class="news bg-f4 space-global">
     <div class="container">
-        <h2 class="text-center title text-white">{{ $config['title'] }}</h2>
-        <div class="slider-news arrows-white-2">
+        <div class="header-box text-center">
+            <div class="group">Hahuco</div>
+            <h2>Tin tức</h2>
+        </div>
+
+        <div class="row">
             @foreach($news as $new)
-            <div class="tile-news">
-                <a class="img" href="{{ route('homepage.news.show', $new->slug) }}" style="background-image: url('{{ $new->thumbnail }}')"></a>
-                <div class="text">
-                    <h4 class="dotdotdot"><a href="{{ route('homepage.news.show', $new->slug) }}">{{ $new->name }}</a></h4>
+            <div class="col-lg-4 col-sm-6">
+                <div class="tile-news">
+                    <div class="img effect-img">
+                        <a href="{{ route('homepage.news.show', $new->slug) }}"><img src="{{ $new->thumbnail }}" alt="" onerror="this.src='/hahuco/images/img-default.jpg';" /></a>
+                    </div>
+                    <h4 class="title-sm"><a href="{{ route('homepage.news.show', $new->slug) }}">{{ $new->name }}</a></h4>
                     <?php Carbon\Carbon::setLocale('vi'); ?>
                     <p class="time">{{ $new->created_at->format('h:i d/m/Y') }}</p>
-                    <div class="description dotdotdot">
+                    <div class="desc dotdotdot">
                         {!! $new->excerpt !!}
                     </div>
-                </div>
-            </div><!-- /.tile-news -->
+                    <a href="{{ route('homepage.news.show', $new->slug) }}" class="btn-hahuco btn-outlight-red">Chi tiết</a>
+                </div><!-- /.tile-news -->
+            </div>
             @endforeach
         </div>
+
         @if ($config['readmore'])
         <hr>
         <div class="g-view-more">
@@ -23,4 +31,4 @@
         </div>
         @endif
     </div>
-</section>
+</section><!-- /.news -->

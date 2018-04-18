@@ -39,7 +39,7 @@
 					</div>
 					<div class="form-group">
 						<label for="content">@lang('admin/testimonial.content')</label>
-						<textarea type="text" class="form-control my-editor" name="content" id="content" rows="5"></textarea>
+						<textarea type="text" class="form-control my-editor" name="content" id="content" rows="15"></textarea>
 						@if ($errors->has('content'))
 						<span class="help-block">
 							<strong>{{ $errors->first('content') }}</strong>

@@ -28,6 +28,17 @@
 						</span>
 						@endif
 					</div>
+
+					<div class="form-group margin-bottom-30">
+						<label for="excerpt">@lang('admin/news.excerpt')</label>
+						<textarea type="text" class="form-control" name="excerpt" id="excerpt" rows="5">{{ $term->excerpt }}</textarea>
+						@if ($errors->has('excerpt'))
+							<span class="help-block">
+							<strong>{{ $errors->first('excerpt') }}</strong>
+						</span>
+						@endif
+					</div>
+
 					<div class="form-group margin-bottom-30">
 						<label for="description">@lang('admin/term.description')</label>
 						<textarea type="text" class="form-control my-editor" name="description" id="description" rows="15">{{ $term->description }}</textarea>

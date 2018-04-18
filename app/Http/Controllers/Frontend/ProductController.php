@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Events\ViewProductHandler;
+use App\Models\ProductTerm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\ProductCategory as Category;
@@ -27,10 +28,10 @@ class ProductController extends Controller
 
 		//seoable
 		$seoable = $product->setSeoable();
-
+		$term = ProductTerm::where('id','=', $product->product_term_id)->first();
 		event( new ViewProductHandler($product));
 		$tags = $product->tags;
-		return view('frontend.chitietsanpham', compact(['product', 'title', 'tags']));
+		return view('frontend.chitietsanpham', compact(['product', 'title', 'tags', 'term']));
     }
 
 	public function term($term_slug) {

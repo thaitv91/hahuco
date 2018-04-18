@@ -2,6 +2,13 @@
 
 @section('content')
     <section class="page-inner">
+
+        <div class="breadcrumb-ov">
+            <div class="container">
+                {{ Breadcrumbs::render('tuyendung-detail', $recruitment) }}
+            </div>
+        </div><!-- /.breadcrumb-ov -->
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">

@@ -1,4 +1,4 @@
-<section class="product-highlights space-global">
+<section class="product-highlights bg-f4 space-global">
     <div class="container">
         <div class="header-box text-center">
             <div class="group">Hahuco</div>

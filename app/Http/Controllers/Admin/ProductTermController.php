@@ -57,6 +57,7 @@ class ProductTermController extends Controller
         $request->validate(['name'=>'required']);
         $term = $this->term;
         $term->name = $request->name;
+        $term->excerpt = $request->excerpt;
         $term->description = $request->description;
         if ($request->thumbnail) {
             $term->thumbnail = $this->image->uploadImage('images/product_term', $request->thumbnail);
@@ -107,6 +108,7 @@ class ProductTermController extends Controller
         if ($request->name != $term->name) 
             $request->validate(['name'=>'required']);
         $term->name = $request->name;
+        $term->excerpt = $request->excerpt;
         $term->description = $request->description;
         if ($request->thumbnail) {
             $term->thumbnail = $this->image->uploadImage('images/product_term', $request->thumbnail);

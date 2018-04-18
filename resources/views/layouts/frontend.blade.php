@@ -126,75 +126,38 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="row">
-                            <div class="col-md-5 mb-3 mb-lg-0">
-                                <div class="about-ft">
-                                    <img src="/hahuco/images/upload/logo-footer.png" alt="Image" class="logo" />
-                                    <p><strong>Trụ sở chính</strong></p>
-                                    <ul class="ul_info_foot">
-                                        <li>
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" />{!! $trusochinh_address !!}</p>
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
-
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email: <a href="mailto:{!! $email1 !!}">{!! $email1 !!}</a></p>
-
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline2 }}">{{ $hotline2 }}</a></p>
-                                        </li>
-                                    </ul>                                    
-
-                                    <p><strong>Xưởng sản xuất</strong></p>
-
-                                    <ul class="ul_info_foot">
-                                        <li>
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" /> Địa chỉ: Lô 6, Khu công nghiệp Lai Xá, Xã Kim Chung, Huyện Hoài Đức, TP.Hà Nội.</p>
-
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
-
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email:  <a href="mailto:{!! $email2 !!}">{!! $email2 !!}</a></p>
-
-                                            <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline3 }}">{{ $hotline3 }}</a></p>
-                                        </li>
-                                    </ul>                                    
-                                </div><!-- /.about-ft -->
-                            </div>
-
-                            <div class="col-md-3 mb-3 mb-lg-0">
-                                <div class="link-ft">
-                                    <h3 class="text-uppercase">TRUY CẬP NHANH</h3>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Trang chủ</a></li>
-                                        <li><a href="#">Giới thiệu</a></li>
-                                        <li><a href="#">Lĩnh vực đầu tư</a></li>
-                                        <li><a href="#">Dự án</a></li>
-                                        <li><a href="#">Tin tức</a></li>
-                                        <li><a href="#">Liên hệ</a></li>
-                                    </ul>
-                                </div><!-- /.link-ft -->
-                            </div>
-
-                            <div class="col-md-4 mb-3 mb-lg-0">
-                                <div class="link-ft">
-                                    <h3 class="text-uppercase">CHÚNG TÔI CÓ GÌ?</h3>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Bất động sản</a></li>
-                                        <li><a href="#">Cơ sở hạ tầng</a></li>
-                                        <li><a href="#">Nông nghiệp</a></li>
-                                        <li><a href="#">Sản phẩm tài chính</a></li>
-                                        <li><a href="#">Phát triển cộng đồng</a></li>
-                                        <li><a href="#">Năng lượng</a></li>
-                                    </ul>
-                                </div><!-- /.link-ft -->
-                            </div>
-                        </div>
+                    <div class="col-md-4 mb-4 mb-lg-0">
+                        <div class="about-ft">
+                            <h3 class="text-uppercase">Trụ sở chính</h3>
+                            <ul class="ul_info_foot">
+                                <li>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" />{!! $trusochinh_address !!}</p>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email: <a href="mailto:{!! $email1 !!}">{!! $email1 !!}</a></p>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline2 }}">{{ $hotline2 }}</a></p>
+                                </li>
+                            </ul>
+                        </div><!-- /.about-ft -->
                     </div>
 
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="hahuco-fb">
-                            <h3 class="text-uppercase">Kết nối với chúng tôi</h3>
-                            <div class="fb-page" data-href="https://www.facebook.com/www.hahuco.com.vn/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                                <blockquote cite="https://www.facebook.com/www.hahuco.com.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/www.hahuco.com.vn/">TỰ ĐỘNG HÓA Hahuco</a></blockquote>
-                            </div>
+                    <div class="col-md-4 mb-4 mb-lg-0">
+                        <div class="about-ft">
+                            <h3 class="text-uppercase">Xưởng sản xuất</h3>
+                            <ul class="ul_info_foot">
+                                <li>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_1.png" /> Địa chỉ: Lô 6, Khu công nghiệp Lai Xá, Xã Kim Chung, Huyện Hoài Đức, TP.Hà Nội.</p>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_2.png" /> Điện thoại: <a href="tel:{{ $hotline1 }}">{{ $hotline1 }}</a></p>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_3.png" /> Email:  <a href="mailto:{!! $email2 !!}">{!! $email2 !!}</a></p>
+                                    <p><img alt="" src="/hahuco/imgs/layout/icon_foot_4.png" /> Hotline: <a href="tel:{{ $hotline3 }}">{{ $hotline3 }}</a></p>
+                                </li>
+                            </ul>
+                        </div><!-- /.about-ft -->
+                    </div>
+
+                    <div class="col-md-4 mb-4 mb-lg-0">
+                        <h3 class="text-uppercase">Kết nối với chúng tôi</h3>
+                        <div class="fb-page" data-href="https://www.facebook.com/www.hahuco.com.vn/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/www.hahuco.com.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/www.hahuco.com.vn/">TỰ ĐỘNG HÓA Hahuco</a></blockquote>
                         </div>
                     </div>
                 </div>
@@ -212,53 +175,7 @@
     </footer><!-- End #footer -->
 </div><!-- End #wrapper -->
 
-<div class="fixed_button">
-    <ul>
-        <li class="fb_email">
-            <div class="inner_fb" style="line-height: 24px; text-indent: 0;">
-                <div style="padding: 10px 0 0 10px; text-align: left !important; font-size: 11px;">
-                    <a href="mailto:{!! $email1 !!}">{!! $email1 !!}</a>
-                    <br>
-                    <a href="mailto:{!! $email2 !!}">{!! $email2 !!}</a>
-                </div>
-            </div>
-        </li>
-        <li class="fb_website">
-            <div class="inner_fb">
-                <img src="{!! $qr_website !!}" alt="hahuco.com.vn">
-            </div>
-        </li>
-        <li class="fb_hotline">
-            <div class="inner_fb">
-                <a href="tel:{{ $hotline2 }}">{{ $hotline2 }}</a>
-                <br>
-                <a href="tel:{{ $hotline3 }}">{{ $hotline3 }}</a>
-            </div>
-        </li>
-        <li class="fb_support">
-
-        </li>
-    </ul>
-</div><!-- End .fixed_button -->
-
-<style>
-    .f-detail a {
-        color: #01712a !important;
-    }
-    @media only screen and (max-width: 768px) {
-        .ipt_s {
-            border: 1px solid #ccc !important;
-            background: #f9f9f9 !important;
-            color: #fff;
-            width: 200px;
-            height: 28px;
-        }
-        .btn_s {
-            background-color: #048031 !important;
-        }
-    }
-</style>
-
+<div class="hotline-fixed"><div><i class="ico-phone"></i><a href="tel:{{ $hotline1 }}"> Hotline: {{ $hotline1 }}</a></div></div>
 
 <div class="menu_mobile" style="visibility: hidden;">
 

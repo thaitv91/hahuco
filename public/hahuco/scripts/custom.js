@@ -47,26 +47,57 @@ $(window).ready(function(){
             {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesPerRow: 3
                 }
             },
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow:2,
-                    slidesToScroll: 2
+                    slidesPerRow: 2
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow:1,
-                    slidesToScroll: 1
+                    slidesPerRow: 1
                 }
             }
         ]
     });
+
+    $('.slide-video').slick({
+        arrows: false,
+        autoplay: false,
+        dots: true,
+        slidesToShow: 4, 
+        slidesToScroll:4, 
+        infinite: true,
+        autoplaySpeed: 4000,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll:3 
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll:2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll:1
+                }
+            }
+        ]
+    });
+
 
     
 

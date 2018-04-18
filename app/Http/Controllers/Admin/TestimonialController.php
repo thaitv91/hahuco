@@ -25,8 +25,8 @@ class TestimonialController extends Controller
     public function index()
     {
         $testimonials = $this->testimonial->get();
-
-        return view('admin.testimonial.index', compact(['testimonials']));
+		$title = "Khách hàng đánh giá";
+        return view('admin.testimonial.index', compact(['testimonials', 'title']));
     }
 
     /**
@@ -36,7 +36,8 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        return view('admin.testimonial.create');
+    	$title = "Tạo nội dung Testimonial";
+        return view('admin.testimonial.create',compact(['title']));
     }
 
     /**
@@ -83,8 +84,9 @@ class TestimonialController extends Controller
     public function edit($id)
     {
         $testimonial = $this->testimonial->where('id', $id)->firstOrFail();
+        $title = "Edit nội dung Testimonial";
 
-        return view('admin.testimonial.edit', compact(['testimonial']));
+        return view('admin.testimonial.edit', compact(['testimonial', 'title']));
     }
 
     /**
