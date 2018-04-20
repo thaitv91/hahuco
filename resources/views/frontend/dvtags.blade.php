@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article class="content">
-                        <div class="title_ct"><h1>Tags: {!! $tag_name !!}</h1></div><!-- End .title_ct -->
+                        <h1 class="title-page">Tags: {!! $tag_name !!}</h1><!-- End .title_ct -->
 
                         <div class="main_ct">
                             <div class="row">

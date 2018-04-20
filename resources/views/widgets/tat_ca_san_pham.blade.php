@@ -1,7 +1,7 @@
 <div class="main_ct">
     <div class="row">
         @foreach($products as $product)
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                 <a href="{{ route('homepage.product.show', [$product->slug]) }}" class="tile-product">
                     <div class="inner_prod">
                         <figure>

@@ -74,16 +74,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
                 <li class="header">HEADER</li>
-                <!-- Optionally, you can add icons to the links -->
                 <li class="">
                     <a href="{{ route('admin.user') }} ">
-                        <i class="fa fa-link"></i>
+                        <i class="fa fa-user"></i>
                         <span>@lang('admin/sidebar.user')</span>
                     </a>
                 </li>
 
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>@lang('admin/sidebar.product')</span>
+                    <a href="#"><i class="fa fa-cubes"></i> <span>@lang('admin/sidebar.product')</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -98,13 +97,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <li class="">
                     <a href="/admin/configure/edit/1">
-                        <i class="fa fa-link"></i>
+                        <i class="fa fa-cogs"></i>
                         <span>@lang('admin/sidebar.configure')</span>
                     </a>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-link"></i> 
+                        <i class="fa fa-list-alt"></i>
                         <span>@lang('admin/sidebar.page_manager')</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -117,12 +116,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li><a href="{{ route('admin.pages.index') }} ">@lang('admin/sidebar.page')</a></li>
                     </ul>
                 </li>
-                {{-- <li><a href="{{ route('admin.translations') }}"><i class="fa fa-link"></i> <span>Language Manager</span></a>
-                <li> --}}
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-link"></i> 
+                        <i class="far fa-address-book"></i>
                         <span>@lang('admin/sidebar.partner')</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -137,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-link"></i> 
+                        <i class="fa fa-info-circle"></i>
                         <span>@lang('admin/sidebar.news')</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -152,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-link"></i> 
+                        <i class="fa fa-legal"></i>
                         <span>@lang('admin/sidebar.testimonial')</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -162,6 +159,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li><a href="{{ route('admin.testimonial') }}"> @lang('admin/sidebar.manager')</a></li>
                         <li><a href="{{ route('admin.testimonial.create') }}"> @lang('admin/sidebar.new')</a></li>
                     </ul>
+                </li>
+
+                <li class="">
+                    <a href="{{ route('admin.dichvu') }} ">
+                        <i class="fa fa-reorder"></i><span>Dịch vụ</span>
+                    </a>
                 </li>
 
                 <li class="treeview">
@@ -182,33 +185,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <li class="">
                     <a href="{{ route('menu_manager') }} ">
-                        <i class="fa fa-link"></i><span>@lang('admin/sidebar.menu_manager')</span>
+                        <i class="fa fa-reorder"></i><span>@lang('admin/sidebar.menu_manager')</span>
                     </a>
                 </li>
 
-                <li class="">
-                    <a href="{{ route('admin.award') }}">
-                        <i class="fa fa-link"></i><span>@lang('admin/sidebar.award')</span>
-                    </a>
-                </li>
+                {{--<li class="">--}}
+                    {{--<a href="{{ route('admin.award') }}">--}}
+                        {{--<i class="fa fa-photo"></i><span>@lang('admin/sidebar.award')</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
 
                 <li class="">
                     <a href="{{ route('admin.slider') }}">
-                        <i class="fa fa-link"></i><span>@lang('admin/sidebar.slider')</span>
+                        <i class="fa fa-photo"></i><span>@lang('admin/sidebar.slider')</span>
                     </a>
                 </li>
 
                 <li class="">
                     <a href="{{ route('admin.contact') }}">
-                        <i class="fa fa-link"></i><span>@lang('admin/sidebar.contact')</span>
+                        <i class="fa fa-photo"></i><span>@lang('admin/sidebar.contact')</span>
                     </a>
                 </li>
 
-                <li class="">
-                    <a href="{{ route('admin.email_registration') }}">
-                        <i class="fa fa-link"></i><span>@lang('admin/sidebar.email_registration')</span>
-                    </a>
-                </li>
+                {{--<li class="">--}}
+                    {{--<a href="{{ route('admin.email_registration') }}">--}}
+                        {{--<i class="fa fa-link"></i><span>@lang('admin/sidebar.email_registration')</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
 
                 <li class="">
                     <a href="{{ route('admin.recruitment.resume.index') }} ">

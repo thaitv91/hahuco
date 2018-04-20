@@ -13,9 +13,8 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article class="content">
-                        <div class="title_ct"><h1>{!! $term->name !!}</h1></div><!-- End .title_ct -->
-
                         <div class="info_catelogy">
+                            <h1 class="title-page">{!! $term->name !!}</h1><!-- End .title_ct -->
                             <div class="f-detail clearfix">
                                 {!! $term->description !!}
                             </div><!-- End .f-detail -->
@@ -24,7 +23,7 @@
                         <div class="main_ct">
                             <div class="row">
                                 @foreach($term->products as $product)
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                                         <a href="{{ route('homepage.product.show', [ $product->slug]) }}" class="tile-product">
                                             <div class="inner_prod">
                                                 <figure>

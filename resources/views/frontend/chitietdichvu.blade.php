@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article>
-                        <div class="title_ct mb-4">
+                        <div class="title-page">
                             <span>Dịch vụ</span>
                         </div>
                         <h1 class="title_D">{{ $dichvu->name }}</h1>

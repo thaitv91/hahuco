@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article>
-                        <div class="title_ct mb-4">
+                        <div class="title-page">
                             <span>Tin tức</span>
                         </div>
                         <h1 class="title_D">{{ $new->name }}</h1>

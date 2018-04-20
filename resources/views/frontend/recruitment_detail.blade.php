@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article>
-                        <div class="title_ct mb-4">
+                        <div class="title-page">
                             <span>Tuyển dụng</span>
                         </div>
                         <h1 class="title_D">{{ $recruitment->title }}</h1>

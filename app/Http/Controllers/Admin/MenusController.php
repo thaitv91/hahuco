@@ -50,7 +50,7 @@ class MenusController extends Controller
 
 	public function render2($menuItems, $html) {
 		foreach ($menuItems as $key => $item) {
-			$html .= '<li id="'.$item->id.'"><div><span id="item_name_'.$item->id.'">'.$item->name.($item->status?'':' <i>(Hiden)</i> ').'</span><span id="item_link_'.$item->id.'"> - ('.$item->link.')</span><a href = "'.route('menu_manager.detailMenuItem', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-danger btn-xs remove-menu-item">Remove</a><a href = "'.route('menu_manager.detailMenuItem', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-warning btn-xs edit-menu-item">Edit</a></div>';
+			$html .= '<li id="'.$item->id.'"><div><span id="item_name_'.$item->id.'">'.$item->name.($item->status?'':' <i>(Hiden)</i> ').'</span><a href = "'.route('menu_manager.detailMenuItem', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-danger btn-xs remove-menu-item">Remove</a><a href = "'.route('menu_manager.detailMenuItem', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-warning btn-xs edit-menu-item">Edit</a></div>';
 
 			if ($item->hasChildren()) {
 				$html .= '<ul>'.$this->render2($item->children, '').'</ul>';
@@ -60,6 +60,29 @@ class MenusController extends Controller
 		}
 
 		return $html;
+
+	}
+
+	public function createMenuItem(Request $request) {
+		if (!$request->name) {
+			return 0;
+		}
+
+		$menuItem = new MenuItem;
+		$menuItem->menu_id = $request->menu_id;
+		$menuItem->name = $request->name;
+		$menuItem->status = 1;
+		$menuItem->order = 999;
+		$menuItem->link = $request->link;
+		if($menuItem->save()) {
+			Session::flash('message', "Tạo item thành công");
+			return Redirect::back();
+		}
+
+		Session::flash('error', "Tạo item không thành công");
+		return Redirect::back();
+		//$menuItem->detailMenuItemUrl = route('menu_manager.detailMenuItem', ['menu_item_id'=>$menuItem->id]);
+
 
 	}
 }

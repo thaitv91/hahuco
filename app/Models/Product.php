@@ -35,14 +35,8 @@ class Product extends Model
         return [
             'title'                     => $this->title,
             'slug'                      => $this->slug,
+            'short_description'            =>  $this->short_description,
             'mo_ta_san_pham'            =>  $this->mo_ta_san_pham,
-            'doi_tuong_bao_hiem'        =>  $this->doi_tuong_bao_hiem,
-            'pham_vi_bao_hiem'          =>  $this->pham_vi_bao_hiem,
-            'doi_tuong_kh'      =>  $this->doi_tuong_kh,
-            'ho_so'                     =>  $this->ho_so,
-            'thong_tin'                 =>  $this->thong_tin,
-            'hotline'                  =>  $this->hotline,
-            'quyen_loi_bao_hiem'        =>  $this->quyen_loi_bao_hiem
         ];
     }
 

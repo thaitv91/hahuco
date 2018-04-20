@@ -24,9 +24,9 @@ class ContactController extends Controller
     	$contact->status = 0;
     	$contact->save();
 
-        $this->sendMail($contact->email);
+        //$this->sendMail($contact->email);
 
-    	\Session::flash('success', 'Your contact was sent successfully');
+    	\Session::flash('success', 'Cảm ơn bạn đã Liên hệ với chúng tôi');
 
     	return \Redirect::back();
     }

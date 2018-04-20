@@ -1,15 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('content')
     <div class="page-inner">
+        
         <div class="container">
-                <div class="news-box">
-                <div class="header-box">
-                    <h2 class="text-link text-uppercase text-center">Kết quả tìm kiếm</h2>
+
+                <div class="search-form-page mb-4">
+                    <form action="{{ route('search') }}" id="form-search">
+                        <input type="text" placeholder="Từ khóa tìm kiếm..!" name="keyword" class="form-control">
+                        <button class="btn_s" type="submit"><i class="ico-search"></i></button>
+                    </form>
                 </div>
                 <div class="news-box">
-                    <div class="header-box d-flex justify-content-between align-items-center">
-                        <h2 class="text-link text-uppercase">Tin tức ({{ $result_News->total() }})</h2>
+                <!-- <div class="header-box">
+                    <h2 class="title-page">Kết quả tìm kiếm</h2>
+                </div> -->
+                <div class="news-box">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="title-page">Tin tức ({{ $result_News->total() }})</h2>
                     </div>
                 </div>
                 <div class="row" id="list-news">
@@ -44,8 +52,8 @@
                  </div>
                 @endif
                 <div class="news-box">
-                    <div class="header-box d-flex justify-content-between align-items-center">
-                        <h2 class="text-link text-uppercase">Sản phẩm ({{ $result_Products->total() }})</h2>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="title-page">Sản phẩm ({{ $result_Products->total() }})</h2>
                     </div>
                 </div>
                 <div class="row" id="list-product">
@@ -63,7 +71,9 @@
                                         {{ $product->title }}
                                     </a>
                                 </h4>
-
+                                <div class="description">
+                                    {!! $product->short_description !!}
+                                </div>
                             </div>
                         </div><!-- /.tile-news -->
                     </div>

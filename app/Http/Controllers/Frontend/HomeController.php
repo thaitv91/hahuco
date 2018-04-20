@@ -50,7 +50,8 @@ class HomeController extends Controller
 		return view('frontend.ketquatimkiem')->with([
 			'keyword'			=>	$keyword,
 			'result_News'		=>	$result_News,
-			'result_Products'	=>	$result_Products
+			'result_Products'	=>	$result_Products,
+			'title' => "Tìm kiếm"
 		]);
 	}
 

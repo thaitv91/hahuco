@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article>
-                        <div class="title_ct"><span>{{ $product->title }}</span></div><!-- End .title_ct -->
+                        <div class="title-page"><span>{{ $product->title }}</span></div><!-- End .title_ct -->
 
                         <div class="info_prod_D">
                             <div class="ipD_l">

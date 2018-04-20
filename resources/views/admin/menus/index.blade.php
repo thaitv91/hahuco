@@ -55,54 +55,54 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading bg-red" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a class="d-block text-white" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Trang
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <ul class="list-check">
-                                        @foreach($pages as $page)
-                                        <li>
-                                            <input type="checkbox" id="menu-{{ $page->id }}"/>
-                                            <input type="hidden" name="menu-item[{{ $page->id }}][title]" value="{{ $page->title }}">
-                                            <input type="hidden" name="menu-item[{{ $page->id }}][url]" value="/{{ $page->slug }}">
-                                            <label for="menu-{{ $page->id }}">{{ $page->title }}</label>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                    <button class="btn btn-block btn-primary">Add</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading bg-green" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed d-block text-white" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Chuyên mục sản phẩm
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <ul class="list-check">
-                                        @foreach($terms as $term)
-                                            <li>
-                                                <input type="checkbox" id="menu-{{ $term->id }}"/>
-                                                <input type="hidden" name="menu-item[{{ $term->id }}][title]" value="{{ $term->name }}">
-                                                <input type="hidden" name="menu-item[{{ $term->id }}][url]" value="/{{ $term->slug }}">
-                                                <label for="menu-{{ $term->id }}">{{ $term->name }}</label>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                    <button class="btn btn-block btn-primary">Add</button>
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="panel panel-default">--}}
+                            {{--<div class="panel-heading bg-red" role="tab" id="headingOne">--}}
+                                {{--<h4 class="panel-title">--}}
+                                    {{--<a class="d-block text-white" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">--}}
+                                        {{--Trang--}}
+                                    {{--</a>--}}
+                                {{--</h4>--}}
+                            {{--</div>--}}
+                            {{--<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">--}}
+                                {{--<div class="panel-body">--}}
+                                    {{--<ul class="list-check">--}}
+                                        {{--@foreach($pages as $page)--}}
+                                        {{--<li>--}}
+                                            {{--<input type="checkbox" id="menu-{{ $page->id }}"/>--}}
+                                            {{--<input type="hidden" name="menu-item[{{ $page->id }}][title]" value="{{ $page->title }}">--}}
+                                            {{--<input type="hidden" name="menu-item[{{ $page->id }}][url]" value="/{{ $page->slug }}">--}}
+                                            {{--<label for="menu-{{ $page->id }}">{{ $page->title }}</label>--}}
+                                        {{--</li>--}}
+                                        {{--@endforeach--}}
+                                    {{--</ul>--}}
+                                    {{--<button class="btn btn-block btn-primary">Add</button>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="panel panel-default">--}}
+                            {{--<div class="panel-heading bg-green" role="tab" id="headingTwo">--}}
+                                {{--<h4 class="panel-title">--}}
+                                    {{--<a class="collapsed d-block text-white" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">--}}
+                                        {{--Chuyên mục sản phẩm--}}
+                                    {{--</a>--}}
+                                {{--</h4>--}}
+                            {{--</div>--}}
+                            {{--<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">--}}
+                                {{--<div class="panel-body">--}}
+                                    {{--<ul class="list-check">--}}
+                                        {{--@foreach($terms as $term)--}}
+                                            {{--<li>--}}
+                                                {{--<input type="checkbox" id="menu-{{ $term->id }}"/>--}}
+                                                {{--<input type="hidden" name="menu-item[{{ $term->id }}][title]" value="{{ $term->name }}">--}}
+                                                {{--<input type="hidden" name="menu-item[{{ $term->id }}][url]" value="/{{ $term->slug }}">--}}
+                                                {{--<label for="menu-{{ $term->id }}">{{ $term->name }}</label>--}}
+                                            {{--</li>--}}
+                                        {{--@endforeach--}}
+                                    {{--</ul>--}}
+                                    {{--<button class="btn btn-block btn-primary">Add</button>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         <div class="panel panel-default">
                             <div class="panel-heading bg-aqua" role="tab" id="headingThree">
                                 <h4 class="panel-title">
@@ -113,16 +113,17 @@
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Liên kết 1" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Liên kết 2" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Liên kết 3" />
-                                    </div>
-                                    <button class="btn btn-block btn-primary">Add</button>
+                                    <form action="{{ route('admin.menu.createItem') }}" method="POST">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="menu_id" value="{{ $menu->id }}">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Tiêu đề" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="link" class="form-control" placeholder="Đường dẫn" />
+                                        </div>
+                                        <button class="btn btn-block btn-primary">Tạo Item</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

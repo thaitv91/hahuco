@@ -58,51 +58,52 @@
                 @endif
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">TRANG CHỦ</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/gioi-thieu">
-                                GIỚI THIỆU
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a href="gioi-thieu/gia-tri-cot-loi/index.html" class="dropdown-item">Giá trị cốt lõi</a>
-                                </li>
-                                <li>
-                                    <a href="gioi-thieu/chinh-sach-chat-luong/index.html" class="dropdown-item">Chính sách chất lượng</a>
-                                </li>
-                                <li>
-                                    <a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html" class="dropdown-item">Giới thiệu về kim loại tấm Intech</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/san-pham/">
-                                Sản phẩm
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a></li>
-                                <li><a class="dropdown-item" href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a>
-                                </li>
-                                <li><a class="dropdown-item" href="gia-cong-cat-laser/index.html">Gia công cắt laser</a></li>
-                                <li><a class="dropdown-item" href="gia-ke-gia-ke-kho-hang/index.html">Giá kệ, giá kệ kho hàng</a></li>
-                                <li><a class="dropdown-item" href="xe-day-xe-day-hang/index.html">Xe đẩy, xe đẩy hàng</a></li>
-                                <li><a class="dropdown-item" href="ban-thao-tac-ban-inox/index.html">Bàn thao tác, Bàn Inox</a></li>
-                                <li><a class="dropdown-item" href="thang-mang-cap-dien/index.html">Thang máng cáp điện</a></li>
-                                <li><a class="dropdown-item" href="dot-dap-hang-loat/index.html">Đột dập hàng loạt</a></li>
-                                <li><a class="dropdown-item" href="tu-dung-dung-cu/index.html">Tủ đựng dụng cụ</a></li>
-                                <li><a class="dropdown-item" href="tu-phong-sach/index.html">Tủ phòng sạch</a></li>
-                                <li><a class="dropdown-item" href="ban-an-cong-nghiep/index.html">Bàn ăn công nghiệp</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="/dich-vu">Dịch vụ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/catalog">Catalogue</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/tin-tuc">Tin tức</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/tuyen-dung">Tuyển Dụng</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/lien-he">Liên hệ</a></li>
-                    </ul>
+                    {{--<ul class="navbar-nav ml-auto">--}}
+                        {{--<li class="nav-item active">--}}
+                            {{--<a class="nav-link" href="/">TRANG CHỦ</span></a>--}}
+                        {{--</li>--}}
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a class="nav-link dropdown-toggle" href="/gioi-thieu">--}}
+                                {{--GIỚI THIỆU--}}
+                            {{--</a>--}}
+                            {{--<ul class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<li>--}}
+                                    {{--<a href="gioi-thieu/gia-tri-cot-loi/index.html" class="dropdown-item">Giá trị cốt lõi</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="gioi-thieu/chinh-sach-chat-luong/index.html" class="dropdown-item">Chính sách chất lượng</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html" class="dropdown-item">Giới thiệu về kim loại tấm Intech</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="nav-item dropdown">--}}
+                            {{--<a class="nav-link dropdown-toggle" href="/san-pham/">--}}
+                                {{--Sản phẩm--}}
+                            {{--</a>--}}
+                            {{--<ul class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                                {{--<li><a class="dropdown-item" href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a>--}}
+                                {{--</li>--}}
+                                {{--<li><a class="dropdown-item" href="gia-cong-cat-laser/index.html">Gia công cắt laser</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="gia-ke-gia-ke-kho-hang/index.html">Giá kệ, giá kệ kho hàng</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="xe-day-xe-day-hang/index.html">Xe đẩy, xe đẩy hàng</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="ban-thao-tac-ban-inox/index.html">Bàn thao tác, Bàn Inox</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="thang-mang-cap-dien/index.html">Thang máng cáp điện</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="dot-dap-hang-loat/index.html">Đột dập hàng loạt</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="tu-dung-dung-cu/index.html">Tủ đựng dụng cụ</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="tu-phong-sach/index.html">Tủ phòng sạch</a></li>--}}
+                                {{--<li><a class="dropdown-item" href="ban-an-cong-nghiep/index.html">Bàn ăn công nghiệp</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="nav-item"><a class="nav-link" href="/dich-vu">Dịch vụ</a></li>--}}
+                        {{--<li class="nav-item"><a class="nav-link" href="/catalog">Catalogue</a></li>--}}
+                        {{--<li class="nav-item"><a class="nav-link" href="/tin-tuc">Tin tức</a></li>--}}
+                        {{--<li class="nav-item"><a class="nav-link" href="/tuyen-dung">Tuyển Dụng</a></li>--}}
+                        {{--<li class="nav-item"><a class="nav-link" href="/lien-he">Liên hệ</a></li>--}}
+                    {{--</ul>--}}
+                    {{ MenuManager::getMenu('Header Menu', 'navbar-nav ml-auto', 'nav-item', 'nav-link') }}
                 </div>
 
                 <div class="search-header dropdown">
@@ -111,8 +112,8 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <div class="inner">
-                            <form action="http://kimloaitamintech.com/xu-ly.htm" method="post">
-                                <input type="text" placeholder="Từ khóa tìm kiếm..!" name="search_tukhoa" class="form-control">
+                            <form action="{{ route('search') }}" id="form-search">
+                                <input type="text" placeholder="Từ khóa tìm kiếm..!" name="keyword" class="form-control">
                                 <button class="btn_s" type="submit"><i class="ico-search"></i></button>
                             </form>
                         </div>
@@ -177,143 +178,143 @@
 
 <div class="hotline-fixed"><div><i class="ico-phone"></i><a href="tel:{{ $hotline1 }}"> Hotline: {{ $hotline1 }}</a></div></div>
 
-<div class="menu_mobile" style="visibility: hidden;">
+{{--<div class="menu_mobile" style="visibility: hidden;">--}}
 
-    <span class="close_menu_mobile"></span>
+    {{--<span class="close_menu_mobile"></span>--}}
 
-    <div class="menu_accordion">
+    {{--<div class="menu_accordion">--}}
 
-        <ul class="ul_ma_1">
+        {{--<ul class="ul_ma_1">--}}
 
-            <li class="active"><a href="/">Trang chủ</a></li>
+            {{--<li class="active"><a href="/">Trang chủ</a></li>--}}
 
-            <li>
-                <a href="gioi-thieu/index.html">Giới Thiệu</a>
-                <i class="arrown_menu_accordion" val="sub_ac_87"></i>
-                <ul class="ul_ma_2" id="sub_ac_87" style="display:none;">
-                    <li><a href="gioi-thieu/gia-tri-cot-loi/index.html">Giá trị cốt lõi</a></li>
-                    <li><a href="gioi-thieu/chinh-sach-chat-luong/index.html">Chính sách chất lượng</a></li>
-                    <li><a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html">Giới thiệu về kim loại tấm Intech</a></li>
-                </ul><!-- End .ul_ma_2 -->
-            </li>
+            {{--<li>--}}
+                {{--<a href="gioi-thieu/index.html">Giới Thiệu</a>--}}
+                {{--<i class="arrown_menu_accordion" val="sub_ac_87"></i>--}}
+                {{--<ul class="ul_ma_2" id="sub_ac_87" style="display:none;">--}}
+                    {{--<li><a href="gioi-thieu/gia-tri-cot-loi/index.html">Giá trị cốt lõi</a></li>--}}
+                    {{--<li><a href="gioi-thieu/chinh-sach-chat-luong/index.html">Chính sách chất lượng</a></li>--}}
+                    {{--<li><a href="gioi-thieu/gioi-thieu-ve-kim-loai-tam-intech/index.html">Giới thiệu về kim loại tấm Intech</a></li>--}}
+                {{--</ul><!-- End .ul_ma_2 -->--}}
+            {{--</li>--}}
 
-            <li>
-                <a href="san-pham/index.html">Sản phẩm</a>
-                <i class="arrown_menu_accordion" val="sub_ac_78"></i>
+            {{--<li>--}}
+                {{--<a href="san-pham/index.html">Sản phẩm</a>--}}
+                {{--<i class="arrown_menu_accordion" val="sub_ac_78"></i>--}}
 
-                <ul class="ul_ma_2" id="sub_ac_78" style="display:none;">
-                    <li>
+                {{--<ul class="ul_ma_2" id="sub_ac_78" style="display:none;">--}}
+                    {{--<li>--}}
 
-                        <a href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a>
+                        {{--<a href="gia-cong-dot-cnc/index.html">Gia công đột CNC</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a>
+                        {{--<a href="gia-cong-chan-gap-cnc/index.html">Gia công chấn gấp CNC</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="gia-cong-cat-laser/index.html">Gia công cắt laser</a>
+                        {{--<a href="gia-cong-cat-laser/index.html">Gia công cắt laser</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="gia-ke-gia-ke-kho-hang/index.html">Giá kệ, giá kệ kho hàng</a>
+                        {{--<a href="gia-ke-gia-ke-kho-hang/index.html">Giá kệ, giá kệ kho hàng</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="xe-day-xe-day-hang/index.html">Xe đẩy, xe đẩy hàng</a>
+                        {{--<a href="xe-day-xe-day-hang/index.html">Xe đẩy, xe đẩy hàng</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="ban-thao-tac-ban-inox/index.html">Bàn thao tác, Bàn Inox</a>
+                        {{--<a href="ban-thao-tac-ban-inox/index.html">Bàn thao tác, Bàn Inox</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="thang-mang-cap-dien/index.html">Thang máng cáp điện</a>
+                        {{--<a href="thang-mang-cap-dien/index.html">Thang máng cáp điện</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="dot-dap-hang-loat/index.html">Đột dập hàng loạt</a>
+                        {{--<a href="dot-dap-hang-loat/index.html">Đột dập hàng loạt</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="tu-dung-dung-cu/index.html">Tủ đựng dụng cụ</a>
+                        {{--<a href="tu-dung-dung-cu/index.html">Tủ đựng dụng cụ</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="tu-phong-sach/index.html">Tủ phòng sạch</a>
+                        {{--<a href="tu-phong-sach/index.html">Tủ phòng sạch</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="ban-an-cong-nghiep/index.html">Bàn ăn công nghiệp</a>
+                        {{--<a href="ban-an-cong-nghiep/index.html">Bàn ăn công nghiệp</a>--}}
 
 
-                    </li>
+                    {{--</li>--}}
 
 
-                    <li>
+                    {{--<li>--}}
 
-                        <a href="cnc/index.html">CNC</a>
+                        {{--<a href="cnc/index.html">CNC</a>--}}
 
 
-                    </li>
-                </ul><!-- End .ul_ma_2 -->
-            </li>
+                    {{--</li>--}}
+                {{--</ul><!-- End .ul_ma_2 -->--}}
+            {{--</li>--}}
 
-            <li><a href="dich-vu/index.html">Dịch vụ</a></li>
+            {{--<li><a href="dich-vu/index.html">Dịch vụ</a></li>--}}
 
-            <li><a href="catalogue/index.html">Catalogue</a></li>
+            {{--<li><a href="catalogue/index.html">Catalogue</a></li>--}}
 
-            <li><a href="tin-tuc/index.html">Tin tức</a></li>
+            {{--<li><a href="tin-tuc/index.html">Tin tức</a></li>--}}
 
-            <li><a href="tuyen-dung/index.html">Tuyển Dụng</a></li>
+            {{--<li><a href="tuyen-dung/index.html">Tuyển Dụng</a></li>--}}
 
-            <li class="active"><a href="lien-he/index.html">Liên hệ</a></li>
+            {{--<li class="active"><a href="lien-he/index.html">Liên hệ</a></li>--}}
 
-        </ul><!-- End .ul_ma_1 -->
+        {{--</ul><!-- End .ul_ma_1 -->--}}
 
-    </div><!-- End .menu_accordion -->
+    {{--</div><!-- End .menu_accordion -->--}}
 
-</div><!-- End .menu_mobile -->
+{{--</div><!-- End .menu_mobile -->--}}
 
 <script>
 

@@ -11,9 +11,11 @@
         <div class="row">
             <div class="col-lg-9">
                 <article class="single-article">
+                    @if($page->thumbnail)
                     <figure class="img">
                         <img src="{{ $page->thumbnail }}" alt="Image">
                     </figure>
+                    @endif
                     <h2 class="title-page">
                         <span>{!! $page->title !!}</span>
                     </h2>
@@ -25,9 +27,10 @@
             <div class="col-lg-3 order-lg-first">
                 <div class="nav-sidebar">
                     <ul class="list-unstyled">
-                        <li><a href="#">Giá trị cốt lõi</a></li>
-                        <li><a href="#">Chính sách chất lượng</a></li>
-                        <li><a href="#">Giới thiệu về kim loại tấm Intech</a></li>
+                        <?php $pages = \PackagePage\Pages\Models\Pages::where('page_categoryid' , '=', 2)->get()?>
+                        @foreach($pages as $page)
+                            <li><a href="{{ route('user.pages.index', $page->slug) }}">{{ $page->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div><!-- /.nav-sidebar-->
             </div>

@@ -7,7 +7,7 @@
 
         <div class="row">
             @foreach($news as $new)
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="tile-news">
                     <div class="img effect-img">
                         <a href="{{ route('homepage.news.show', $new->slug) }}"><img src="{{ $new->thumbnail }}" alt="" onerror="this.src='/hahuco/images/img-default.jpg';" /></a>

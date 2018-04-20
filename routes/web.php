@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::group(['prefix' => 'menu'], function () {
 		//Route::get('/', 'Admin\MenusController@index')->name('admin.menu.index');
 		Route::get('{id}', 'Admin\MenusController@index')->name('admin.menu.index');
+		Route::post('/create-item', 'Admin\MenusController@createMenuItem')->name('admin.menu.createItem');
 	});
 
     Route::group(['prefix' => 'user'], function () {
