@@ -11,9 +11,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <article>
-                        <div class="title-page">
+                    <article class="format-editor">
+                        <div class="title_ct mb-4">
                             <span>Dịch vụ</span>
+                            {!!  Share::currentPage()->facebook()->twitter()->googlePlus()  !!}
                         </div>
                         <h1 class="title_D">{{ $dichvu->name }}</h1>
                         {!! $dichvu->content !!}

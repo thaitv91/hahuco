@@ -1,0 +1,40 @@
+.contact-us{
+  margin-bottom: 180px;
+  padding-top:20px;
+  .desc{
+    margin-bottom: 25px;
+  }
+  h4{
+    margin-bottom: 20px;
+  }
+  .form{
+
+    .form-control{
+      border:1px solid #dedede;
+      @include border-radius(0);
+      background-color: #f8f8f8;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      &:focus{
+        border-color: $color-link;
+        @include box-shadow(none);
+      }
+    }
+    textarea{
+      height: 200px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .btn-primary{
+      background-color:$color-link;
+      padding: 10px 20px;
+      min-width: 150px;
+      &:hover, &:focus{
+        background-color:darken($color-link,10%);
+      }
+    }
+    .form-group{
+      margin-bottom: 20px;
+    }
+  }
+}

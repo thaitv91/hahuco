@@ -1,7 +1,7 @@
 <section class="product-highlights space-global">
     <div class="container">
         <div class="header-box text-center">
-            <div class="group">Hahuco</div>
+            <!-- <div class="group">Hahuco</div> -->
             <h2>Sản phẩm nổi bật</h2>
         </div>
 
@@ -16,6 +16,9 @@
                             <div class="mask_img"><i>Xem chi tiết</i></div>
                         </figure>
                         <h3><p>{{ $product->title }}</p></h3>
+                        <div class="rating">
+                            <div class="ratebox" data-id="1" data-rating="{!! $product->getRated() !!}"></div>
+                        </div>
                         <div class="desc">{{ $product->short_description }}</div>
                     </div><!-- End .inner_prod -->
                 </a>

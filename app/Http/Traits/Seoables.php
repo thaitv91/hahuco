@@ -55,11 +55,18 @@ trait Seoables
 		                               ->where('seoable_id', '=', $this->id)
 		                               ->first();
 		$image = $image == '' ? $this->thumbnail : $image;
-		if($seoable) {
-			SEO::setTitle($seoable->seoable_title);
-			SEO::setDescription($seoable->seoable_description);
-			SEO::opengraph()->addProperty('type', 'content');
-			SEO::opengraph()->addImage('/'. $image);
+		if(isset($this->title)) {
+			$title = $this->title;
+		} else {
+			$title = $this->name;
 		}
+		$seotitle = $seoable ? $seoable->seoable_title : $title;
+		$seodes = $seoable ? $seoable->seoable_description : $this->excerpt;
+
+		SEO::setTitle($seotitle);
+		SEO::setDescription($seodes);
+		SEO::opengraph()->addProperty('type', 'content');
+		SEO::opengraph()->addProperty('description', $seodes);
+		SEO::opengraph()->addImage( env('APP_URL') . '/'. $image);
 	}
 }

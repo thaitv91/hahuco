@@ -11,6 +11,9 @@
                             <div class="mask_img"><i>Xem chi tiết</i></div>
                         </figure>
                         <h3><p>{{ $product->title }}</p></h3>
+                        <div class="rating">
+                            <div class="ratebox" data-id="1" data-rating="{!! $product->getRated() !!}"></div>
+                        </div>
                         <div class="dotdotdot desc">{{ $product->short_description }}</div>
                     </div><!-- End .inner_prod -->
                 </a>

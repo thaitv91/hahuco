@@ -34,7 +34,7 @@
     <section class="video-gallery  space-global">
         <div class="container">
             <div class="header-box text-center">
-                <div class="group">Hahuco</div>
+                <!-- <div class="group">Hahuco</div> -->
                 <h2>Thư viện video</h2>
             </div>
 
@@ -59,98 +59,24 @@
                     <div class="col-lg-7 mb-4 mb-lg-0">
                         <div class="video" id="video_show"></div>
                     </div>
+                    <?php
+                        $videos = \App\Models\Video::all();
+                        $count = 0;
+                    ?>
                     <div class="col-lg-5">
                         <div class="list_video">
                             <div class="slide-video dots-link">
-                                <div class="a_video" id="a_video1" val_id="1" val_link="http://www.youtube.com/embed/zB4HksXlhAI">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/0.jpg">
-                                        </div>
-                                        Gia công chấn gấp cnc Intech Việt Nam                        
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video2" val_id="2" val_link="http://www.youtube.com/embed/ziXz_R54ijQ">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/1.jpg">
-                                        </div>
-                                        Gia công đột dập CNC                        
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video3" val_id="3" val_link="http://www.youtube.com/embed/6HAX73CLGKA">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/2.jpg">
-                                        </div>
-                                        Gia công chấn gấp CNC                        
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video4" val_id="4" val_link="http://www.youtube.com/embed/be38W5SB1Ek">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/3.jpg">
-                                        </div>
-                                        Gia công cắt Laser                       
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video5" val_id="5" val_link="http://www.youtube.com/embed/yydVXWIzZqQ">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/4.jpg">
-                                        </div>
-                                        Intech Việt Nam - 5 năm một chặng đường                       
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video6" val_id="6" val_link="http://www.youtube.com/embed/2JVKWMSs5h0">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/5.jpg">
-                                        </div>
-                                        Kỷ niệm 5 năm thành lập Intech Việt Nam!                        
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video7" val_id="7" val_link="http://www.youtube.com/embed/u7O9AinKhi0">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/6.jpg">
-                                        </div>
-                                        Gia công cắt Laser trên thép, inox                        
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video8" val_id="8" val_link="http://www.youtube.com/embed/HBelvkEZmg4">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/7.jpg">
-                                        </div>
-                                        Tiệc tất niên 2017 Intech Việt Nam                       
-                                    </a>
-                                </div>
-
-                                <div class="a_video" id="a_video9" val_id="9" val_link="http://www.youtube.com/embed/gKPAk7EM8lg">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/8.jpg">
-                                        </div>
-                                        Gia công căt laser trên inox                        
-                                    </a>
-                                </div>
-
-                                <li class="a_video" id="a_video10" val_id="10" val_link="http://www.youtube.com/embed/w-zQm74MR2U">
-                                    <a href="JavaScript:void(0);">
-                                        <div class="img">
-                                            <img src="hahuco/images/video/9.jpg">
-                                        </div>
-                                        Gia công chấn gấp kim loại tấm                        
-                                    </a>
-                                </div>
+                                @foreach($videos as $video)
+		                            <?php $count++; ?>
+                                    <div class="a_video" id="a_video{{ $count }}" val_id="{{ $count }}" val_link="{{ $video->video }}">
+                                        <a href="JavaScript:void(0);">
+                                            <div class="img">
+                                                <img src="/{{ $video->thumbnail }}">
+                                            </div>
+                                            {{ $video->title }}
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
                         </div><!-- End .list_video -->
                     </div>
@@ -182,9 +108,20 @@
                 zoom: 15,
                 center: uluru
             });
+
+            var contentString = "{!!  $mapdes !!}";
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
             var marker = new google.maps.Marker({
                 position: uluru,
                 map: map
+            });
+
+            google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
+                infowindow.open(map, marker);
             });
         }
     </script>

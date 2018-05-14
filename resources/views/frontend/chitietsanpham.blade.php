@@ -13,7 +13,10 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article>
-                        <div class="title-page"><span>{{ $product->title }}</span></div><!-- End .title_ct -->
+                        <div class="title_ct mb-4">
+                            <span>{{ $product->title }}</span>
+                            {!!  Share::currentPage()->facebook()->twitter()->googlePlus()  !!}
+                        </div><!-- End .title_ct -->
 
                         <div class="info_prod_D">
                             <div class="ipD_l">
@@ -32,6 +35,9 @@
                                 </ul><!-- End .list_prod_D -->
 
                                 <p class="tt_prod">{{ $product->short_description }}</p>
+                                <div class="rating">
+                                    <div class="ratebox" data-id="1" data-rating="{!! $product->getRated(); !!}"></div>
+                                </div>
                             </div><!-- End .ipD_r -->
                         </div><!-- End .info_prod_D -->
 
@@ -47,6 +53,8 @@
                             <a target="_self" href="{{ route('homepage.product.tags', $tag->slug) }}">{{ $tag->name }}</a>
                             @endforeach
                         </div><!-- End .tag -->
+
+                        <div class="fb-comments" data-href="{{ Request::url() }}" data-width="100%" data-numposts="5"></div>
 
                         <div class="block_ct" style="margin-top: 20px;">
                             <div class="title_ct">
@@ -73,5 +81,26 @@
         $(document).ready(function(){
             $(".group1").colorbox({rel:'group1', maxWidth:"90%", maxHeight:"90%"});
         });
+        function rateAlert(id, rating) {
+            //alert( 'Rating for '+id+' is '+rating+' stars!' );
+
+
+            var url = '/admin/rating/product';
+            var formData = new FormData();
+            formData.append('rate', rating);
+            formData.append('product_id', {{ $product->id }});
+
+            $.ajax({
+                type        : 'POST',
+                url         : url,
+                data        : formData,
+                processData: false,
+                contentType: false
+            })
+                .done(function(status) {
+                    console.log(status);
+                    toastr.success("Cảm ơn bạn đã đánh giá sản phẩm của chúng tôi!");
+                });
+        }
     </script>
 @endsection

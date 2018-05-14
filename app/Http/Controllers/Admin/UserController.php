@@ -25,19 +25,22 @@ class UserController extends Controller
 
    	public function index(){
    		$users = $this->user->get(['id','username','email','isadmin']);
-        return view('admin.users.index',compact('users'));
+   		$title = "Quản lý người dùng";
+        return view('admin.users.index',compact('users', 'title'));
    	}
 
    	public function edit($id)
     {
         //
         $user = $this->user->where('id',$id)->get(['id','username','email','isadmin'])->first();
-        // dd($user->getUserInfo()->toSql());
+
         $user_detail = $user->getUserInfo()->first();
-        if (!count($user_detail)) {
+        if ($user_detail->count()) {
             $this->user_meta->create(['userid'=>$user->id]);
         }
-        return view('admin.users.edit',compact('user'));
+
+	    $title = "Người dùng: " . $user->username;
+        return view('admin.users.edit',compact('user', 'title'));
     }
 
 

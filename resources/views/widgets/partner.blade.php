@@ -1,8 +1,7 @@
 <section class="partners section-img">
     <div class="container">
         <div class="header-box text-center">
-            <div class="group">CÁC Đối tác của</div>
-            <h2>Hahuco</h2>
+            <h2>Các đối tác của Chúng tôi</h2>
         </div>
         <div class="slider-partners arrows-gray">
             @foreach($partners as $partner)

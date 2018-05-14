@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @if(isset($title))
             {{ $title }}
         @else
-            VietinBank Insurance
+            Admin - Backend Manger
         @endif
     </title>
     <!-- Tell the browser to be responsive to screen width -->
@@ -186,6 +186,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="">
                     <a href="{{ route('menu_manager') }} ">
                         <i class="fa fa-reorder"></i><span>@lang('admin/sidebar.menu_manager')</span>
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="{{ route('admin.video.index') }} ">
+                        <i class="fa fa-youtube" aria-hidden="true"></i><span>Video</span>
                     </a>
                 </li>
 
@@ -391,7 +397,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script type="text/javascript" src="/js/bootstrap-tagsinput.js"></script>
 <script type='text/javascript' src='{{ url('js/highcharts/loader.js') }}'></script>
 <script src="/packages/menu-manager/js/jquery-sortable-lists.js"></script>
-
+<script>
+    @if ( Session::has('success'))
+    toastr.success('{{ session('success')}}');
+    @endif
+    @if ( Session::has('error'))
+    toastr.error('{{ session('error')}}');
+    @endif
+</script>
 <script>
     $.ajaxSetup({
         headers: {
@@ -415,7 +428,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             'table'
         ],
 
-        toolbar: 'undo redo | insert | styleselect fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code | table',
+        toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code | table',
         content_css: [
             // '//fonts.googleapis.com/css?family=Arial',
             // '//www.tinymce.com/css/codepen.min.css'
@@ -423,8 +436,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         setup : function(ed)
         {
             ed.on('init', function (ed) {
-                ed.target.editorCommands.execCommand("fontName", false, "Arial");
-                $('form *:input[type!=hidden]:first').focus();
+                // ed.target.editorCommands.execCommand("fontName", false, "Arial");
+                // $('form *:input[type!=hidden]:first').focus();
             });
         },
         // without images_upload_url set, Upload tab won't show up
@@ -462,14 +475,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             xhr.send(formData);
         },
     });
-
-
-    @if ( Session::has('success'))
-    toastr.success('{{ session('success')}}');
-    @endif
-    @if ( Session::has('error'))  
-    toastr.error('{{ session('error')}}');  
-    @endif
 
     // Preview Image
     function readURL(input, id) {

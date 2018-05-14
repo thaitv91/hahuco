@@ -32,6 +32,15 @@ Route::group(['prefix' => 'admin'], function () {
 		Route::post('/create-item', 'Admin\MenusController@createMenuItem')->name('admin.menu.createItem');
 	});
 
+	Route::group(['prefix' => 'video'], function () {
+		Route::get('/', 'Admin\VideoController@index')->name('admin.video.index');
+		Route::get('/edit/{id}', 'Admin\VideoController@edit')->name('admin.video.edit');
+		Route::get('/create', 'Admin\VideoController@create')->name('admin.video.create');
+		Route::post('/create', 'Admin\VideoController@store')->name('admin.video.store');
+		Route::post('/delete', 'Admin\VideoController@destroy')->name('admin.video.delete');
+		Route::post('/edit/{id}', 'Admin\VideoController@update')->name('admin.video.update');
+	});
+
     Route::group(['prefix' => 'user'], function () {
         Route::get('/', 'Admin\UserController@index')->name('admin.user');
         Route::get('edit/{id?}', 'Admin\UserController@edit')->name('admin.user.edit');
@@ -39,6 +48,12 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('delete/{id}', 'Admin\UserController@destroy')->name('admin.user.delete');
         Route::get('get-url-delete', 'Admin\UserController@getUrlDelete')->name('admin.user.getUrlDelete');
     });
+
+	Route::group(['prefix' => 'rating'], function () {
+		//Route::get('/', 'Admin\RatingController@index')->name('rating.index');
+		Route::post('/product', 'Admin\RatingController@postRate')->name('rating.rate');
+
+	});
 
     Route::group(['prefix'=>'product'], function() {
         Route::group(['prefix'=>''], function() {
@@ -314,9 +329,6 @@ Route::get('/changeButton/detail-local', 'User\NetWorkController@detailLocal')->
 Route::get('search', 'Frontend\HomeController@search')->name('search');
 Route::get('search-news/{keyword}', 'Frontend\HomeController@searchNews')->name('searchNews');
 Route::get('search-products/{keyword}', 'Frontend\HomeController@searchProducts')->name('searchProducts');
-Route::get('location', function () {
-	return view('example');
-});
 
 Route::group(['prefix' => 'tuyen-dung', 'as' => 'recruitment.', 'namespace' => 'Frontend'], function() {
     Route::get('search', 'RecruitmentController@search')->name('search');
@@ -326,11 +338,6 @@ Route::group(['prefix' => 'tuyen-dung', 'as' => 'recruitment.', 'namespace' => '
 });
 Route::get('refresh_captcha', 'Frontend\RecruitmentController@refreshCaptcha')->name('refresh_captcha');
 Route::post('upload', 'Admin\ImageFileController@store');
-
-Route::group(['prefix' => 'tra-cuu', 'namespace' => 'Frontend'], function() {
-    Route::get('boi-thuong', 'TraCuuController@getTraCuuBoiThuong');
-});
-Route::get('get-quan-huyen', 'Frontend\CompensationController@getQuanHuyen');
 
 Route::post('editor-uploads', 'Admin\ImageFileController@UploadEditor');
 

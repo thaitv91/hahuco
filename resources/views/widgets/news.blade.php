@@ -1,7 +1,7 @@
 <section class="news bg-f4 space-global">
     <div class="container">
         <div class="header-box text-center">
-            <div class="group">Hahuco</div>
+            <!-- <div class="group">Hahuco</div> -->
             <h2>Tin tức</h2>
         </div>
 

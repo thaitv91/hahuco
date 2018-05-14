@@ -1,7 +1,7 @@
 <section class="investment-sector bg-f4 space-global">
     <div class="container">
         <div class="header-box text-center">
-            <div class="group">Hahuco</div>
+            <!-- <div class="group">Hahuco</div> -->
             <h2>Danh mục sản phẩm</h2>
         </div>
 
@@ -12,7 +12,7 @@
                         {{--<div class="ico"><i class="ico-investment-1"></i></div>--}}
                         <div class="ico"><img src="/{{ $term->thumbnail }}"></div>
                         <div class="text">
-                            <h4><a href="{{ route('homepage.product.showMore', $term->id) }}">{{ $term->name }}</a></h4>
+                            <h4><a href="{{ route('homepage.product.term', $term->slug) }}">{{ $term->name }}</a></h4>
                             <div class="desc">
                                 {!! $term->excerpt !!}
                             </div>

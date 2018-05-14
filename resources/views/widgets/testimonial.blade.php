@@ -1,7 +1,7 @@
 <section class="testimonials space-global">
     <div class="container">
         <div class="header-box text-center">
-            <div class="group">Hahuco</div>
+            <!-- <div class="group">Hahuco</div> -->
             <h2>Khách hàng nói về chúng tôi</h2>
         </div>
         <div class="dots-link slider-testimonials">

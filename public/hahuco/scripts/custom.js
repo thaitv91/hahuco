@@ -157,7 +157,17 @@ $(window).ready(function(){
         ]
     });
 
+    $( '.ratebox' ).raterater( {
+        submitFunction: 'rateAlert',
+        allowChange: false,
+        starWidth: 20,
+        spaceWidth: 5,
+        numStars: 5
+    } );
     
+    $('.scrollTop').click(function(){
+        $("html, body").animate({ scrollTop: "0" });
+    });
 
     // $('.navbar-light .navbar-nav .dropdown-toggle').unbind("click");
 
@@ -165,8 +175,10 @@ $(window).ready(function(){
         var scroll = $(this).scrollTop();
         if (scroll >= 350) {
             $('body').addClass('fixed-header');
+            $('.scrollTop').show();
         } else {
             $('body').removeClass('fixed-header');
+            $('.scrollTop').hide();
         }
 
     });

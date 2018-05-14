@@ -25,8 +25,11 @@
     <link type="text/css" href="/stylesheets/style.css" rel="stylesheet"/>
     <link href="{{url('css/toastr.min.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/scripts/colorbox-master/example1/colorbox.css">
 
-   {{--  Google Analytics --}}
+
+
+{{--  Google Analytics --}}
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112823873-1"></script>
         <script>
@@ -205,6 +208,7 @@
 <!--<script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>-->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="{{ asset('js/jquery.number.js') }}"></script>
+<script src="/hahuco.scripts/colorbox-master/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
 <script type="text/javascript">
     @if (Session::has('postSuccess'))

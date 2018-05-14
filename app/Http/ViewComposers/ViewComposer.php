@@ -23,6 +23,7 @@ class ViewComposer
         $android = is_null($configViews) ? '' : $configViews->android;
         $apple = is_null($configViews) ? '' : $configViews->apple;
 	    $email = is_null($configViews) ? '' : $configViews->email;
+	    $mapdes = is_null($configViews) ? '' : $configViews->mapdes;
 
 	    $this->logo = $logo;
 	    $this->sitename = $sitename;
@@ -38,6 +39,7 @@ class ViewComposer
 	    $this->android = $android;
 	    $this->apple = $apple;
 	    $this->email = $email;
+	    $this->mapdes = $mapdes;
 
     }
 	public function compose(View $view)
@@ -56,5 +58,6 @@ class ViewComposer
        $view->with('hotline1',$this->android);
        $view->with('hotline2',$this->apple);
        $view->with('hotline3',$this->email);
+       $view->with('mapdes',$this->mapdes);
       }
 }

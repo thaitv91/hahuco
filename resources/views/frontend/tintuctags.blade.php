@@ -6,7 +6,10 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article class="content">
-                        <h1 class="title-page">Tags: {!! $tag_name !!}</h1><!-- End .title_ct -->
+                        <div class="title_ct mb-4">
+                            <span>Tags: {!! $tag_name !!}</span>
+                            {!!  Share::currentPage()->facebook()->twitter()->googlePlus()  !!}
+                        </div><!-- End .title_ct -->
 
                         <div class="main_ct">
                             <div class="row">

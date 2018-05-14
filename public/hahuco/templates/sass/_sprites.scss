@@ -1,0 +1,32 @@
+.ico-search{
+  @include use-sprite('search');
+}
+
+@for $i from 1 through 6{
+  .ico-investment-#{$i}{
+    @include use-sprite('investment-#{$i}');
+  }
+}
+
+.ico-quote{
+	@include use-sprite('quote');
+}
+
+.ico-phone{
+	@include use-sprite('phone');
+}
+
+.ico-prev{
+	@include use-sprite('prev');
+}
+.ico-prev-hover{
+	@include use-sprite('prev-hover');
+}
+
+.ico-next{
+	@include use-sprite('next');
+}
+
+.ico-next-hover{
+	@include use-sprite('next-hover');
+}

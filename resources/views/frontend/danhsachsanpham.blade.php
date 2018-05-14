@@ -14,7 +14,10 @@
                 <div class="col-lg-9">
                     <article class="content">
                         <div class="info_catelogy">
-                            <h1 class="title-page">{!! $term->name !!}</h1><!-- End .title_ct -->
+                            <div class="title_ct mb-4">
+                                <span>{!! $term->name !!}</span>
+                                {!!  Share::currentPage()->facebook()->twitter()->googlePlus()  !!}
+                            </div><!-- End .title_ct -->
                             <div class="f-detail clearfix">
                                 {!! $term->description !!}
                             </div><!-- End .f-detail -->
@@ -31,6 +34,9 @@
                                                     <div class="mask_img"><i>Xem chi tiết</i></div>
                                                 </figure>
                                                 <h3><p>{{ $product->title }}</p></h3>
+                                                <div class="rating">
+                                                    <div class="ratebox" data-id="1" data-rating="{!! $product->getRated() !!}"></div>
+                                                </div>
                                                 <div class="dotdotdot desc">{{ $product->short_description }}</div>
                                             </div><!-- End .inner_prod -->
                                         </a>

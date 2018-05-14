@@ -171,6 +171,6 @@ class DichvuController extends Controller
 
 		Session::flash('success', trans('admin/general.success.remove'));
 
-		return Redirect::route('admin.news');
+		return Redirect::back();
 	}
 }

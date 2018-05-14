@@ -1,26 +1,23 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <div class="breadcrumb-ov">
+    <section class="page-inner">
         <div class="container">
             {{ Breadcrumbs::render('page', $page) }}
-        </div>
-    </div><!-- /.breadcrumb-ov -->
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9">
-                <article>
-                    <h2 class="title-page">
-                        <span>{!! $page->title !!}</span>
-                    </h2>
-                    @widget('DanhSachTuyenDung')
-                </article><!-- End .content -->
-            </div>
-            <div class="col-lg-3 order-lg-first">
-                @widget('SidebarLeft')
+            <div class="row">
+                <div class="col-lg-9">
+                    <article>
+                        <div class="title_ct mb-4">
+                            <span>{!! $page->title !!}</span>
+                            {!!  Share::currentPage()->facebook()->twitter()->googlePlus()  !!}
+                        </div>
+                        @widget('DanhSachTuyenDung')
+                    </article><!-- End .content -->
+                </div>
+                <div class="col-lg-3 order-lg-first">
+                    @widget('SidebarLeft')
+                </div>
             </div>
         </div>
-    </div>
-    
+    </section>
 @endsection

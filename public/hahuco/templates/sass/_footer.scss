@@ -1,0 +1,122 @@
+footer{
+  background-color: #1f1f20;
+  color:$white;
+  font-size: 14px;
+  a{
+    color: $white;
+    &:hover{
+      color: $color-link;
+    }
+  }
+
+  .footer-top{
+    padding: 48px 0 16px;
+    overflow:hidden;
+    @include breakpoint(lg){
+      padding: 48px 0 64px;
+    }
+    h3{
+      margin: 0;
+      color: $white;
+      font-size: 14px;
+      font-weight: 600;
+      &:after{
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background-color: $color-link;
+        margin: 15px 0 24px;
+      }
+    }
+  }
+
+  .ul_info_foot{
+  	li{
+  		width:100%;
+  		margin-right:0;
+  	}
+  }
+
+  .link-ft{
+    @include breakpoint(md){
+      margin-top: 77px;
+    }
+    ul{
+      li{
+        &+li{
+          margin-top: 6px;
+        }
+        a{
+          display: inline-block;
+          &:after{
+            content: "";
+            display: block;
+            height: 1px;
+            width: 0;
+            background-color: $color-link;
+            @include transition-value(width .3s ease-in-out);
+          }
+          &:hover, &:focus{
+            text-decoration: none;
+          }
+          &:hover{
+            &:after{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hahuco-fb{
+  	@include breakpoint(md){
+      margin-top: 77px;
+    }
+  }
+
+  .social{
+    a{
+      display: inline-block;
+      @include border-radius(50%);
+      border:1px solid $color-text;
+      @include transition-value();
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      line-height: 34px;
+      i{
+        vertical-align: middle;
+      }
+      &:hover{
+        border-color:$color-link;
+        background-color: $color-link;
+        color:$white;
+      }
+      &+a{
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.about-ft{
+	p{
+		margin-bottom:0;
+	}
+	.logo{
+		margin-bottom:15px;
+	}
+}
+
+.foot_2{
+	.container{
+		overflow:hidden;
+	}
+}
+
+.footer-bottom{
+  background-color: #19191a;
+  padding: 28px 0;
+}

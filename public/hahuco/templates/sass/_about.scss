@@ -1,0 +1,18 @@
+.single-article{
+  margin-bottom: 44px;
+  .img{
+    margin-bottom: 30px;
+  }
+  .text{
+    h4{
+      font-weight: 600;
+      color: #242424;
+      @include Montserrat();
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+    p{
+      margin-bottom: 23px;
+    }
+  }
+}

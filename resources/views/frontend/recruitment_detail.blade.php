@@ -13,8 +13,9 @@
             <div class="row">
                 <div class="col-lg-9">
                     <article>
-                        <div class="title-page">
+                        <div class="title_ct mb-4">
                             <span>Tuyển dụng</span>
+                            {!!  Share::currentPage()->facebook()->twitter()->googlePlus()  !!}
                         </div>
                         <h1 class="title_D">{{ $recruitment->title }}</h1>
                         {!! $recruitment->body !!}

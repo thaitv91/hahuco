@@ -10,9 +10,10 @@
         <div class="row">
             <div class="col-lg-9">
                 <article>
-                    <h2 class="title-page">
+                    <div class="title_ct mb-4">
                         <span>{!! $page->title !!}</span>
-                    </h2>
+                        {!!  Share::currentPage()->facebook()->twitter()->googlePlus()  !!}
+                    </div>
                     @widget('DanhSachDichVu')
                 </article><!-- End .content -->
             </div>

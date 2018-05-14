@@ -12,6 +12,7 @@ class Product extends Model
     use Searchable;
 	use \Spatie\Tags\HasTags;
 	use \App\Http\Traits\Seoables;
+	use \App\Http\Traits\ProductRating;
 
     protected $table = 'product';
     protected $guarded = array();

@@ -16,7 +16,7 @@
 			{{ method_field('PUT') }}
 			<div class="box-body">
 				<div class="form-group row">
-					<label class="col-md-2 col-md-offset-1">@lang('admin/configure.logo')</label>
+					<label class="col-md-2 col-md-offset-1">Logo</label>
 					<div class="col-md-8">
 						<input type="file" name="logo" value="" id="logo" class="required borrowerImageFile" data-errormsg="PhotoUploadErrorMsg">
 						<img id="previewHolder" src="{{ asset($data->logo) }}" alt="" width="170px" height="100px"/>
@@ -125,11 +125,23 @@
 					</div>
 				</div>
 				<div class="form-group row">
+					<label  class="col-md-2 col-md-offset-1" for="mapdes">Nội dung địa chỉ trên bản đồ</label>
+					<div class="col-md-8">
+						<textarea name="mapdes" class="form-control" rows="10" id="mapdes">{{ $data->mapdes }}</textarea>
+						@if($errors->has('mapdes'))
+						<span class="help-block">
+							<strong class="text-danger">{{$errors->first('mapdes')}}</strong>
+						</span>
+						@endif
+					</div>
+				</div>
+
+				<div class="form-group row">
 					<label  class="col-md-2 col-md-offset-1" for="promotion_content">@lang('admin/configure.promotion_content')</label>
 					<div class="col-md-8">
 						<textarea name="promotion_content" class="form-control" id="promotion_content">{{ $data->promotion_content }}</textarea>
 						@if($errors->has('promotion_content'))
-						<span class="help-block">
+							<span class="help-block">
 							<strong class="text-danger">{{$errors->first('promotion_content')}}</strong>
 						</span>
 						@endif
