@@ -1005,3 +1005,28 @@ a.effect-img{
 .clickable{
   cursor:pointer;
 }
+
+//page 404
+.page-404{
+  padding: 80px 0 120px;
+  font-size: 18px;
+  min-height:600px;
+  img{
+    max-width:350px;
+    margin-bottom: 35px;
+  }
+  p{
+    margin-bottom: 0;
+  }
+  a{
+    color: $color-link;
+    text-decoration: underline;
+  }
+  h4{
+    font-size: 16px;
+    font-weight: 600;
+    a{
+      color: $color-link;
+    }
+  }
+}
