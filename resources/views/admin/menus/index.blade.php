@@ -302,28 +302,6 @@
             $('#form-create-menu-item')[0].reset();
         });
 
-        $(document).on('click','.edit-menu-item', function(e) {
-            e.preventDefault();
-            var url = $(this).attr('href');
-            $.ajax({
-                url : url,
-                type : 'GET'
-            }).done(function (item) {
-                if (item) {
-                    $('#edit-menu-item-status').val(item.status);
-                    $('#edit-menu-item-name').val(item.name);
-                    $('#edit-menu-item-li-class').val(item.li_class);
-                    $('#edit-menu-item-icon').val(item.icon);
-                    $('#edit-menu-item-link').val(item.link);
-                    $('#edit-menu-item-a-class').val(item.a_class);
-                    $('#edit-menu-item-id').val(item.id);
-                    $('#modal-edit').modal('show');
-                } else {
-                    alert('Error');
-                }
-            });
-        });
-
         $('#form-edit-menu-item').on('submit', function(e) {
             e.preventDefault();
             $.ajax({

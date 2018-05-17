@@ -36,9 +36,6 @@
 								<td>{{ $testimonial->job }}</td>
 								<td><img src="{{ asset($testimonial->thumbnail) }}" class="img" height="75px"></td>
 								<td>
-									<a class="btn btn-info btn-xs" 
-										href="{{ route('homepage.testimonial.show',['id'=>$testimonial->id]) }}">@lang('admin/general.view')
-									</a>
 									<a class="btn btn-warning btn-xs" 
 										href="{{ route('admin.testimonial.edit',['id'=>$testimonial->id]) }}">@lang('admin/general.edit')
 									</a>

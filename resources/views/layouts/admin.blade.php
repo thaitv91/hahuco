@@ -56,7 +56,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Logo -->
         <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini">VietTinBank</span>
+            <span class="logo-mini">Hahuco</span>
         </a>
 
         <!-- Header Navbar -->
@@ -89,9 +89,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{ route('admin.product') }}"> @lang('admin/sidebar.manager')</a></li>
-                        <li><a href="{{ route('admin.product.create') }}"> @lang('admin/sidebar.new')</a></li>
-                        <li><a href="{{ route('admin.product.category') }}"> @lang('admin/sidebar.category')</a></li>
-                        <li><a href="{{ route('admin.product.term') }}"> @lang('admin/sidebar.term')</a></li>
+                        <li><a href="{{ route('admin.product.create') }}"> Tạo mới</a></li>
+                        <li><a href="{{ route('admin.product.term') }}"> @lang('admin/sidebar.category')</a></li>
                     </ul>
                 </li>
 
@@ -119,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="far fa-address-book"></i>
+                        <i class="fa fa-user-plus"></i>
                         <span>@lang('admin/sidebar.partner')</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -127,7 +126,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{ route('admin.partner') }}"> @lang('admin/sidebar.manager')</a></li>
-                        <li><a href="{{ route('admin.partner.create') }}"> @lang('admin/sidebar.new')</a></li>
+                        <li><a href="{{ route('admin.partner.create') }}"> Tạo mới</a></li>
                         <li><a href="{{ route('admin.partner.reorder') }}"> @lang('admin/sidebar.reorder')</a></li>
                     </ul>
                 </li>
@@ -167,24 +166,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                 </li>
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-link"></i> 
-                        <span>@lang('admin/sidebar.network')</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ route('admin.network.index') }}"> @lang('admin/sidebar.manager')</a></li>
-                        <li><a href="{{ route('admin.region.index') }}"> @lang('admin/sidebar.region')</a></li>
-                        <li><a href="{{ route('admin.city.index') }}"> @lang('admin/sidebar.province')</a></li>
-                        <li><a href="{{ route('admin.district.index') }}"> @lang('admin/sidebar.district')</a></li>
-                    </ul>
-                </li>
-
                 <li class="">
-                    <a href="{{ route('menu_manager') }} ">
+                    <a href="/admin/menu/1">
                         <i class="fa fa-reorder"></i><span>@lang('admin/sidebar.menu_manager')</span>
                     </a>
                 </li>
@@ -225,21 +208,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                 </li>
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-link"></i> 
-                        <span>@lang('admin/sidebar.recruitment')</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+                <li class="">
+                    <a href="{{ route('admin.recruitment.index') }}">
+                        <i class="fa fa-users"></i><span>Tuyển dụng</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ route('admin.recruitment.index') }}"> @lang('admin/sidebar.manager')</a></li>
-                        <li><a href="{{ route('admin.recruitment.create') }}"> @lang('admin/sidebar.new')</a></li>
-                        <li><a href="{{ route('admin.recruitment.job.index') }} "> @lang('admin/sidebar.job')</a></li>
-                        <li><a href="{{ route('admin.recruitment.place.index') }} "> @lang('admin/sidebar.place')</a></li>
-                        <li><a href="{{ route('admin.recruitment.profile.index') }} "> @lang('admin/sidebar.profile')</a></li>
-                    </ul>
                 </li>
 
                 <li>

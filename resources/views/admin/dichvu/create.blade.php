@@ -19,7 +19,7 @@
 			<div class="col-md-8">
 				<div class="box-body">
 					<div class="form-group margin-bottom-30">
-						<label  class="" for="name">Title</label>
+						<label  class="" for="name">Tiêu đề</label>
 						<input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
 						@if($errors->has('name'))
 							<span class="help-block">
@@ -29,12 +29,12 @@
 					</div>
 
 					<div class="form-group margin-bottom-30">
-						<label  class="" for="excerpt">Mô tả tóm tắt</label>
+						<label  class="" for="excerpt">Mô tả</label>
 						<textarea class="form-control" rows="5" id="excerpt" name="excerpt"></textarea>
 					</div>
 
 					<div class="form-group margin-bottom-30">
-						<label  class="" for="content">Content</label>
+						<label  class="" for="content">Nội dung</label>
 						<textarea class="form-control my-editor" rows="15" id="content" name="content"></textarea>
 					</div>
 
@@ -44,7 +44,7 @@
 			<div class="col-md-4">
 				<div class="box-body">
 					<div class="form-group margin-bottom-30">
-						<label class="">Thumbnail</label>
+						<label class="">Hình ảnh</label>
 						<input type="file" name="thumbnail" value="" id="thumbnail" class="required borrowerImageFile" data-errormsg="PhotoUploadErrorMsg">
 						<img id="previewHolder" alt="" width="170px" height="100px"/>
 						@if($errors->has('thumbnail'))

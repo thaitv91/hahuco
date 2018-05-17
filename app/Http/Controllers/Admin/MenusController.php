@@ -50,7 +50,7 @@ class MenusController extends Controller
 
 	public function render2($menuItems, $html) {
 		foreach ($menuItems as $key => $item) {
-			$html .= '<li id="'.$item->id.'"><div><span id="item_name_'.$item->id.'">'.$item->name.($item->status?'':' <i>(Hiden)</i> ').'</span><a href = "'.route('menu_manager.detailMenuItem', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-danger btn-xs remove-menu-item">Remove</a><a href = "'.route('menu_manager.detailMenuItem', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-warning btn-xs edit-menu-item">Edit</a></div>';
+			$html .= '<li id="'.$item->id.'"><div><span id="item_name_'.$item->id.'">'.$item->name.($item->status?'':' <i>(Hiden)</i> ').'</span><a href = "'.route('menu_manager.detailMenuItem', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-danger btn-xs remove-menu-item">Remove</a><a href = "'.route('admin.menu.item', ['menu_item_id'=>$item->id]).'" class="clickable pull-right btn btn-warning btn-xs edit-menu-item">Edit</a></div>';
 
 			if ($item->hasChildren()) {
 				$html .= '<ul>'.$this->render2($item->children, '').'</ul>';
@@ -82,7 +82,27 @@ class MenusController extends Controller
 		Session::flash('error', "Tạo item không thành công");
 		return Redirect::back();
 		//$menuItem->detailMenuItemUrl = route('menu_manager.detailMenuItem', ['menu_item_id'=>$menuItem->id]);
+	}
 
+	public function editMenuItem($menu_item_id) {
+		$item = MenuItem::where('id', $menu_item_id)->firstOrFail();
+		$tilte = 'Sửa item: ' . $item->name;
+		return view('admin.menus.item', compact(['item', 'title']));
+		//return view('admin.menus.index', compact(['html', 'menu']));
+	}
 
+	public function updateMenuItem(Request $request) {
+		$data = $request->all();
+		$item = MenuItem::where('id', $data['item_id'])->firstOrFail();
+		$item->name = $data['name'];
+		$item->link = $data['link'];
+
+		if($item->save()) {
+			Session::flash('message', "Sửa item thành công");
+			return Redirect::to('/admin/menu/1');
+		}
+
+		Session::flash('error', "Sửa item không thành công");
+		return Redirect::back();
 	}
 }

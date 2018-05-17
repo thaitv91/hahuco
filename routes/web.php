@@ -29,6 +29,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::group(['prefix' => 'menu'], function () {
 		//Route::get('/', 'Admin\MenusController@index')->name('admin.menu.index');
 		Route::get('{id}', 'Admin\MenusController@index')->name('admin.menu.index');
+		Route::get('/item/{menu_item_id}', 'Admin\MenusController@editMenuItem')->name('admin.menu.item');
+		Route::post('/item', 'Admin\MenusController@updateMenuItem')->name('admin.menu.updateItem');
 		Route::post('/create-item', 'Admin\MenusController@createMenuItem')->name('admin.menu.createItem');
 	});
 

@@ -20,7 +20,7 @@ class UserPageController extends Controller
 {	
 	public function index($slug = ''){
 		$slug = $slug ? $slug : 'homepage';
-		$data = Pages::where( 'slug', $slug )->first();
+		$data = Pages::where( 'slug', $slug )->firstOrFail();
 		$data->setSeoable();
 
 		$template = $data->template;

@@ -24,7 +24,6 @@
 						<thead>
 							<th>@lang('admin/product.id')</th>
 							<th>@lang('admin/product.title')</th>
-							<th>@lang('admin/product.term')</th>
 							<th>@lang('admin/product.category')</th>
 							<th>@lang('admin/product.thumbnail')</th>
 							<th width="15%"></th>
@@ -35,7 +34,6 @@
 								<td>{{ $key+1 }}</td>
 								<td>{{ $product->title }}</td>
 								<td>{{ $product->term? $product->term->name : '' }}</td>
-								<td>{{ $product->category? $product->category->name : '' }}</td>
 								<td><img src="{{ asset($product->thumbnail) }}" class="img" height="75px"></td>
 								<td>
 									<a class="btn btn-info btn-xs" 

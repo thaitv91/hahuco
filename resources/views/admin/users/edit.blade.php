@@ -30,7 +30,7 @@
 					</div>
 					<div class="form-group">
 						<label for="firstname">@lang('admin/user.firstname')</label>
-						<input type="text" class="form-control" name="firstname" id="firstname" required="required" value="{{ $user->getUserInfo->firstname }}">
+						<input type="text" class="form-control" name="firstname" id="firstname" value="{{ $user->getUserInfo->firstname }}">
 						@if ($errors->has('firstname'))
 						<span class="help-block">
 							<strong>{{ $errors->first('firstname') }}</strong>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="form-group">
 						<label for="lastname">@lang('admin/user.lastname')</label>
-						<input type="text" class="form-control" name="lastname" id="lastname" required="required" value="{{ $user->getUserInfo->lastname }}">
+						<input type="text" class="form-control" name="lastname" id="lastname" value="{{ $user->getUserInfo->lastname }}">
 						@if ($errors->has('lastname'))
 						<span class="help-block">
 							<strong>{{ $errors->first('lastname') }}</strong>
@@ -52,6 +52,16 @@
 						@if ($errors->has('email'))
 						<span class="help-block">
 							<strong>{{ $errors->first('email') }}</strong>
+						</span>
+						@endif
+					</div>
+
+					<div class="form-group">
+						<label for="password">Mật khẩu</label>
+						<input type="password" class="form-control" name="password" id="password">
+						@if ($errors->has('password'))
+							<span class="help-block">
+							<strong>{{ $errors->first('password') }}</strong>
 						</span>
 						@endif
 					</div>

@@ -921,10 +921,12 @@ a.effect-img{
     color: rgba( 0, 0, 0, 0.25 );
 }
 .raterater-hover-layer {
-    color: rgba( 255, 255, 0, 0.75 );
+    // color: rgba( 255, 255, 0, 0.75 );
+    color:$color-link-hover;
 }
 .raterater-hover-layer.rated { /* after the user selects a rating */
-    color: rgba( 255, 255, 0, 1 );
+    // color: rgba( 255, 255, 0, 1 );
+    color: $color-link;
 }
 .raterater-rating-layer {
     color: $color-link;

@@ -58,10 +58,6 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group">
-                                    <p>(<span style="color: red">*</span>) trường thông tin bắt buộc</p>
-                                </div>
-
                                 <div class="text-left">
                                     <button type="submit" class="btn btn-primary">Gửi liên hệ</button>
                                 </div>

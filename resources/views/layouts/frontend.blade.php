@@ -136,8 +136,8 @@
 
                     <div class="col-md-4 mb-4 mb-lg-0">
                         <h3 class="text-uppercase">Kết nối với chúng tôi</h3>
-                        <div class="fb-page" data-href="https://www.facebook.com/www.hahuco.com.vn/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                            <blockquote cite="https://www.facebook.com/www.hahuco.com.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/www.hahuco.com.vn/">TỰ ĐỘNG HÓA Hahuco</a></blockquote>
+                        <div class="fb-page" data-href="{{ $facebook }}" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="{{ $facebook }}" class="fb-xfbml-parse-ignore"><a href="{{ $facebook }}">TỰ ĐỘNG HÓA Hahuco</a></blockquote>
                         </div>
                     </div>
                 </div>

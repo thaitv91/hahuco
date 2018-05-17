@@ -20,7 +20,7 @@
 					<div class="col-md-8">
 						<div class="box-body">
 							<div class="form-group margin-bottom-30">
-								<label  class="" for="name">Title</label>
+								<label  class="" for="name">Tiêu đề</label>
 								<input type="text" class="form-control" name="name" id="name" value="{{ $dichvu->name }}">
 								@if($errors->has('name'))
 									<span class="help-block">
@@ -35,7 +35,7 @@
 							</div>
 
 							<div class="form-group margin-bottom-30">
-								<label  class="" for="content">Content</label>
+								<label  class="" for="content">Nội dung</label>
 								<textarea class="form-control my-editor" rows="15" id="content" name="content">{{ $dichvu->content }}</textarea>
 							</div>
 
@@ -45,7 +45,7 @@
 					<div class="col-md-4">
 						<div class="box-body">
 							<div class="form-group margin-bottom-30">
-								<label class="">Thumbnail</label>
+								<label class="">Hình ảnh</label>
 								<input type="file" name="thumbnail" value="" id="thumbnail" class="required borrowerImageFile" data-errormsg="PhotoUploadErrorMsg">
 								<img src="{{ asset($dichvu->image) }}" class="img img-thumbnail" id="preview-thumbnail" width="675px" height="auto"  @if (!$dichvu->image) style="display: none" @endif>
 							</div>
